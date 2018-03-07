@@ -1,5 +1,6 @@
 # проект сайт portfolio
+##  разработка
 ### **студент**:  Волкова Юлия
 ### **наставник**: Ивченко Антон
 ### **курс**: продвинутый курс по WEB
-### **ссылка на проект**  https://yuliyavolkova.github.io/burger_project/ 
+### **ссылка на проект**  https://yuliyavolkova.github.io/portfolio_pages/
