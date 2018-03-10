@@ -1,0 +1,13 @@
+
+.l-copy {
+
+	@include tablet {
+
+		margin-top: auto;
+	}
+
+	@include mobile {
+
+		margin: auto 0;
+	}
+}

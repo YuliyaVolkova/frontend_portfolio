@@ -1,0 +1,131 @@
+
+.c-welcome {
+
+	background-color: rgba(252, 252, 252, 0.85);
+	@include size(rem(380), rem(395));
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	border-radius: rem(5);
+}
+
+.c-welcome__img-wrap {
+
+	width: rem(141);
+	height: rem(141);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	margin-bottom: 4%;
+	border-radius: 50%;
+}
+
+.c-welcome__img {
+
+	max-width: 100%;
+}
+
+.c-welcome__content {
+
+	text-align: center;
+	max-width: 100%;
+	width: 100%;
+}
+
+.c-welcome__header {
+
+	font-size: rem(28);
+	font-weight: 500;
+	line-height: 1.21;
+	margin-bottom: 0.3%;
+}
+
+.c-welcome__desc {
+	
+	font-size: rem(16);
+	color: rgba($text-color, 0.8);
+	line-height: 1.5;
+}
+
+.c-welcome__social {
+	
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin: 10% 0; 
+}
+
+.c-welcome__social-item {
+
+	height: rem(22);
+	margin-right: 7%;
+
+	&:last-child {
+
+		margin-right: 0;
+	}
+}
+
+.c-welcome__social-link {
+
+	display: inline-block;
+	height: 100%;
+
+	&:hover .svg-use {
+
+		opacity: 1;
+	}
+}
+
+.svg-use {
+
+	@include size(rem(28), rem(22));
+	transition: opacity 0.6s;
+	opacity: 0.5;
+	color: $brand-color;
+}
+
+.c-welcome__nav {
+
+	display: flex;
+	background-color: rgba($brand-color, 0.85);
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 0 0 rem(5) rem(5);
+}
+
+.c-welcome__nav-item {
+	
+	border-left: 1px solid rgba($primaryColor, 0.85);
+	transition:  background-color 0.3s;
+	flex: 1;
+
+	&:hover {
+		
+		background-color: rgba($second-color, 0.85);
+		cursor: pointer;
+	}
+	&:first-child {
+	
+		border-left: none;
+	}
+}
+
+.c-welcome__nav-link {
+	
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	width: 100%;
+	height: 100%;
+	padding: 7% 7%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: rem(16);
+	color: $primaryColor;
+}

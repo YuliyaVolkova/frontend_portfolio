@@ -1,0 +1,17 @@
+include ../base/_mixins.pug
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="description" content="web разработка сопровождение сайтов и веб приложений")
+    meta(name="keywords" content="")
+    meta(content="IE=edge" http-equiv="X-UA-Compatible")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0" )
+
+    title #{title}
+
+  body
+    .l-wrapper
+      block content

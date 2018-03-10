@@ -1,0 +1,42 @@
+
+.c-button {
+
+	min-width: rem(50);
+	min-height: rem(45);
+	font-size: rem(16);
+	padding: 0 rem(28);
+	display: inline-block;
+	vertical-align: middle;
+	background-color: transparent;
+	border: 1px solid $primaryColor;
+	transition:  background-color 0.2s;
+	overflow: hidden;
+	border-radius: rem(5);
+	outline: none;
+
+	&:hover {
+		
+		background-color: $primaryColor;
+		cursor: pointer;
+	}
+	&:hover .c-button__text {
+
+		color: $brand-color;
+	}
+}
+
+.c-button__text {
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: rem(45);
+	font-weight: 500;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	color: $primaryColor;
+	transition: color 0.2s;
+}

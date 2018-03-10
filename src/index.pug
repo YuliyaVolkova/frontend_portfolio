@@ -1,0 +1,48 @@
+extends ./assets/pug/layout/main.layout.pug
+
+block variables
+	- var title = 'welcome вебразработка'
+	- var social = ['vk', 'github', 'in']
+	-
+		var nav = [{
+			name: 'Мои работы', 
+			url: './pages/my_works.html'
+			},
+			{
+				name: 'Обо мне',
+				url: './pages/about.html'
+			},
+			{name: 'Блог',
+			url: './pages/blog.html'}]
+	-
+		var copy = [
+			'&copy;&nbsp;Yuliya Volkova',
+			'создано в &laquo;&nbsp;LoftSchool&nbsp;&raquo;',
+			'2018' ]
+
+block content
+
+	.l-login__button
+		button.c-button
+			span.c-button__text Авторизоваться
+
+	section.l-welcome
+		.c-welcome
+			.c-welcome__img-wrap(style="background-image: url('./assets/images/content/photo.jpg'); background-repeat:no-repeat;")
+				img.c-welcome__img.visually-hidden(alt="", src=require('./assets/images/content/photo.jpg'))
+			.c-welcome__content
+				h1.c-welcome__header Volkova Yuliya
+				h2.c-welcome__desc Личный сайт веб разработчика
+				ul.c-welcome__social
+					each val in social
+						li.c-welcome__social-item
+							a.c-welcome__social-link(href="#" target="blank")
+								+icon(val, 'svg-use')
+				ul.c-welcome__nav
+					each val in nav
+						li.c-welcome__nav-item
+							a.c-welcome__nav-link(href=`${val.url}`)= val.name
+	footer.l-copy
+		ul.c-copy
+			each val in copy
+				li.c-copy_item!= val

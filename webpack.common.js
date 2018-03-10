@@ -19,7 +19,7 @@ module.exports = {
   entry: {
     index: ['./app/index.js'],
     blog: ['./app/blog.js'],
-    admin: ['./app/admin.js'],
+    about: ['./app/about.js'],
     my_works: ['./app/my_works.js']
   },
 
@@ -33,10 +33,9 @@ module.exports = {
     rules: [
       {
         test: /\.(svg)$/i,   //to support eg. background-image property 
-        loader:'svg-url-loader',
+        loader:'file-loader',
         options:{
-          limit: '3500',
-          name:'[path][name].[ext]',
+        name:'[path][name].[ext]',
         }
       },
       {
@@ -158,6 +157,13 @@ module.exports = {
               }
             ] 
         })    
+      },
+      {
+        test: /\.(pug|jade)$/,
+        exclude: /node_modules/,
+        loader: "pug-lint-loader",
+        options: require('./.pug-lintrc.js'),
+        enforce: "pre"
       },
       {
         test: /\.pug$/,

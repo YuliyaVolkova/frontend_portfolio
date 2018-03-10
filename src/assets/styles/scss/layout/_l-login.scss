@@ -1,0 +1,23 @@
+
+.l-login__button {
+	
+	position: absolute;
+	top: 5%;
+	right: 5%;
+
+	@include custom {
+
+		right: 10%;
+	}
+
+	@include tablet {
+
+		top: 4.5%;
+	}
+
+	@include mobile {
+
+		position: initial;
+		margin: auto 0;
+	}
+}

@@ -14,6 +14,7 @@ module.exports = merge(common, {
   output: {
 
      publicPath: 'http://localhost:8080/',
+    // publicPath: 'https://yuliyavolkova.github.io/portfolio_pages/',
    },
 
   devServer: {
@@ -43,28 +44,28 @@ module.exports = merge(common, {
 
       new HtmlWebpackPlugin({
        title: 'Portfolio Главная',
-       template: './pug/pages/index/index.pug',
+       template: './index.pug',
        chunks: ['index'],
        filename: './index.html'
       }),
 
       new HtmlWebpackPlugin({
        title: 'Web blog',
-       template: './pug/pages/blog/blog.pug',
+       template: './pages/blog.pug',
        chunks: ['blog'],
        filename: './pages/blog.html'
       }),
 
       new HtmlWebpackPlugin({
-       title: 'Site admin',
-       template: './pug/pages/admin/admin.pug',
-       chunks: ['admin'],
-       filename: './pages/admin.html'
+       title: 'About me',
+       template: './pages/about.pug',
+       chunks: ['about'],
+       filename: './pages/about.html'
       }),
 
       new HtmlWebpackPlugin({
        title: 'Мои работы',
-       template: './pug/pages/my_works/my_works.pug',
+       template: './pages/my_works.pug',
        chunks: ['my_works'],
        filename: './pages/my_works.html'
       }),

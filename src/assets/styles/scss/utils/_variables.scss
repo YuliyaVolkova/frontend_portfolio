@@ -13,14 +13,18 @@ $primaryColor: rgb(255, 255, 255);
 
 /// Copy text color
 /// @type Color
-$text-color: rgb(47, 50, 52) !default;
+$text-color: rgb(69, 90, 100) !default;
+
+///
+$dark-text-color: #373E42;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(249, 180, 59) !default;
+//$brand-color: rgb(32,181,161) !default;
+$brand-color: rgb(0, 191, 165) !default;
 
 /// Secondary color
-$second-color: rgb(228, 80, 40);
+$second-color: rgb(0, 150, 136);
 
 /// Light grey
 /// @type Color

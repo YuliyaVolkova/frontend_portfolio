@@ -1,0 +1,16 @@
+
+.l-welcome {
+	
+	margin-bottom: 5%;
+
+	@include tablet {
+		
+		margin-top: auto;
+		margin-bottom: 0;
+	}
+
+	@include mobile {
+
+		margin: auto 0;
+	}
+}
