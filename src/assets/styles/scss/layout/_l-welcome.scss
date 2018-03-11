@@ -1,16 +1,18 @@
 
 .l-welcome {
 	
-	margin-bottom: 5%;
+	//margin-bottom: 5%;
+	@include absolute-center;
+	z-index: 1;
 
 	@include tablet {
 		
-		margin-top: auto;
-		margin-bottom: 0;
+		//margin-top: auto;
+		//margin-bottom: 0;
 	}
 
 	@include mobile {
 
-		margin: auto 0;
+		//margin: auto 0;
 	}
 }

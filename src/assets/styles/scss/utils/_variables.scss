@@ -1,11 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-
-
-
-
-
 /// Regular font family
 /// @type List
 
@@ -38,17 +33,13 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
-
-
-
+///*** colors ****
+///
+//"#0077B5"
 
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
-
-
-
-
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
@@ -59,14 +50,11 @@ $breakpoints: (
   'large': 1024px,
 ) !default;
 
-
 $desktop: 1300px;
 $laptop:  992px;
 $tablet: 768px;
 $mobile: 480px;
 $small-mobile: 375px;
-
-
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

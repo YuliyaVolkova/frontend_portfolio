@@ -3,6 +3,7 @@ extends ./assets/pug/layout/main.layout.pug
 block variables
 	- var title = 'welcome вебразработка'
 	- var social = ['vk', 'github', 'in']
+	- var component = 'c-welcome'
 	-
 		var nav = [{
 			name: 'Мои работы', 
@@ -20,8 +21,8 @@ block variables
 			'создано в &laquo;&nbsp;LoftSchool&nbsp;&raquo;',
 			'2018' ]
 
-block content
-
+block extend
+	.l-parallax__container
 	.l-login__button
 		button.c-button
 			span.c-button__text Авторизоваться
@@ -33,16 +34,12 @@ block content
 			.c-welcome__content
 				h1.c-welcome__header Volkova Yuliya
 				h2.c-welcome__desc Личный сайт веб разработчика
-				ul.c-welcome__social
-					each val in social
-						li.c-welcome__social-item
-							a.c-welcome__social-link(href="#" target="blank")
-								+icon(val, 'svg-use')
+				+social(component, social, './assets/images/sprites/sprite_social.svg')
 				ul.c-welcome__nav
 					each val in nav
 						li.c-welcome__nav-item
 							a.c-welcome__nav-link(href=`${val.url}`)= val.name
-	footer.l-copy
-		ul.c-copy
-			each val in copy
-				li.c-copy_item!= val
+		footer.l-copy
+			ul.c-copy
+				each val in copy
+					li.c-copy_item!= val

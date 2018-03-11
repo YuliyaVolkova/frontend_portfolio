@@ -1,7 +1,14 @@
-mixin icon(iconName, iconClass)
+mixin icon(iconName, iconClass, url)
 	svg(class=`${iconClass}`)
-		use(xlink:href=`./assets/images/sprites/sprite_social.svg#${iconName}`)
+		use(xlink:href=`${url}#${iconName}`)
 			title=iconName
+
+mixin social(component, listSocial, url)
+	ul(class=`${component}__social`)
+		each val in listSocial
+			li(class=`${component}__social-item`)
+				a(class=`${component}__social-link`, href="#" target="blank")
+					+icon(val, 'svg-use', url)
 
 mixin iconID(iconName, iconClass)
 	svg(class=`${iconClass}`)

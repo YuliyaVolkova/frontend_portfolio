@@ -8,6 +8,10 @@
 	justify-content: flex-end;
 	align-items: center;
 	border-radius: rem(5);
+
+	@include mobile {
+		//margin-bottom: 11%;
+	}
 }
 
 .c-welcome__img-wrap {
@@ -72,6 +76,7 @@
 
 	display: inline-block;
 	height: 100%;
+	color: $brand-color;
 
 	&:hover .svg-use {
 
@@ -84,7 +89,6 @@
 	@include size(rem(28), rem(22));
 	transition: opacity 0.6s;
 	opacity: 0.5;
-	color: $brand-color;
 }
 
 .c-welcome__nav {

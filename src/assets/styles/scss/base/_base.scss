@@ -12,12 +12,11 @@
 body, html {
 
   	color: $text-color;
- 	background-color: $brand-color; 
+ 	background-color: $light-grey; 
   	font-family: $text-font-stack;
 	margin: 0;
 	padding: 0;
-	width: 100%;
-	height: 100%; 
+	@include size(100%);
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.425rem;

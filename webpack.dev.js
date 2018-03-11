@@ -13,8 +13,8 @@ module.exports = merge(common, {
 
   output: {
 
-     publicPath: 'http://localhost:8080/',
-    // publicPath: 'https://yuliyavolkova.github.io/portfolio_pages/',
+     //publicPath: 'http://localhost:8080/',
+     publicPath: 'https://yuliyavolkova.github.io/portfolio_pages/',
    },
 
   devServer: {

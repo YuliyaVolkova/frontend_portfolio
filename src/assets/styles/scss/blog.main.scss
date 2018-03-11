@@ -13,18 +13,13 @@
   'base/base',
   'base/helpers';
 
-/*@import
-
-  'layout/l-wrapper',
-  'layout/l-hero',
-  'layout/l-container',
-  'layout/l-page',
-  'layout/l-header',
-  'layout/l-nav-dots',
-  'layout/l-footer';
-
 @import
 
-  'components/c-logo'; */
-  
-  
+  'layout/l-wrapper',
+  'layout/l-section',
+  'layout/l-hamburger';
+
+@import 
+
+  'components/c-header__social',
+  'components/c-hamburger-nav';

@@ -1,17 +1,8 @@
 
 .l-wrapper {
-	width: 100%;
-	height: 100%;
+	
+	@include size(100%);
 	margin: 0;
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	// for parallax
 	overflow: hidden;
-	background-image: url(../../images/decor/bg/montains.jpg);
-	background-size: 140% 140%;
-	background-repeat: no-repeat;
 } 

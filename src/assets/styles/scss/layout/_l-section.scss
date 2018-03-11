@@ -1,0 +1,32 @@
+
+.l-section {
+
+	
+
+}
+
+.l-section_header {
+
+	@include size(100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	background-image: url('../../images/decor/bg/montains.jpg');
+
+	@include custom {
+
+		min-height: 650px;
+	}
+
+}
+
+.l-section_common {
+
+
+}
+
+.l-section_footer {
+
+
+}
