@@ -33,10 +33,29 @@
 	margin-bottom: 0.3%;
 	color: $primaryColor;
 }
+
+.c-developer__header_blog {
+
+	font-family: 'bernier';
+	font-size: rem(63);
+	letter-spacing: 0.2rem;
+	&:first-letter {
+
+		text-transform: uppercase;
+	}
+}
+
 .c-developer__desc {
 
 	font-size: rem(16);
 	color: rgba($primaryColor, 0.8);
 	line-height: 1.5;
 	font-weight: 300;
+}
+
+.c-developer__desc-blog {
+	
+	color: $primaryColor;
+	font-weight: 400;
+
 }

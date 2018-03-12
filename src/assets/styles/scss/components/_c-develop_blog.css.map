@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,uBAAwB,CAEvB,OAAO,CAAE,YAAY,CACrB,KAAK,CAAE,IAAI,CAIZ,yBAA0B,CAEzB,OAAO,CAAE,YAAY,CACrB,cAAc,CAAE,MAAM,CACtB,MAAM,CAAE,MAAM",
+"sources": ["_c-develop_blog.scss"],
+"names": [],
+"file": "_c-develop_blog.css"
+}

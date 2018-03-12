@@ -1,3 +1,20 @@
+----------
+- var sectionName = 'c-header'
+- var social = ['vk', 'github', 'in']
+- var arrowId = 'arrow_down'
+
+	+social(sectionName, social, '../assets/images/sprites/sprite.svg')
+	+icon(bgHeaderSvgId, `svg_header${pageClMod?` svg_header-${pageClMod}`:''}`, '../assets/images/sprites/sprite.svg')
+	.l-developer
+		.c-developer
+			.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
+				img.c-developer__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
+			.c-developer__content
+				h1(class=`c-developer__header${headerDevClMod?` c-developer__header-${headerDevClMod}`:''}`)= devTitle
+				h2(class=`c-developer__desc${headerDevClMod?` c-developer__desc-${headerDevClMod}`:''}`)= devDescript
+	a.c-next(href='#')
+		+icon(arrowId, 'svg_next', '../assets/images/sprites/sprite.svg')
+------------------
 extends ./main.layout.pug
 
 block extend

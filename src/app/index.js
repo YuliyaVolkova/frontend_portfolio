@@ -1,12 +1,18 @@
 
 import 'normalize.css';
 import '../assets/styles/scss/index.main.scss';
+
+import svg4everybody from 'svg4everybody';
+svg4everybody();
+
+//var svgEveryBody = require('svg4everybody');
+//svgEveryBody();
 	
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
 //*
 //function requireAll(r) { r.keys().forEach(r); }
-//requireAll(require.context('../assets/images/sprites/to_social/', true));
+//requireAll(require.context('../assets/images/sprites/to_sprite/', true));
 
 var prlxMontains = (function() {
 

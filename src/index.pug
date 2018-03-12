@@ -1,7 +1,7 @@
 extends ./assets/pug/layout/main.layout.pug
 
 block variables
-	- var title = 'welcome вебразработка'
+	- var title = 'welcome WEB Разработка'
 	- var social = ['vk', 'github', 'in']
 	- var component = 'c-welcome'
 	-
@@ -33,8 +33,8 @@ block extend
 				img.c-welcome__img.visually-hidden(alt="", src=require('./assets/images/content/photo.jpg'))
 			.c-welcome__content
 				h1.c-welcome__header Volkova Yuliya
-				h2.c-welcome__desc Личный сайт веб разработчика
-				+social(component, social, './assets/images/sprites/sprite_social.svg')
+				h2.c-welcome__desc Личный сайт WEB Разработчика
+				+social(component, social, './assets/images/sprites/sprite.svg')
 				ul.c-welcome__nav
 					each val in nav
 						li.c-welcome__nav-item

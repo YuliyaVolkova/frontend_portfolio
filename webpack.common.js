@@ -40,13 +40,13 @@ module.exports = {
       },
       {
       test: /\.(svg)$/i,   //sprite 
-      include: path.resolve(__dirname, 'src/assets/images/sprites/to_social/'),
+      include: path.resolve(__dirname, 'src/assets/images/sprites/to_sprite/'),
       use: [
         {
           loader: 'svg-sprite-loader',
           options: {
             extract: true,
-            spriteFilename:  'assets/images/sprites/sprite_social.svg',
+            spriteFilename:  'assets/images/sprites/sprite.svg',
           }
         },
        	{
