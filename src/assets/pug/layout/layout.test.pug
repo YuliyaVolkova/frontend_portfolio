@@ -1,0 +1,36 @@
+extends ./main.layout.pug
+
+block extend
+	- var sections = ['header', 'content', 'footer']
+	- var component = 'c-header'
+	-
+		var navList = [{pageUrl: '#my_works', title: 'мои работы'},
+			{pageUrl: '#blog', title: 'блог'},
+			{pageUrl: '#about', title: 'обо мне'},
+			{pageUrl: '#login', title: 'авторизация'}]
+
+	each val in sections
+		section(class=`l-section l-section_${val}`)
+			case val
+				when 'header'
+					block header
+						include ../components/section-header.pug
+				when 'content'
+
+					- var bgLeftId = 'about_bg_left'
+					- var bgRightId = 'about_bg_right'
+					.l-bg-about
+						+icon(bgLeftId, 'svg_aboutLeft', '../assets/images/sprites/sprite_social.svg')
+						+icon(bgRightId, 'svg_aboutRight', '../assets/images/sprites/sprite_social.svg')
+					block content
+				when 'footer'
+					block footer
+	.l-hamburger
+		nav.c-hamburger-nav
+			a.c-hamburger-nav__target(href="")
+				span.c-hamburger-nav__fake
+			ul.c-hamburger-nav__list.visually-hidden
+				each val in navList
+					li.c-hamburger-nav__item
+						a.c-hamburger-nav__link(href=`${val.pageUrl}`)= val.title
+

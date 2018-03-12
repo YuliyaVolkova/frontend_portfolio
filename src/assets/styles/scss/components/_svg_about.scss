@@ -1,0 +1,13 @@
+.svg_aboutLeft, .svg_aboutRight {
+	
+	width: 50%;
+	height: 120%;
+	fill: $light-beige;
+	stroke: $light-beige;
+}
+
+.svg_aboutRight {
+	
+	position: relative;
+	top: 1px;
+}

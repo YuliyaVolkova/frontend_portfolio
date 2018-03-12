@@ -1,0 +1,9 @@
+.svg_header {
+	
+	opacity: 0.06;
+	@include size(100%, 37%);
+	@include absolute-center;
+	fill: $primaryColor;
+	//stroke: $primaryColor;
+	z-index: 1;
+}

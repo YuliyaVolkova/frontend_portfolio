@@ -1,0 +1,17 @@
+.c-next {
+
+	display: block;
+	@include size(rem(28), rem(18));
+	position: absolute;
+	bottom: 15%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+	transition: transform 0.3s;
+	will-change: transform;
+
+	&:hover {
+
+		transform: translateX(-50%) scale(1.2);
+	}
+}

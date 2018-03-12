@@ -17,9 +17,16 @@
 
   'layout/l-wrapper',
   'layout/l-section',
-  'layout/l-hamburger';
+  'layout/l-hamburger',
+  'layout/l-developer',
+  'layout/l-bg-about';
 
 @import 
 
-  'components/c-header__social',
-  'components/c-hamburger-nav';
+  'components/c-header-social',
+  'components/c-hamburger-nav',
+  'components/c-developer',
+  'components/svg_header',
+  'components/c-next',
+  'components/svg_next',
+  'components/svg_about';

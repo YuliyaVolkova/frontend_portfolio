@@ -3,11 +3,11 @@ mixin icon(iconName, iconClass, url)
 		use(xlink:href=`${url}#${iconName}`)
 			title=iconName
 
-mixin social(component, listSocial, url)
-	ul(class=`${component}__social`)
+mixin social(classPrefix, listSocial, url)
+	ul(class=`${classPrefix}-social`)
 		each val in listSocial
-			li(class=`${component}__social-item`)
-				a(class=`${component}__social-link`, href="#" target="blank")
+			li(class=`${classPrefix}-social__item`)
+				a(class=`${classPrefix}-social__link`, href="#" target="blank")
 					+icon(val, 'svg-use', url)
 
 mixin iconID(iconName, iconClass)

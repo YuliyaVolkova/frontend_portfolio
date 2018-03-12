@@ -1,5 +1,4 @@
 extends ./main.layout.pug
-
 block extend
 	- var sections = ['header', 'content', 'footer']
 	- var component = 'c-header'
@@ -15,6 +14,12 @@ block extend
 				when 'header'
 					include ../components/section-header.pug
 				when 'content'
+
+					- var bgLeftId = 'about_bg_left'
+					- var bgRightId = 'about_bg_right'
+					.l-bg-about
+						+icon(bgLeftId, 'svg_aboutLeft', '../assets/images/sprites/sprite_social.svg')
+						+icon(bgRightId, 'svg_aboutRight', '../assets/images/sprites/sprite_social.svg')
 					block content
 				when 'footer'
 					block footer

@@ -1,4 +1,16 @@
-
--var componentName = 'c-header'
+- var componentName = 'c-header'
 - var social = ['vk', 'github', 'in']
+- var portfId = 'portfolio_header'
+- var arrowId = 'arrow_down'
+
 	+social(componentName, social, '../assets/images/sprites/sprite_social.svg')
+	+icon(portfId, 'svg_header', '../assets/images/sprites/sprite_social.svg')
+	.l-developer
+		.c-developer
+			.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
+				img.c-developer__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
+			.c-developer__content
+				h1.c-developer__header Volkova Yuliya
+				h2.c-developer__desc Личный сайт веб разработчика
+	a.c-next(href='#')
+		+icon(arrowId, 'svg_next', '../assets/images/sprites/sprite_social.svg')
