@@ -20,11 +20,13 @@
 
 	max-width: 100%;
 }
+
 .c-developer__content {
 
 	width: 100%;
 	text-align: center;
 }
+
 .c-developer__header {
 
 	font-size: rem(35);
@@ -39,6 +41,10 @@
 	font-family: 'bernier';
 	font-size: rem(63);
 	letter-spacing: 0.2rem;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 2.5%;
+
 	&:first-letter {
 
 		text-transform: uppercase;
@@ -57,5 +63,6 @@
 	
 	color: $primaryColor;
 	font-weight: 400;
-
+	display: inline-block;
+	width: 100%;
 }

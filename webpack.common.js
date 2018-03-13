@@ -7,7 +7,6 @@ const extractNormalizeCSS = new ExtractTextPlugin('./assets/css/normalize.css');
 const extractSass = new ExtractTextPlugin({filename: './assets/css/styles.[name].css', allChunks:true});
 const autoprefixer = require('autoprefixer');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -131,8 +130,9 @@ module.exports = {
         name:'[path][name].[ext]',
         }
       },
-      { 
+     { 
       test: /\.css$/,
+      exclude: path.resolve(__dirname, 'src/assets/styles/css/'),
       use: extractNormalizeCSS.extract({
         use: [{ loader: 'css-loader', 
                 options: {
@@ -237,11 +237,6 @@ module.exports = {
         windows: false
       }
     }),
- 
-    new CopyWebpackPlugin([
-   // { from: 'assets/images/content/slider/products/', to: 'assets/images/content/slider/products/' },
-  //  { from: 'assets/images/content/menu/', to: 'assets/images/content/menu/'},
-     ]),
 
     // Make sure that the plugin is after any plugins that add images
     // These are the default options:

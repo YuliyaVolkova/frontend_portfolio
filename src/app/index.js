@@ -1,7 +1,6 @@
 
 import 'normalize.css';
-import '../assets/styles/scss/index.main.scss';
-
+import '../assets/styles/index.main.scss';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
 

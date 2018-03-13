@@ -13,7 +13,7 @@
 	background-size: cover;
 	background-position: center center;
 	position: relative;
-	background-image: url('../../images/decor/bg/montains.jpg');
+	background-image: url('../images/decor/bg/montains.jpg');
 	background-attachment: fixed;
 		
 		&:after {
@@ -28,6 +28,7 @@
 
 		min-height: 650px;
 	}
+
 	@include mobile {
 
 		background-attachment: scroll;
@@ -36,6 +37,8 @@
 
 .l-section_header-blog {
 	
+	background-position: center top;
+
 	&:before {
 
 		display: block;
@@ -53,17 +56,12 @@
 			top: 3%;
 			background-color: rgba(1, 102, 114, 0.3);
 		}
-
 }
 
 .l-section_content {
 
-	
-
-
 }
 
 .l-section_footer {
-
 
 }
