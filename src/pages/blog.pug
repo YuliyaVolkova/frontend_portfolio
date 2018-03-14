@@ -5,22 +5,21 @@ block variables
 	- var pageClMod = 'blog'
 	
 block headerMode
-	- var sectionName = 'c-header'
 	- var socialId = ['vk', 'github', 'in']
 	- var bgHeaderSvgId = 'blog_header'
-	- var arrowId = 'arrow_down'
 
-	+social(sectionName, socialId, '../assets/images/sprites/sprite.svg')
+	+social('l-header', socialId, '../assets/images/sprites/sprite.svg')
 	+icon(bgHeaderSvgId, 'svg_header', '../assets/images/sprites/sprite.svg')
-	.l-developer.l-developer_blog
+	.l-header__develop.l-header__develop_blog
 		.c-developer
 			.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
 				img.c-developer__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
 			.c-developer__content
-				.c-develop__header-blog
-					+icon('dash', 'svg_develop', '../assets/images/sprites/sprite.svg')
-					h1.c-developer__header.c-developer__header_blog блог
-					+icon('dash', 'svg_develop', '../assets/images/sprites/sprite.svg')
-				h2.c-developer__desc.c-developer__desc-blog Статьи, которые я написал
-	
-block content
+				.c-develop_blog-header
+					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					h1.h-title-section.h-title-section_color блог
+					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+				h2.c-developer__desc.c-developer__desc_blog Статьи, которые я написал
+	.l-header__bottom.l-header__bottom_blog
+		+icon('bg', 'svg_header-bottom', '../assets/images/sprites/sprite.svg')
+//-block content

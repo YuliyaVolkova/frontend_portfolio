@@ -4,10 +4,10 @@ mixin icon(iconName, iconClass, url)
 			title=iconName
 
 mixin social(classPrefix, listSocial, url)
-	ul(class=`${classPrefix}-social`)
+	ul(class=`${classPrefix}__social`)
 		each val in listSocial
-			li(class=`${classPrefix}-social__item`)
-				a(class=`${classPrefix}-social__link`, href="#" target="blank")
+			li(class=`${classPrefix}__social-item`)
+				a(class=`${classPrefix}__social-link`, href="#" target="blank")
 					+icon(val, 'svg-use', url)
 
 mixin iconID(iconName, iconClass)

@@ -1,12 +1,11 @@
 .c-developer {
-
 	width: rem(380);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.c-developer__img-wrap {
 
+.c-developer__img-wrap {
 	@include size(rem(141));
 	background-repeat: no-repeat;
 	background-position: center;
@@ -17,14 +16,16 @@
 }
 
 .c-developer__img {
-
 	max-width: 100%;
 }
 
 .c-developer__content {
-
 	width: 100%;
 	text-align: center;
+}
+
+.c-develop_blog-header {
+	color: $primaryColor;
 }
 
 .c-developer__header {
@@ -36,31 +37,14 @@
 	color: $primaryColor;
 }
 
-.c-developer__header_blog {
-
-	font-family: 'bernier';
-	font-size: rem(63);
-	letter-spacing: 0.2rem;
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0 2.5%;
-
-	&:first-letter {
-
-		text-transform: uppercase;
-	}
-}
-
 .c-developer__desc {
-
 	font-size: rem(16);
 	color: rgba($primaryColor, 0.8);
 	line-height: 1.5;
 	font-weight: 300;
 }
 
-.c-developer__desc-blog {
-	
+.c-developer__desc_blog {
 	color: $primaryColor;
 	font-weight: 400;
 	display: inline-block;

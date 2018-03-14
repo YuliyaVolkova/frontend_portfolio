@@ -1,0 +1,32 @@
+.c-about-card {
+	width: 70%;
+	text-align: center;
+	margin: auto;
+}
+.c-about-card__header {
+	color: $title-color;
+	margin-bottom: 7%;
+}
+.c-about-card__img-wrap {
+	@include size(rem(444), rem(391));
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: rem(33) auto rem(40) auto;
+}
+.c-about-card__img {
+	max-width: 100%;
+}
+.c-about-card__content {
+	text-align: center;
+
+}
+.c-about-card__content-header {
+	color: $text-color;
+	margin-bottom: 3%;
+}
+.c-about-card__content-text {
+	text-align: left;
+	line-height: 1.5;
+	padding-bottom: 3%;
+}

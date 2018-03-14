@@ -1,0 +1,59 @@
+.c-skills-card {
+	width: 88%;
+	padding-left: 3%;
+	margin: auto;
+}
+
+.c-skills-card__header {
+	color: $title-color;
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: auto;
+	& .svg_dash {
+		transform: translateY(-50%);
+	}
+
+	& .h-title-article {
+		 line-height: 1.17;
+		 text-align: center;
+	}
+
+	margin-bottom: 3%;
+}
+
+.c-skills-card__desc {
+	margin-bottom: 13%;
+}
+
+.c-skills-card__content {
+
+}
+.c-skills-card__group {
+	width: 100%;
+}
+.c-skills-card__group-title {
+	font-size: rem(28);
+	margin-bottom: 2%;
+	width: 100%;
+}
+.c-skills-card__group-content {
+	height: 110px;
+	width: 100%;
+	display: flex;
+}
+
+.c-skills-card__skill-item {
+	position: relative;
+}
+
+.c-skills-card__skill-diagramm {
+	@include size(rem(112));
+
+}
+
+.c-skills-card__skill-title {
+
+	@include absolute-center;
+}

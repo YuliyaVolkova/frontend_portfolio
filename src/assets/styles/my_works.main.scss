@@ -17,13 +17,13 @@
 
   'layout/l-wrapper',
   'layout/l-section',
+  'layout/l-header',
+  'layout/l-header__social',
   'layout/l-hamburger',
-  'layout/l-developer',
-  'layout/l-bg-about';
+  'layout/l-content';
 
 @import 
 
-  'components/c-header-social',
   'components/c-hamburger-nav',
   'components/c-developer',
   'components/c-next',

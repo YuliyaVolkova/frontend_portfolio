@@ -1,0 +1,8 @@
+export default {
+      id: "blog_header-usage",
+      viewBox: "0 0 302.193 208.012",
+      url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\blog_header.svg",
+      toString: function () {
+        return this.url;
+      }
+    }

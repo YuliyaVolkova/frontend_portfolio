@@ -1,0 +1,8 @@
+export default {
+      id: "about_bg_right-usage",
+      viewBox: "0 0 900.331 1009.986",
+      url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\about_bg_right.svg",
+      toString: function () {
+        return this.url;
+      }
+    }

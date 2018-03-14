@@ -1,4 +1,4 @@
-var scrollNext = (() => {
+const scrollNext = (() => {
 
   const nextBut = document.body.querySelector('#next'),
     firstSection = document.body.querySelector('.l-section'),
@@ -33,8 +33,8 @@ var scrollNext = (() => {
     });
   };
 
-  var keyDown = (e) => {
-    var tag = e.target.tagName.toLowerCase();
+  const keyDown = (e) => {
+    let tag = e.target.tagName.toLowerCase();
     switch(e.which) {
     case 40:
       if (tag != 'input' && tag != 'textarea') {
@@ -46,7 +46,7 @@ var scrollNext = (() => {
     return false;
   };
 
-  var handler = () => {
+  const handler = () => {
     document.addEventListener('keydown', keyDown, false);
     nextBut.addEventListener('click', showSect, false);
   };

@@ -1,0 +1,35 @@
+.h-title-section {
+	font-family: 'bernier';
+	font-size: rem(63);
+	letter-spacing: 0.2rem;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 2.5%;
+	line-height: 1.5;
+	font-weight: 500;
+	color: $title-color;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.h-title-section_color {
+	color: $primaryColor;
+}
+
+.h-title-article {
+	font-family: 'bernier';
+	font-size: rem(35);
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 2.5%;
+	line-height: 1.5;
+	font-weight: 500;
+	color: $text-color;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
+
+}

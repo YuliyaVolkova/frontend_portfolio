@@ -1,0 +1,8 @@
+export default {
+      id: "about_header-usage",
+      viewBox: "0 0 498.161 175.44",
+      url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\about_header.svg",
+      toString: function () {
+        return this.url;
+      }
+    }

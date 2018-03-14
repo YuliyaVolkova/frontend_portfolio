@@ -1,7 +1,6 @@
 extends ./main.layout.pug
 
 block extend
-	- var sections = ['header', 'content', 'footer']
 	- var component = 'c-header'
 	-
 		var navList = [{pageUrl: '#my_works', title: 'мои работы'},
@@ -9,22 +8,13 @@ block extend
 			{pageUrl: '#about', title: 'обо мне'},
 			{pageUrl: '#login', title: 'авторизация'}]
 
-	each val in sections
-		section(class=`l-section l-section_${val}${pageClMod?` l-section_${val}-${pageClMod}`:''}`)
-			case val
-				when 'header'
-					block headerMode
-						include ../components/section-header.pug
-				when 'content'
-
-					- var bgLeftId = 'about_bg_left'
-					- var bgRightId = 'about_bg_right'
-					div(class=`l-bg-about${pageClMod?` l-bg-about_${pageClMod}`:''}`)
-						+icon(bgLeftId, 'svg_aboutLeft', '../assets/images/sprites/sprite.svg')
-						+icon(bgRightId, 'svg_aboutRight', '../assets/images/sprites/sprite.svg')
-					block content
-				when 'footer'
-					block footer
+	header(class=`l-section l-header${pageClMod?` l-header_${pageClMod}`:''}`)
+		block headerMode
+			include ../components/section-header.pug
+	//-section(class=`l-section l-content${pageClMod?` l-content_${pageClMod}`:''}`)
+		block content
+	section(class=`l-section l-footer${pageClMod?` l-footer_${pageClMod}`:''}`)
+		block footer
 	.l-hamburger
 		nav.c-hamburger-nav
 			a.c-hamburger-nav__target(href="")

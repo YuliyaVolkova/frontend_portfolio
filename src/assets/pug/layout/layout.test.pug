@@ -1,3 +1,37 @@
+<li class="c-team__team-card">
+								<a href="#" class="team-card__title">Дэниэл Редклиф</a>
+								<div class="team-card__content">
+									<div class="team-card__img-wrap" style="background-image: url('./assets/images/content/team/aphex1_100.jpg'); background-repeat: no-repeat;">
+										<img src="./assets/images/content/team/aphex1_100.jpg" alt="#" class="team-card__img visually-hidden">
+									</div>
+									<div class="team-card__desc">
+										<div class="team-card__desc-header">Оператор</div>
+										<div class="team-card__desc-text">
+											С радостью поможет подобрать идеальный бургер и оформить заказ.
+										</div>
+									</div>
+								</div>
+							</li>
+
+----------
+section(class=`l-section l-header${pageClMod?` l-header_${pageClMod}`:''}`)
+		block headerMode
+			include ../components/section-header.pug
+	section(class=`l-section l-content${pageClMod?` l-content_${pageClMod}`:''}`)
+			- var bgLeftId = 'about_bg_left'
+			- var bgRightId = 'about_bg_right'
+			.l-content__wrapper
+				.l-content__column-one jghfkdfd nbxmv bmsdg
+					
+				.l-content__column-two bsdmg dshj sdjhj
+					
+			block content
+				-------------------
+div.l-content__bg
+						//-+icon(bgLeftId, 'svg_aboutLeft', '../assets/images/sprites/sprite.svg'
+----------
+div.l-content__bg
+						//-+icon(bgRightId, 'svg_aboutRight', '../assets/images/sprites/sprite.svg')
 ----------
 - var sectionName = 'c-header'
 - var social = ['vk', 'github', 'in']

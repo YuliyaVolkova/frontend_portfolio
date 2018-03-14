@@ -1,64 +1,50 @@
 
 @mixin size($width, $height: $width) {
-	
   width: $width;
   height: $height;
 }
 
 /// mixins for Media Queries
+@mixin custom_1800 {
+  @media screen and (min-width: 1800px) {
+   @content;
+  }
+}
+
 @mixin custom {
-
   @media screen and (min-width: $desktop + 1) {
-
     @content;
   }
-
 }
 
 @mixin desktop {
-
 	@media screen and (min-width: $laptop + 1) and (max-width: $desktop) {
-
 		@content;
 	}
-
 }
 
 @mixin laptop {
-
 	@media screen and (max-width: $laptop) and (min-width: $tablet + 1) {
-
-		@content;
+  	@content;
 	}
-
 }
 
-
 @mixin tablet {
-
 	@media screen and (max-width: $tablet) {
-
 		@content;
 	}
-
 }
 
 @mixin mobile {
-
 	@media screen and (max-width: $mobile) {
-
 		@content;
 	}
-
 }
 
 @mixin s-mobile {
-
 	@media screen and (max-width: $small-mobile) {
-
 		@content;
 	}
-
 }
 
 @mixin retina {
@@ -80,11 +66,9 @@
   }
 }
 
-
 /// mixins for change visiblity
 
 @mixin invisible {
-
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -93,23 +77,18 @@
   padding: 0;
   position: absolute;
   width: 1px;
-
 }
 
 @mixin visible {
-
   height: initial;
   width: initial;
   margin: initial;
   position: initial;
-
-
 }
 
 /// position
 
 @mixin absolute-stretch {
-
   position: absolute;
   top: 0;
   left: 0;
@@ -118,7 +97,6 @@
 }
 
 @mixin absolute-center {
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -126,7 +104,6 @@
 }
 
 @mixin absolute-centerX {
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -134,7 +111,6 @@
 }
 
 @mixin absolute-centerY {
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -172,7 +148,6 @@
 /// styling radiobutton, checkbox
 
 @mixin hidden {
-
   position: absolute;
   top: 0px;
   left: 0px;
@@ -180,7 +155,6 @@
   height: 0;
   overflow: hidden;
   opacity: 0;
-
 }
 /// for placeholder styling
 

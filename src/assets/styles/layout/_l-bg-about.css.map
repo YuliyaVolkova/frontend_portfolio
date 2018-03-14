@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA,WAAY,CAEX,KAAK,CAAE,IAAI,CACX,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,CAAC,CACP,GAAG,CAAE,IAAI,CACT,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,CAGjB,gBAAiB,CAEhB,GAAG,CAAE,IAAI",
-"sources": ["_l-bg-about.scss"],
-"names": [],
-"file": "_l-bg-about.css"
-}
