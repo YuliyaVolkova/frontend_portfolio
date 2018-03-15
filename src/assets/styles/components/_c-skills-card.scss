@@ -27,19 +27,24 @@
 	margin-bottom: 13%;
 }
 
-.c-skills-card__content {
+.c-skills-card__container {
 
 }
 .c-skills-card__group {
 	width: 100%;
+	overflow: hidden;
 }
 .c-skills-card__group-title {
 	font-size: rem(28);
 	margin-bottom: 2%;
+	font-weight: 500;
 	width: 100%;
+	line-height: 1.14;
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
 .c-skills-card__group-content {
-	height: 110px;
 	width: 100%;
 	display: flex;
 }
@@ -48,12 +53,13 @@
 	position: relative;
 }
 
-.c-skills-card__skill-diagramm {
-	@include size(rem(112));
-
-}
-
 .c-skills-card__skill-title {
 
 	@include absolute-center;
+	width: 50%;
+	font-size: rem(15);
+	font-weight: 500;
+	color: $brand-color;
+	line-height: 1.12;
+	text-align: center;
 }

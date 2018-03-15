@@ -1,10 +1,10 @@
 
 .l-hamburger {
 
-	position: fixed;
+	position: absolute;
 	top: 10%;
 	right: 10%;
-	z-index: 9;
+	z-index: 1;
 	//@include size(rem(30), rem(24));
 }
 

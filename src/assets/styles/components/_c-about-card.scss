@@ -13,13 +13,15 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: rem(33) auto rem(40) auto;
+	overflow: hidden;
 }
 .c-about-card__img {
 	max-width: 100%;
+	width: 100%;
+	height: auto;
 }
 .c-about-card__content {
 	text-align: center;
-
 }
 .c-about-card__content-header {
 	color: $text-color;

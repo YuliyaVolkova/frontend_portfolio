@@ -1,10 +1,10 @@
 extends ../assets/pug/layout/sub.layout.pug
-
 block variables
 	- var title = 'Обо мне'
 	- var bgTitleSvgId = 'portfolio_header'
 	- var aboutText = 'Я веб разработчик из Санкт-Петербурга. Мне 38 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!'
-	- var skillsDesc = 'Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.'
+	- var skillsDescText = 'Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.'
+	- var skillsGroups = ['frontend', 'backend', 'Workflow']
 block content
 	.l-content__wrapper
 		.l-content__column-one
@@ -17,8 +17,7 @@ block content
 						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
 						h2.h-title-section обо мне
 						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-					.c-about-card__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
-						img.c-about-card__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
+					img.c-about-card__img(alt="", src=require('../assets/images/content/photo.jpg'))
 					.c-about-card__content
 						.c-about-card__content-header
 							+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
@@ -31,11 +30,5 @@ block content
 						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
 						h3.h-title-article Чем я могу быть вам полезен
 						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-					.c-skills-card__desc= skillsDesc
-					ul.c-skills-card__content
-						li.c-skills-card__group
-							.c-skills-card__group-title
-							ul.c-skills-card__group-content
-								li.c-skills-card__skill-item
-									.c-skills-card__skill-diagramm
-									.c-skills-card__skill-title
+					.c-skills-card__desc= skillsDescText
+					ul.c-skills-card__container
