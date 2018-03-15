@@ -1,25 +1,30 @@
-extends ../assets/pug/layout/sub.layout.pug
+extends ../assets/pug/layout/main.layout.pug
 
 block variables
 	- var title = 'Блог о web разработке'
 	- var pageClMod = 'blog'
-	
-block headerMode
 	- var socialId = ['vk', 'github', 'in']
-	- var bgHeaderSvgId = 'blog_header'
+	- var bgHeroSvgId = 'blog_header'
+	-
+		var navList = [{pageUrl: './my_works.html', title: 'мои работы'},
+			{pageUrl: '#', title: 'блог'},
+			{pageUrl: './about.html', title: 'обо мне'},
+			{pageUrl: '#login', title: 'авторизация'}]
 
-	+social('l-header', socialId, '../assets/images/sprites/sprite.svg')
-	+icon(bgHeaderSvgId, 'svg_header', '../assets/images/sprites/sprite.svg')
-	.l-header__develop.l-header__develop_blog
-		.c-developer
-			.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
-				img.c-developer__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
-			.c-developer__content
-				.c-develop_blog-header
-					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-					h1.h-title-section.h-title-section_color блог
-					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-				h2.c-developer__desc.c-developer__desc_blog Статьи, которые я написал
-	.l-header__bottom.l-header__bottom_blog
-		+icon('bg', 'svg_header-bottom', '../assets/images/sprites/sprite.svg')
-//-block content
+block extend
+	section(class='l-section l-hero l-hero_blog')
+		+social('l-hero', socialId, '../assets/images/sprites/sprite.svg')
+		+icon(bgHeroSvgId, 'svg_hero', '../assets/images/sprites/sprite.svg')
+		.l-hero__develop.l-hero__develop_blog
+			.c-developer
+				.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
+					img.c-developer__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
+				.c-developer__content
+					.c-develop_blog-header
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+						h1.h-title-section.h-title-section_color блог
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					h2.c-developer__desc.c-developer__desc_blog Статьи, которые я написал
+	.l-hero__bottom.l-hero__bottom_blog
+		+icon('bg', 'svg_hero-bottom', '../assets/images/sprites/sprite.svg')
+	+hamburger(navlist)

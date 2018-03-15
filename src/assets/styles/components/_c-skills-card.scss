@@ -1,12 +1,12 @@
 .c-skills-card {
-	width: 88%;
-	padding-left: 3%;
-	margin: auto;
+	padding: 0 0 5% 5%;
+	overflow: hidden;
+
 }
 
 .c-skills-card__header {
 	color: $title-color;
-	width: 70%;
+	width: 50%;
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
@@ -24,7 +24,8 @@
 }
 
 .c-skills-card__desc {
-	margin-bottom: 13%;
+	margin-bottom: 7%;
+	width: 90%;
 }
 
 .c-skills-card__container {

@@ -2,7 +2,7 @@ const scrollNext = (() => {
 
   const nextBut = document.body.querySelector('#next'),
     firstSection = document.body.querySelector('.l-section'),
-    scrollPos = firstSection.clientHeight;
+    scrollPos = firstSection.clientHeight - document.body.clientHeight/25;
 
   const animate = (options) => {
 
@@ -23,7 +23,7 @@ const scrollNext = (() => {
   const showSect = (e) => {
     e.preventDefault();
     animate({
-      duration: 700,
+      duration: 500,
       timing: function(timeFraction) {
         return timeFraction;
       },

@@ -10,6 +10,22 @@ mixin social(classPrefix, listSocial, url)
 				a(class=`${classPrefix}__social-link`, href="#" target="blank")
 					+icon(val, 'svg-use', url)
 
+mixin navMenu(navlist)
+	ul.c-nav__list
+		each val in navList
+			li.c-nav__item
+				a.c-nav__link(href=`${val.pageUrl}`)= val.title	
+
+mixin hamburger(navlist)
+	.l-hamburger
+		nav.c-hamburger-nav
+			a.c-hamburger-nav__target(href="")
+				span.c-hamburger-nav__fake
+			ul.c-hamburger-nav__list.visually-hidden
+				each val in navList
+					li.c-hamburger-nav__item
+						a.c-hamburger-nav__link(href=`${val.pageUrl}`)= val.title
+						
 mixin iconID(iconName, iconClass)
 	svg(class=`${iconClass}`)
 		use(xlink:href=`./images/icons/sprite.svg#${iconName}`)

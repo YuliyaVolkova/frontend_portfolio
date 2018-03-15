@@ -59,6 +59,7 @@
 	display: flex;
 	align-items: baseline;
 	transform: translateY(14%);
+	flex-wrap:wrap;
 }
 
 .l-content__inner-column-one, .l-content__inner-column-two {

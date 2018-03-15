@@ -16,7 +16,7 @@ const diagrammsSkills = (() => {
     ],
     containerSkills = document.querySelector('.c-skills-card__container'),
     skillsSectHeight = document.querySelector('.l-content__wrapper').clientHeight,
-    firstSectHeight = document.querySelector('.l-header').clientHeight,
+    firstSectHeight = document.querySelector('.l-hero').clientHeight,
     arrItems = new Array();
 
   class Skill {
@@ -117,8 +117,8 @@ const diagrammsSkills = (() => {
   function scrollAnimate(e) {
     const pageYOffset = e.currentTarget.pageYOffset;
     if(pageYOffset>skillsSectHeight||pageYOffset>firstSectHeight-400&&pageYOffset<skillsSectHeight) return;
-    animate({
-      duration: 700,
+    setTimeout(function() {animate({
+      duration: 1000,
       timing: function(timeFraction) {
         return timeFraction;
       },
@@ -129,7 +129,7 @@ const diagrammsSkills = (() => {
           }
         }
       },
-    });
+    });}, 50);
   }
 
   function init() {

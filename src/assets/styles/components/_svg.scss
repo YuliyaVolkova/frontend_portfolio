@@ -1,5 +1,5 @@
 
-.svg_header {
+.svg_hero {
 	opacity: 0.06;
 	@include size(100%, 37%);
 	@include absolute-center;
@@ -29,7 +29,7 @@
 	vertical-align: middle;
 }
 
-.svg_header-bottom {
+.svg_hero-bottom {
 	width: 100%;
 	fill: $beige-one;
 	stroke: $beige-one;

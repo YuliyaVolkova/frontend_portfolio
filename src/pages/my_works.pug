@@ -1,6 +1,18 @@
-extends ../assets/pug/layout/sub.layout.pug
+extends ../assets/pug/layout/main.layout.pug
 
 block variables
 	- var title = 'Мои работы'
 	- var bgTitleSvgId = 'portfolio_header'
-//-block content
+	-
+		var navList = [{pageUrl: '#', title: 'мои работы'},
+			{pageUrl: './blog.html', title: 'блог'},
+			{pageUrl: './about.html', title: 'обо мне'},
+			{pageUrl: '#login', title: 'авторизация'}]
+
+block extend
+	section(class='l-section l-hero')
+		include ../assets/pug/components/section-hero.pug
+			block content
+	section(class='l-section l-last')
+		block last
+	+hamburger(navlist)

@@ -2,9 +2,9 @@
 - var social = ['vk', 'github', 'in']
 - var arrowId = 'arrow_down'
 
-	+social('l-header', social, '../assets/images/sprites/sprite.svg')
-	+icon(bgTitleSvgId, `svg_header`, '../assets/images/sprites/sprite.svg')
-	.l-header__develop
+	+social('l-hero', social, '../assets/images/sprites/sprite.svg')
+	+icon(bgTitleSvgId, `svg_hero`, '../assets/images/sprites/sprite.svg')
+	.l-hero__develop
 		.c-developer
 			.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
 				img.c-developer__img.visually-hidden(alt="", src=require('../assets/images/content/photo.jpg'))
@@ -13,6 +13,6 @@
 				h2.c-developer__desc Личный сайт WEB Разработчика
 	a.c-next#next(href='#')
 		+icon(arrowId, 'svg_next', '../assets/images/sprites/sprite.svg')
-	.l-header__bottom
-		+icon('bg', 'svg_header-bottom', '../assets/images/sprites/sprite.svg')
+	.l-hero__bottom
+		+icon('bg', 'svg_hero-bottom', '../assets/images/sprites/sprite.svg')
 		block content

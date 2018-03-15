@@ -2,6 +2,7 @@
 	width: 70%;
 	text-align: center;
 	margin: auto;
+	padding-bottom: 5%;
 }
 .c-about-card__header {
 	color: $title-color;
@@ -30,5 +31,5 @@
 .c-about-card__content-text {
 	text-align: left;
 	line-height: 1.5;
-	padding-bottom: 3%;
+	padding: 1% 0;
 }

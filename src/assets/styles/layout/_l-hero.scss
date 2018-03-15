@@ -1,5 +1,5 @@
 
-.l-header {
+.l-hero {
 	height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -24,7 +24,7 @@
 	}
 }
 
-.l-header_blog {
+.l-hero_blog {
 	background-position: center top;
 
 	&:before {
@@ -44,17 +44,17 @@
 		}
 }
 
-.l-header__develop {
+.l-hero__develop {
 	@include absolute-center;
 	z-index: 2;
 }
 
-.l-header__develop_blog {
+.l-hero__develop_blog {
 	bottom: 0;
 	transform: translate(-50%, -79%);
 }
 
-.l-header__bottom {
+.l-hero__bottom {
 	width: 100%;
 	position: absolute;
 	bottom: 0;
@@ -65,7 +65,7 @@
 	transform: translateY(50%);
 }
 
-.l-header__bottom_blog {
+.l-hero__bottom_blog {
 	bottom: 50%;
 	transform: translateY(60%);
 }
