@@ -4,3 +4,20 @@
 	position: relative;
 	will-change: transform;	
 }
+
+.l-face-container {
+	@include size(rem(380), rem(395));
+	backface-visibility: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+.l-backface-container {
+	@include size(rem(380), rem(395));
+	position: absolute;
+	left: 0;
+	right: 0;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}

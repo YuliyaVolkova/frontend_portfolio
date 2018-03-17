@@ -15,8 +15,9 @@ svg4everybody();
 //requireAll(require.context('../assets/images/sprites/to_sprite/', true));
 
 const init = () => {
+  if(window.location.hash==='#login') flip.autorizate();
+  else flip.initWelcome();
   prlxMontains.handler();
-  flip.handler();
 };
 
 const prlxMontains = (() => {
@@ -43,34 +44,66 @@ const prlxMontains = (() => {
 const flip = (() => {
 
   const container = document.body.querySelector('.l-welcome'),
+    flipContainer = document.body.querySelector('.l-flip-container'),
     butLogin = document.body.querySelector('.c-button#targetLogin'),
     loginTargEl = document.body.querySelector('.l-login__button'),
-    butMain = document.body.querySelector('.c-form__nav-link#targetMain');
+    firstScreen = document.body.querySelector('.c-welcome'),
+    secondScreen = document.body.querySelector('.c-login'),
+    templFace = document.body.querySelector('#faceBl'),
+    templBackFace = document.body.querySelector('#backFaceBl'),
+    containerFace = document.body.querySelector('.l-face-container'),
+    containerBackface = document.body.querySelector('.l-backface-container');
 
-  var flag = false;
-
-  /// flip-effect 
-  const openLogin = (e) => {
+  const flipHash = (e) => {
     e.preventDefault();
-    if (flag) return;
-    container.classList.add('flip');
-    setTimeout(() => flag=false, 50);
+    if(container.classList.contains('flip')) 
+      container.classList.remove('flip');
+    else container.classList.add('flip');
+    setTimeout(() => {
+      loginTargEl.classList.toggle('visually-hidden');
+      if(!loginTargEl.classList.contains('visually-hidden')) {
+        butLogin.addEventListener('click', flip, false);
+      } }
+      , 500);
+  };
+
+  const flip = (e) => {
+    e.preventDefault();
+    if(container.classList.contains('flip'))
+      container.classList.remove('flip');
+    else container.classList.add('flip');
+    setTimeout(() => {
+      loginTargEl.classList.toggle('visually-hidden');
+      if(!loginTargEl.classList.contains('visually-hidden'))
+        butLogin.addEventListener('click', flip, false);
+      else {
+        var butMain = document.body.querySelector('.c-form__nav-link#targetMain');
+        butMain.addEventListener('click', flipHash, false); 
+      }
+    }
+      , 500);
+  };
+
+  const autorizate = () => {
+    containerFace.innerHTML = templBackFace.innerHTML;
+    templBackFace.innerHTML = '';
+    containerBackface.innerHTML = templFace.innerHTML;
+    templFace.innerHTML = '';
     loginTargEl.classList.add('visually-hidden');
-    butMain.addEventListener('click', openMain, false);
+    var butMain = document.body.querySelector('.c-form__nav-link#targetMain');
+    butMain.addEventListener('click', flipHash, false);
   };
 
-  const openMain = (e) => {
-    e.preventDefault();
-    if (flag) return;
-    container.classList.remove('flip');
-    setTimeout(() => loginTargEl.classList.remove('visually-hidden'), 500);
-    setTimeout(() => flag=false, 50);
+  const initWelcome = () => { 
+    containerFace.innerHTML = templFace.innerHTML;
+    templFace.innerHTML = '';
+    containerBackface.innerHTML = templBackFace.innerHTML;
+    templBackFace.innerHTML = '';
+    if(!loginTargEl.classList.contains('visually-hidden'))
+      butLogin.addEventListener('click', flip, false);
   };
 
-  const handler = () => {
-    butLogin.addEventListener('click', openLogin, false);
-  }; 
-  return {handler};
+  return {initWelcome, autorizate};
 })();
 
 window.onload = init();

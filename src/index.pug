@@ -30,53 +30,57 @@ block extend
 
 	.l-welcome
 		.l-flip-container
-			.c-welcome
-				.c-welcome__img-wrap(style="background-image: url('./assets/images/content/photo.jpg'); background-repeat:no-repeat;")
-					img.c-welcome__img.visually-hidden(alt="", src=require('./assets/images/content/photo.jpg'))
-				.c-welcome__content
-					h1.c-welcome__header Yuliya Volkova
-					h2.c-welcome__desc Личный сайт WEB Разработчика
-					+social(component, social, './assets/images/sprites/sprite.svg')
-					ul.c-welcome__nav
-						each val in nav
-							li.c-welcome__nav-item
-								a.c-welcome__nav-link(href=`${val.url}`)= val.name
-			.c-login
-				.c-login__header
-					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-					h3.h-title-article Авторизуйтесь
-					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-				form.c-form(action="./server_test.php" id="login" method="POST")
-					.c-form__inner
-						.c-form__row
-							label.c-form__item
-								span.c-form__item-logo
-									+icon('login', 'svg_login', '../assets/images/sprites/sprite.svg')
-								input.c-form__input(type="text", name="username", placeholder="Логин", data-rule="name|required")
-						.c-form__row
-							label.c-form__item
-								span.c-form__item-logo
-									+icon('password', 'svg_login', '../assets/images/sprites/sprite.svg')
-								input.c-form__input(type="password", name="password", placeholder="Пароль", data-rule="required")
-						.c-form__buttons
-							label.c-form__item
-								input.c-form__checkbox(type="checkbox", name="capcha")
-								span.c-form__item-title.c-form__item-title--checkbox Я человек
-							span.c-form__row-title Вы точно не робот?
+			.l-face-container
+			.l-backface-container
+			.visually-hidden#faceBl(type='template/text')
+				.c-welcome
+					.c-welcome__img-wrap(style="background-image: url('./assets/images/content/photo.jpg'); background-repeat:no-repeat;")
+						img.c-welcome__img.visually-hidden(alt="", src=require('./assets/images/content/photo.jpg'))
+					.c-welcome__content
+						h1.c-welcome__header Yuliya Volkova
+						h2.c-welcome__desc Личный сайт WEB Разработчика
+						+social(component, social, './assets/images/sprites/sprite.svg')
+						ul.c-welcome__nav
+							each val in nav
+								li.c-welcome__nav-item
+									a.c-welcome__nav-link(href=`${val.url}`)= val.name
+			.visually-hidden#backFaceBl(type='template/text')
+				.c-login
+					.c-login__header
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+						h3.h-title-article Авторизуйтесь
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					form.c-form(action="./server_test.php" id="login" method="POST")
+						.c-form__inner
 							.c-form__row
 								label.c-form__item
-									input.c-form__radio(type="radio", name="noBot", value="yes" checked)
-									span.c-form__item-title.c-form__item-title--radio Да
+									span.c-form__item-logo
+										+icon('login', 'svg_login', '../assets/images/sprites/sprite.svg')
+									input.c-form__input(type="text", name="username", placeholder="Логин", data-rule="name|required")
+							.c-form__row
 								label.c-form__item
-									input.c-form__radio(type="radio", name="noBot", value="none")
-									span.c-form__item-title.c-form__item-title--radio Не уверен
-						ul.c-form__buts-action
-							li.c-form__nav-item
-								button.c-form__nav-link#targetMain(type="button")
-									span.c-button__text На главную
-							li.c-form__nav-item
-								button.c-form__nav-link(type="submit",value="Submit")
-									span.c-button__text Войти
+									span.c-form__item-logo
+										+icon('password', 'svg_login', '../assets/images/sprites/sprite.svg')
+									input.c-form__input(type="password", name="password", placeholder="Пароль", data-rule="required")
+							.c-form__buttons
+								label.c-form__item
+									input.c-form__checkbox(type="checkbox", name="capcha")
+									span.c-form__item-title.c-form__item-title--checkbox Я человек
+								span.c-form__row-title Вы точно не робот?
+								.c-form__row
+									label.c-form__item
+										input.c-form__radio(type="radio", name="noBot", value="yes" checked)
+										span.c-form__item-title.c-form__item-title--radio Да
+									label.c-form__item
+										input.c-form__radio(type="radio", name="noBot", value="none")
+										span.c-form__item-title.c-form__item-title--radio Не уверен
+							ul.c-form__buts-action
+								li.c-form__nav-item
+									button.c-form__nav-link#targetMain(type="button")
+										span.c-button__text На главную
+								li.c-form__nav-item
+									button.c-form__nav-link(type="submit",value="Submit")
+										span.c-button__text Войти
 		footer.l-copy
 			ul.c-copy
 				each val in copy
