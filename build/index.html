@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="hero" lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Разработка и сопровождение сайтов и веб приложений">
@@ -9,12 +9,12 @@
     <style>.svg-use,.svg_next{max-width: 2rem;}</style>
     <title>welcome WEB Разработка</title>
   <link rel="icon" type="image/png" sizes="32x32" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-16x16.png"><link rel="shortcut icon" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon.ico"><link href="http://localhost:8080/./assets/css/normalize.css" rel="stylesheet"><link href="http://localhost:8080/./assets/css/styles.index.css" rel="stylesheet"></head>
-  <body>
+  <body class="hero">
     <!--[if lt IE 8]> <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http:// browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p> <![endif]-->
     <div class="l-wrapper">
       <div class="l-parallax__container"></div>
       <div class="l-login__button">
-        <button class="c-button"><span class="c-button__text">Авторизоваться</span></button>
+        <button class="c-button" id="targetLogin"><span class="c-button__text">Авторизоваться</span></button>
       </div>
       <div class="l-welcome">
         <div class="l-flip-container">
@@ -87,24 +87,21 @@
                   </label>
                 </div>
                 <div class="c-form__buttons">
-                  <div class="c-form__row">
-                    <label class="c-form__item">
-                      <input class="c-form__checkbox" type="checkbox" name="capcha"><span class="c-form__item-title c-form__item-title--checkbox">Я человек</span>
-                    </label>
-                  </div>
-                  <div class="c-form__row-title"></div>
+                  <label class="c-form__item">
+                    <input class="c-form__checkbox" type="checkbox" name="capcha"><span class="c-form__item-title c-form__item-title--checkbox">Я человек</span>
+                  </label><span class="c-form__row-title">Вы точно не робот?</span>
                   <div class="c-form__row">
                     <label class="c-form__item">
                       <input class="c-form__radio" type="radio" name="noBot" value="yes" checked><span class="c-form__item-title c-form__item-title--radio">Да</span>
                     </label>
                     <label class="c-form__item">
-                      <input class="c-form__radio" type="radio" name="noBot" value="none"><span class="c-form__item-title c-form__item-title--radio">Нет</span>
+                      <input class="c-form__radio" type="radio" name="noBot" value="none"><span class="c-form__item-title c-form__item-title--radio">Не уверен</span>
                     </label>
                   </div>
                 </div>
                 <ul class="c-form__buts-action">
                   <li class="c-form__nav-item">
-                    <button class="c-form__nav-link" type="button"><span class="c-button__text">На главную</span></button>
+                    <button class="c-form__nav-link" id="targetMain" type="button"><span class="c-button__text">На главную</span></button>
                   </li>
                   <li class="c-form__nav-item">
                     <button class="c-form__nav-link" type="submit" value="Submit"><span class="c-button__text">Войти</span></button>

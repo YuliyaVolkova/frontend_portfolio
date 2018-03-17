@@ -1,6 +1,7 @@
 extends ./assets/pug/layout/main.layout.pug
 
 block variables
+	- var pageM = 'hero'
 	- var title = 'welcome WEB Разработка'
 	- var social = ['vk', 'github', 'in']
 	- var component = 'c-welcome'
@@ -24,7 +25,7 @@ block variables
 block extend
 	.l-parallax__container
 	.l-login__button
-		button.c-button
+		button.c-button#targetLogin
 			span.c-button__text Авторизоваться
 
 	.l-welcome
@@ -58,21 +59,20 @@ block extend
 									+icon('password', 'svg_login', '../assets/images/sprites/sprite.svg')
 								input.c-form__input(type="password", name="password", placeholder="Пароль", data-rule="required")
 						.c-form__buttons
-							.c-form__row
-								label.c-form__item
-									input.c-form__checkbox(type="checkbox", name="capcha")
-									span.c-form__item-title.c-form__item-title--checkbox Я человек
-							.c-form__row-title
+							label.c-form__item
+								input.c-form__checkbox(type="checkbox", name="capcha")
+								span.c-form__item-title.c-form__item-title--checkbox Я человек
+							span.c-form__row-title Вы точно не робот?
 							.c-form__row
 								label.c-form__item
 									input.c-form__radio(type="radio", name="noBot", value="yes" checked)
 									span.c-form__item-title.c-form__item-title--radio Да
 								label.c-form__item
 									input.c-form__radio(type="radio", name="noBot", value="none")
-									span.c-form__item-title.c-form__item-title--radio Нет
+									span.c-form__item-title.c-form__item-title--radio Не уверен
 						ul.c-form__buts-action
 							li.c-form__nav-item
-								button.c-form__nav-link(type="button")
+								button.c-form__nav-link#targetMain(type="button")
 									span.c-button__text На главную
 							li.c-form__nav-item
 								button.c-form__nav-link(type="submit",value="Submit")

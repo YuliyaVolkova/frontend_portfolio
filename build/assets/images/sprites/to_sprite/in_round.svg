@@ -1,8 +1,0 @@
-export default {
-      id: "in_round-usage",
-      viewBox: "0 0 50 50",
-      url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\in_round.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

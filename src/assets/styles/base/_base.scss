@@ -16,7 +16,7 @@ body, html {
   	font-family: $text-font-stack;
 	margin: 0;
 	padding: 0;
-	@include size(100%);
+	width: 100%;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.425rem;
@@ -48,6 +48,10 @@ body, html {
 
 		font-size: 12px;
 	}
+}
+body.hero, html.hero {
+	height: 100%;
+	overflow: hidden;
 }
 
 /**

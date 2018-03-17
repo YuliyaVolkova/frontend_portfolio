@@ -1,8 +1,0 @@
-export default {
-      id: "portf_arrow_down-usage",
-      viewBox: "0 0 42.736 27.435",
-      url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\portf_arrow_down.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

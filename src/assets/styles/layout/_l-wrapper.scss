@@ -4,6 +4,7 @@
 	@include size(100%);
 	margin: 0;
 	position: relative;
+	overflow: hidden;
 	@include custom {
 		min-height: 650px;
 	}

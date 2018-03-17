@@ -1,6 +1,6 @@
 .c-form {
 	width: 100%;
-	height: 72%;
+	height: 75%;
 }
 
 .c-form__inner {
@@ -24,7 +24,6 @@
 	position: relative;
 
 	&:last-child {
-
 		margin-right: 0;
 	}
 }
@@ -45,9 +44,8 @@
 .c-form__item-title {
 	display: block;
 	text-align: left;
-	margin-bottom: 2%;
+	margin-bottom: 5%;
 	color: rgba(69, 90, 100, 0.8);
-
 }
 
 .c-form__input {
@@ -64,7 +62,6 @@
 	padding-left: 3.5rem;
 
 	&:focus {
-
 		border: 1px solid $brand-color;
 	}
 
@@ -72,52 +69,85 @@
 		opacity: 0.5;
 		color: $text-color;
 	}
-
 }
+
 .c-form__buttons {
-	width: 40%;
+	width: 66%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	& .c-form__row {
+		justify-content: center;
+	}
+	& .c-form__item {
+		margin: 0 0 3% 0;
+	}
 }
 
 .c-form__checkbox {
 	@include hidden;
-
 	&:checked + .c-form__item-title--checkbox:before {
-
-		background: url('../images/decor/bg/checked.svg') no-repeat center center $brand-color;
-		background-size: 75% 80%;	
+		background: url('../images/decor/bg/checked.svg') no-repeat center center rgba($brand-color, 0.9);
+		background-size: 50% 50%;	
 	}
 }
 
 .c-form__item-title--checkbox {
-	transition: background 0.4s;
-	
+	transition: background 0.7s;
+	display: flex;
+	text-align: left;
+	margin-bottom: 2%;
+	align-items: center;
+	color: rgba(69, 90, 100, 0.8);
 	@include tablet {
-
 		margin-bottom: 3%;
 	}
-
 	&:before {
-
 		content: '';
 		display: inline-block;
-    	vertical-align: rem(-4);
-    	@include size(rem(16));
-    	background: $primaryColor;
-    	margin-right: rem(6);
+    	@include size(rem(21));
+    	background: url('../images/decor/bg/checked.svg') no-repeat center center $primaryColor;
+    	border: 0.5px solid $brand-color;
+    	margin-right: rem(9);
+    	border-radius: rem(3px);
+    	background-size: 0 0;
 	}
 }
 
 .c-form__row-title {
-
+	display: block;
+	text-align: center;
+	margin-bottom: 3%;
+	font-weight: 900;
+	color: rgba(69, 90, 100, 0.8);	
 }
 
 .c-form__radio {
 	@include hidden;
-
-	&:checked + .c-form__item-title--radio:before {
-		
-		background-color: rgb(228, 80, 40);
+	&:checked + .c-form__item-title--radio:before {		
+		background-color: $brand-color;
     	box-shadow: inset 0 0 0 rem(5) $primaryColor;
+	}
+	&:checked + .c-form__item-title--radio {
+		color: $brand-color;
+	}
+}
+
+.c-form__item-title--radio {
+
+	transition: background-color 0.4s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:before {
+		content: '';
+    	@include size(rem(21));
+    	border-radius: 50%;
+    	background-color: $primaryColor;
+    	margin-right: 0.6rem;
+    	border: 1px solid rgb(204, 204, 204);
 	}
 }
 
@@ -125,12 +155,10 @@
 
 .c-form__submit {	
 	position: relative;
-
 }
 
 
 .c-form__required-info {
-
 	position: absolute;
 	bottom: 5%;
 	left: 0;
@@ -146,7 +174,6 @@
 }
 
 .c-form__required-marker {
-	
 	font-size: rem(15);
 	font-weight: 700;
 	color: $brand-color;
@@ -222,8 +249,7 @@ form input[type='text'].error, form input[type='password'].error, form textarea.
 	transition:  background-color 0.3s;
 	flex: 1;
 
-	&:hover {
-		
+	&:hover {		
 		background-color: rgba($second-color, 0.85);
 		cursor: pointer;
 	}
@@ -245,15 +271,12 @@ form input[type='text'].error, form input[type='password'].error, form textarea.
 	font-size: rem(16);
 	border: 0px solid transparent;
 	color: $primaryColor;
-
-	&:first-child {
-	
+	&:first-child {	
 		border-left: none;
 	}
 	outline: none;
 	background-color: rgba($brand-color, 0.85);
-	&:hover {
-		
+	&:hover {		
 		background-color: rgba($second-color, 0.85);
 		cursor: pointer;
 	}

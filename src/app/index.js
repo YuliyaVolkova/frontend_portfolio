@@ -11,8 +11,13 @@ svg4everybody();
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
 //*
-function requireAll(r) { r.keys().forEach(r); }
-requireAll(require.context('../assets/images/sprites/to_sprite/', true));
+//function requireAll(r) { r.keys().forEach(r); }
+//requireAll(require.context('../assets/images/sprites/to_sprite/', true));
+
+const init = () => {
+  prlxMontains.handler();
+  flip.handler();
+};
 
 const prlxMontains = (() => {
 
@@ -30,7 +35,6 @@ const prlxMontains = (() => {
   };
 
   const handler = () => {
-    flip.handler();
     container.addEventListener('mousemove', bgmove, false);
   }; 
   return {handler};
@@ -39,22 +43,35 @@ const prlxMontains = (() => {
 const flip = (() => {
 
   const container = document.body.querySelector('.l-welcome'),
-    but = document.body.querySelector('.c-button');
+    butLogin = document.body.querySelector('.c-button#targetLogin'),
+    loginTargEl = document.body.querySelector('.l-login__button'),
+    butMain = document.body.querySelector('.c-form__nav-link#targetMain');
 
   var flag = false;
 
-  /// parallax background-effect 
-  const flipCard = (e) => {
+  /// flip-effect 
+  const openLogin = (e) => {
+    e.preventDefault();
     if (flag) return;
     container.classList.add('flip');
-    setTimeout(() => flag=false, 30);
+    setTimeout(() => flag=false, 50);
+    loginTargEl.classList.add('visually-hidden');
+    butMain.addEventListener('click', openMain, false);
+  };
+
+  const openMain = (e) => {
+    e.preventDefault();
+    if (flag) return;
+    container.classList.remove('flip');
+    setTimeout(() => loginTargEl.classList.remove('visually-hidden'), 500);
+    setTimeout(() => flag=false, 50);
   };
 
   const handler = () => {
-    but.addEventListener('click', flipCard, false);
+    butLogin.addEventListener('click', openLogin, false);
   }; 
   return {handler};
 })();
 
-window.onload = prlxMontains.handler();
+window.onload = init();
 console.log('It` work %%%!');

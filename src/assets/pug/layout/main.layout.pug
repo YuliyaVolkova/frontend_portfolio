@@ -2,7 +2,7 @@ include ../base/_mixins.pug
 
 block variables
 doctype html
-html(lang="ru")
+html(lang="ru", class=`${pageM?`${pageM}`:''}`)
   head
     meta(charset="utf-8")
     meta(name="description" content="Разработка и сопровождение сайтов и веб приложений")
@@ -13,7 +13,7 @@ html(lang="ru")
 
     title #{title}
 
-  body
+  body(class=`${pageM?`${pageM}`:''}`)
     //[if lt IE 8]> <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http:// browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p> <![endif]
     .l-wrapper
       block extend
