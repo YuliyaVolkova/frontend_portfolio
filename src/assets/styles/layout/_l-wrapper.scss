@@ -4,4 +4,7 @@
 	@include size(100%);
 	margin: 0;
 	position: relative;
-} 
+	@include custom {
+		min-height: 650px;
+	}
+}

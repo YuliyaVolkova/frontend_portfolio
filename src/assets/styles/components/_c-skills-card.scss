@@ -1,7 +1,5 @@
 .c-skills-card {
 	padding: 0 0 5% 5%;
-	overflow: hidden;
-
 }
 
 .c-skills-card__header {
@@ -26,6 +24,7 @@
 .c-skills-card__desc {
 	margin-bottom: 7%;
 	width: 90%;
+	display: block;
 }
 
 .c-skills-card__container {

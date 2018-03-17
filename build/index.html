@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>.svg-use,.svg_next{max-width: 2rem;}</style>
     <title>welcome WEB Разработка</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-16x16.png"><link rel="shortcut icon" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon.ico"><link href="https://yuliyavolkova.github.io/portfolio_pages/./assets/css/normalize.css" rel="stylesheet"><link href="https://yuliyavolkova.github.io/portfolio_pages/./assets/css/styles.index.css" rel="stylesheet"></head>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-16x16.png"><link rel="shortcut icon" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon.ico"><link href="http://localhost:8080/./assets/css/normalize.css" rel="stylesheet"><link href="http://localhost:8080/./assets/css/styles.index.css" rel="stylesheet"></head>
   <body>
     <!--[if lt IE 8]> <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http:// browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p> <![endif]-->
     <div class="l-wrapper">
@@ -17,46 +17,111 @@
         <button class="c-button"><span class="c-button__text">Авторизоваться</span></button>
       </div>
       <div class="l-welcome">
-        <div class="c-welcome">
-          <div class="c-welcome__img-wrap" style="background-image: url('./assets/images/content/photo.jpg'); background-repeat:no-repeat;"><img class="c-welcome__img visually-hidden" alt="" src="https://yuliyavolkova.github.io/portfolio_pages/assets/images/content/photo.jpg"></div>
-          <div class="c-welcome__content">
-            <h1 class="c-welcome__header">Yuliya Volkova</h1>
-            <h2 class="c-welcome__desc">Личный сайт WEB Разработчика</h2>
-            <ul class="c-welcome__social">
-              <li class="c-welcome__social-item"><a class="c-welcome__social-link" href="#" target="blank">
-                  <svg class="svg-use">
-                    <use xlink:href="./assets/images/sprites/sprite.svg#vk">
-                      <title>vk</title>
-                    </use>
-                  </svg></a></li>
-              <li class="c-welcome__social-item"><a class="c-welcome__social-link" href="#" target="blank">
-                  <svg class="svg-use">
-                    <use xlink:href="./assets/images/sprites/sprite.svg#github">
-                      <title>github</title>
-                    </use>
-                  </svg></a></li>
-              <li class="c-welcome__social-item"><a class="c-welcome__social-link" href="#" target="blank">
-                  <svg class="svg-use">
-                    <use xlink:href="./assets/images/sprites/sprite.svg#in">
-                      <title>in</title>
-                    </use>
-                  </svg></a></li>
-            </ul>
-            <ul class="c-welcome__nav">
-              <li class="c-welcome__nav-item"><a class="c-welcome__nav-link" href="./pages/my_works.html">Мои работы</a></li>
-              <li class="c-welcome__nav-item"><a class="c-welcome__nav-link" href="./pages/about.html">Обо мне</a></li>
-              <li class="c-welcome__nav-item"><a class="c-welcome__nav-link" href="./pages/blog.html">Блог</a></li>
-            </ul>
+        <div class="l-flip-container">
+          <div class="c-welcome">
+            <div class="c-welcome__img-wrap" style="background-image: url('./assets/images/content/photo.jpg'); background-repeat:no-repeat;"><img class="c-welcome__img visually-hidden" alt="" src="http://localhost:8080/assets/images/content/photo.jpg"></div>
+            <div class="c-welcome__content">
+              <h1 class="c-welcome__header">Yuliya Volkova</h1>
+              <h2 class="c-welcome__desc">Личный сайт WEB Разработчика</h2>
+              <ul class="c-welcome__social">
+                <li class="c-welcome__social-item"><a class="c-welcome__social-link" href="#" target="_blank">
+                    <svg class="svg-use">
+                      <use xlink:href="./assets/images/sprites/sprite.svg#vk">
+                        <title>vk</title>
+                      </use>
+                    </svg></a></li>
+                <li class="c-welcome__social-item"><a class="c-welcome__social-link" href="#" target="_blank">
+                    <svg class="svg-use">
+                      <use xlink:href="./assets/images/sprites/sprite.svg#github">
+                        <title>github</title>
+                      </use>
+                    </svg></a></li>
+                <li class="c-welcome__social-item"><a class="c-welcome__social-link" href="#" target="_blank">
+                    <svg class="svg-use">
+                      <use xlink:href="./assets/images/sprites/sprite.svg#in">
+                        <title>in</title>
+                      </use>
+                    </svg></a></li>
+              </ul>
+              <ul class="c-welcome__nav">
+                <li class="c-welcome__nav-item"><a class="c-welcome__nav-link" href="./pages/my_works.html">Мои работы</a></li>
+                <li class="c-welcome__nav-item"><a class="c-welcome__nav-link" href="./pages/about.html">Обо мне</a></li>
+                <li class="c-welcome__nav-item"><a class="c-welcome__nav-link" href="./pages/blog.html">Блог</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-login">
+            <div class="c-login__header">
+              <svg class="svg_dash">
+                <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                  <title>dash</title>
+                </use>
+              </svg>
+              <h3 class="h-title-article">Авторизуйтесь</h3>
+              <svg class="svg_dash">
+                <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                  <title>dash</title>
+                </use>
+              </svg>
+            </div>
+            <form class="c-form" action="./server_test.php" id="login" method="POST">
+              <div class="c-form__inner">
+                <div class="c-form__row">
+                  <label class="c-form__item"><span class="c-form__item-logo">
+                      <svg class="svg_login">
+                        <use xlink:href="../assets/images/sprites/sprite.svg#login">
+                          <title>login</title>
+                        </use>
+                      </svg></span>
+                    <input class="c-form__input" type="text" name="username" placeholder="Логин" data-rule="name|required">
+                  </label>
+                </div>
+                <div class="c-form__row">
+                  <label class="c-form__item"><span class="c-form__item-logo">
+                      <svg class="svg_login">
+                        <use xlink:href="../assets/images/sprites/sprite.svg#password">
+                          <title>password</title>
+                        </use>
+                      </svg></span>
+                    <input class="c-form__input" type="password" name="password" placeholder="Пароль" data-rule="required">
+                  </label>
+                </div>
+                <div class="c-form__buttons">
+                  <div class="c-form__row">
+                    <label class="c-form__item">
+                      <input class="c-form__checkbox" type="checkbox" name="capcha"><span class="c-form__item-title c-form__item-title--checkbox">Я человек</span>
+                    </label>
+                  </div>
+                  <div class="c-form__row-title"></div>
+                  <div class="c-form__row">
+                    <label class="c-form__item">
+                      <input class="c-form__radio" type="radio" name="noBot" value="yes" checked><span class="c-form__item-title c-form__item-title--radio">Да</span>
+                    </label>
+                    <label class="c-form__item">
+                      <input class="c-form__radio" type="radio" name="noBot" value="none"><span class="c-form__item-title c-form__item-title--radio">Нет</span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="c-form__buts-action">
+                  <li class="c-form__nav-item">
+                    <button class="c-form__nav-link" type="button"><span class="c-button__text">На главную</span></button>
+                  </li>
+                  <li class="c-form__nav-item">
+                    <button class="c-form__nav-link" type="submit" value="Submit"><span class="c-button__text">Войти</span></button>
+                  </li>
+                </ul>
+              </div>
+            </form>
           </div>
         </div>
         <footer class="l-copy">
           <ul class="c-copy">
             <li class="c-copy_item">&copy;&nbsp;Yuliya Volkova</li>
-            <li class="c-copy_item">создано в &laquo;&nbsp;LoftSchool&nbsp;&raquo;</li>
+            <li class="c-copy_item">создано в &laquo;&nbsp;<a href="https://loftschool.com/" target="_blank">LoftSchool</a>&nbsp;&raquo;</li>
             <li class="c-copy_item">2018</li>
           </ul>
         </footer>
       </div>
     </div>
-  <script type="text/javascript" src="https://yuliyavolkova.github.io/portfolio_pages/app/common.bundle.js"></script><script type="text/javascript" src="https://yuliyavolkova.github.io/portfolio_pages/app/index.bundle.js"></script></body>
+  <script type="text/javascript" src="http://localhost:8080/app/index.bundle.js"></script></body>
 </html>

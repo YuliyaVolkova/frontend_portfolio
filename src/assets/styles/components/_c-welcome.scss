@@ -1,6 +1,5 @@
 
 .c-welcome {
-
 	background-color: rgba(252, 252, 252, 0.85);
 	@include size(rem(380), rem(395));
 	display: flex;
@@ -8,6 +7,12 @@
 	justify-content: flex-end;
 	align-items: center;
 	border-radius: rem(5);
+	backface-visibility: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	//transform: rotateY(180deg);
 }
 
 .c-welcome__img-wrap {

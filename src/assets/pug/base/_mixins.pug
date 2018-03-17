@@ -7,7 +7,7 @@ mixin social(classPrefix, listSocial, url)
 	ul(class=`${classPrefix}__social`)
 		each val in listSocial
 			li(class=`${classPrefix}__social-item`)
-				a(class=`${classPrefix}__social-link`, href="#" target="blank")
+				a(class=`${classPrefix}__social-link`, href="#" target="_blank")
 					+icon(val, 'svg-use', url)
 
 mixin navMenu(navlist)

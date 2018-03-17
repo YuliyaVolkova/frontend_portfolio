@@ -2,62 +2,83 @@ extends ../assets/pug/layout/main.layout.pug
 block variables
 	- var title = 'Обо мне'
 	- var bgTitleSvgId = 'portfolio_header'
-	- var aboutText = 'Я веб разработчик из Санкт-Петербурга. Мне 38 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!'
+	- var aboutText = 'Я веб разработчик из Санкт-Петербурга. Мне 38 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!'
 	- var skillsDescText = 'Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.'
 	-
 		var navList = [{pageUrl: './my_works.html', title: 'мои работы'},
 			{pageUrl: './blog.html', title: 'блог'},
 			{pageUrl: '#', title: 'обо мне'},
 			{pageUrl: '#login', title: 'авторизация'}]
-	- var footerText = 'Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.'
+	- var footerText = 'Я веб-разработчик из Санкт-Петербурга, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.'
 	-
 		var copy = [
 			'&copy;&nbsp;Yuliya Volkova',
-			'создано в &laquo;&nbsp;LoftSchool&nbsp;&raquo;',
+			'создано в &laquo;&nbsp;<a href="https://loftschool.com/" target="_blank">LoftSchool</a>&nbsp;&raquo;',
 			'2018' ]
 	- var social = ['vk', 'github', 'in']
+	-
+		var contacts = [{href: 'skype:yuliyawolf?add', linkText: 'skype_kdn', iconId: 'skype', iconCl: 'svg_skype'},
+		{href: 'mailto:someone@example.com', linkText: 'astachov@gmail.com', iconId: 'mail', iconCl: 'svg_mail'},
+		{href: 'tel:+7-800-000-392-10', linkText: '+7-800-000-392-10', iconId: 'phone', iconCl: 'svg_phone'},
+		{href: "https://www.google.com/maps/search/?api=1&query=36.26577,-92.54324", linkText: 'г.Новосибирск, ул. Инская, д. 5', iconId: 'map_marker', iconCl: 'svg_map-marker'}]
 
 block extend
-	section(class='l-section l-hero')
+	section.l-section.l-hero
 		include ../assets/pug/components/section-hero.pug
-			block content
-				.l-content__wrapper
-					.l-content__column-one
+	section.l-section.l-main
+		.l-main__top
+			+icon('bg', 'svg_main-top', '../assets/images/sprites/sprite.svg')
+		.l-main__wrapper
+			.l-main__column-one
+				.c-about-card
+					.c-about-card__header
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+						h2.h-title-section обо мне
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
 						+icon('about_header', `svg_about`, '../assets/images/sprites/sprite.svg')
-					.l-content__column-two
-					.l-content__inner
-						.l-content__inner-column-one
-							.c-about-card
-								.c-about-card__header
-									+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-									h2.h-title-section обо мне
-									+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-								img.c-about-card__img(alt="", src=require('../assets/images/content/photo.jpg'))
-								.c-about-card__content
-									.c-about-card__content-header
-										+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-										h3.h-title-article Кто я
-										+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-									.c-about-card__content-text= aboutText
-						.l-content__inner-column-two
-							.c-skills-card
-								.c-skills-card__header
-									+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-									h3.h-title-article Чем я могу быть вам полезен
-									+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-								.c-skills-card__desc= skillsDescText
-								ul.c-skills-card__container
-
-						.l-section.l-last
-							.l-map-container
-							footer.l-footer
-								.l-footer__left
-									+navMenu(navlist)
-									.c-footer__text= footerText
-								.l-footer__right
-									+social('l-footer', social, '../assets/images/sprites/sprite.svg')
-									ul.c-copy.c-copy_footer
-										each val in copy
-											li.c-copy_item!= val
-									
+					img.c-about-card__img(alt="", src=require('../assets/images/content/photo.jpg'))
+					.c-about-card__content
+						.c-about-card__content-header
+							+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+							h3.h-title-article Кто я
+							+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+						.c-about-card__content-text
+							span= aboutText
+			.l-main__column-two
+				.l-main__column-two-bg
+				.c-skills-card
+					.c-skills-card__header
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+						h3.h-title-article Чем я могу быть вам полезен
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					.c-skills-card__desc
+						span= skillsDescText
+					ul.c-skills-card__container
+	section.l-section.l-last
+		.l-map-container
+		.l-layout-first
+			.l-contacts
+				.c-contacts
+					.c-contacts__header
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+						h3.h-title-article Контакты
+						+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					.c-contacts__content
+						ul.c-contacts__list
+							each val in contacts
+								li.c-contacts__row
+									a.c-contacts__link(href=`${val.href}` target="_blank")
+										+icon(`${val.iconId}`, `${val.iconCl}`, '../assets/images/sprites/sprite.svg')
+										span= val.linkText
+			footer.l-footer
+				.l-container
+					.l-footer__left
+						+navMenu(navlist)
+						.c-footer__text
+							span= footerText
+					.l-footer__right
+						+social('l-footer', social, '../assets/images/sprites/sprite.svg')
+						ul.c-copy.c-copy_footer
+							each val in copy
+								li.c-copy_item!= val
 	+hamburger(navlist)

@@ -25,6 +25,9 @@ body, html {
 	-moz-osx-font-smoothing: grayscale;
 	font-display: optional;
 	position: relative;
+	@include custom_1800 {
+		background-color: rgba($text-color, 0.3);
+	} 
 	
 	@include laptop {
 

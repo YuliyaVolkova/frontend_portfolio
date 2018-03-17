@@ -19,9 +19,11 @@
   'layout/l-section',
   'layout/l-hero',
   'layout/l-hero__social',
+  'layout/l-container',
   'layout/l-hamburger',
-  'layout/l-content',
+  'layout/l-main',
   'layout/l-map-container',
+  'layout/l-contacts',
   'layout/l-footer';
 
 @import 
@@ -33,5 +35,6 @@
   'components/c-about-card',
   'components/h-title',
   'components/c-skills-card',
+  'components/c-contacts',
   'components/c-nav',
   'components/c-copy';

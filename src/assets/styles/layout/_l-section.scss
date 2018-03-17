@@ -1,7 +1,21 @@
 
 .l-section {
-	
 	width: 100%;
 	min-height: 100%;
+	position: relative;
+		@include custom {
+			min-height: 650px;
+			width: rem(1800);
+			margin: auto;
+		}
+}
+
+.l-last {
 	height: 100%;
+}
+
+.l-layout-first {
+	@include absolute-stretch;
+	display: flex;
+	flex-direction: column;
 }

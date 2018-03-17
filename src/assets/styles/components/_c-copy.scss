@@ -1,8 +1,14 @@
-
 .c-copy {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	& a {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	& a:hover {
+		text-decoration: none;
+	}
 	@include mobile {
 		flex-wrap: wrap;
 		text-align: center;
@@ -28,7 +34,6 @@
 	}
 
 	@include mobile {
-
 		line-height: 1.5;
 		&:first-child {
 			width: 100%;
@@ -44,5 +49,8 @@
 	justify-content: flex-end;
 	& .c-copy_item {
 		color: rgba($primaryColor, 0.5);
+	}
+	& a {
+		opacity: 0.5;
 	}
 }

@@ -4,15 +4,15 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	position: relative;
 	background-image: url('../images/decor/bg/montains.jpg');
 	background-attachment: fixed;
 		
-		&:after {
+		&:before {
 			content: '';
 			display: block;
 			@include absolute-stretch;
 			background-color: rgba(1, 102, 114, 0.3);
+			z-index: 0;
 		}
 
 	@include custom {
@@ -41,6 +41,7 @@
 			@include absolute-stretch;
 			top: 3%;
 			background-color: rgba(1, 102, 114, 0.3);
+			z-index: 0;
 		}
 }
 
@@ -52,20 +53,4 @@
 .l-hero__develop_blog {
 	bottom: 0;
 	transform: translate(-50%, -79%);
-}
-
-.l-hero__bottom {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	display: flex;
-	transform: translateY(50%);
-}
-
-.l-hero__bottom_blog {
-	bottom: 50%;
-	transform: translateY(60%);
 }

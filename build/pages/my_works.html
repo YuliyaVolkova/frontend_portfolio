@@ -8,39 +8,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>.svg-use,.svg_next{max-width: 2rem;}</style>
     <title>Мои работы</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-16x16.png"><link rel="shortcut icon" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon.ico"><link href="https://yuliyavolkova.github.io/portfolio_pages/./assets/css/normalize.css" rel="stylesheet"><link href="https://yuliyavolkova.github.io/portfolio_pages/./assets/css/styles.my_works.css" rel="stylesheet"></head>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon-16x16.png"><link rel="shortcut icon" href="https://yuliyavolkova.github.io/portfolio_pages/icons-e37e1b74e0ab6134f431d1e0ff2f44e4/favicon.ico"><link href="http://localhost:8080/./assets/css/normalize.css" rel="stylesheet"><link href="http://localhost:8080/./assets/css/styles.my_works.css" rel="stylesheet"></head>
   <body>
     <!--[if lt IE 8]> <p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http:// browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p> <![endif]-->
     <div class="l-wrapper">
-      <header class="l-section l-header">
-        <ul class="l-header__social">
-          <li class="l-header__social-item"><a class="l-header__social-link" href="#" target="blank">
+      <section class="l-section l-hero">
+        <ul class="l-hero__social">
+          <li class="l-hero__social-item"><a class="l-hero__social-link" href="#" target="_blank">
               <svg class="svg-use">
                 <use xlink:href="../assets/images/sprites/sprite.svg#vk">
                   <title>vk</title>
                 </use>
               </svg></a></li>
-          <li class="l-header__social-item"><a class="l-header__social-link" href="#" target="blank">
+          <li class="l-hero__social-item"><a class="l-hero__social-link" href="#" target="_blank">
               <svg class="svg-use">
                 <use xlink:href="../assets/images/sprites/sprite.svg#github">
                   <title>github</title>
                 </use>
               </svg></a></li>
-          <li class="l-header__social-item"><a class="l-header__social-link" href="#" target="blank">
+          <li class="l-hero__social-item"><a class="l-hero__social-link" href="#" target="_blank">
               <svg class="svg-use">
                 <use xlink:href="../assets/images/sprites/sprite.svg#in">
                   <title>in</title>
                 </use>
               </svg></a></li>
         </ul>
-        <svg class="svg_header">
+        <svg class="svg_hero">
           <use xlink:href="../assets/images/sprites/sprite.svg#portfolio_header">
             <title>portfolio_header</title>
           </use>
         </svg>
-        <div class="l-header__develop">
+        <div class="l-hero__develop">
           <div class="c-developer">
-            <div class="c-developer__img-wrap" style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;"><img class="c-developer__img visually-hidden" alt="" src="https://yuliyavolkova.github.io/portfolio_pages/assets/images/content/photo.jpg"></div>
+            <div class="c-developer__img-wrap" style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;"><img class="c-developer__img visually-hidden" alt="" src="http://localhost:8080/assets/images/content/photo.jpg"></div>
             <div class="c-developer__content">
               <h1 class="c-developer__header">Yuliya Volkova</h1>
               <h2 class="c-developer__desc">Личный сайт WEB Разработчика</h2>
@@ -52,26 +52,75 @@
               <title>arrow_down</title>
             </use>
           </svg></a>
-        <div class="l-header__bottom">
-          <svg class="svg_header-bottom">
+      </section>
+      <section class="l-section l-main">
+        <div class="l-main__top">
+          <svg class="svg_main-top">
             <use xlink:href="../assets/images/sprites/sprite.svg#bg">
               <title>bg</title>
             </use>
           </svg>
         </div>
-      </header>
-      <section class="l-section l-footer">
+        <div class="l-main__wrapper">
+          <div class="l-main__column-one"></div>
+          <div class="l-main__column-two">
+            <div class="l-main__column-two-bg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="l-section l-last">
+        <div class="l-map-container"></div>
+        <footer class="l-footer">
+          <div class="l-container">
+            <div class="l-footer__left">
+              <ul class="c-nav__list">
+                <li class="c-nav__item"><a class="c-nav__link" href="#">мои работы</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="./blog.html">блог</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="./about.html">обо мне</a></li>
+                <li class="c-nav__item"><a class="c-nav__link" href="#login">авторизация</a></li>
+              </ul>
+              <div class="c-footer__text"><span>Я веб-разработчик из Санкт-Петербурга, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</span></div>
+            </div>
+            <div class="l-footer__right">
+              <ul class="l-footer__social">
+                <li class="l-footer__social-item"><a class="l-footer__social-link" href="#" target="_blank">
+                    <svg class="svg-use">
+                      <use xlink:href="../assets/images/sprites/sprite.svg#vk">
+                        <title>vk</title>
+                      </use>
+                    </svg></a></li>
+                <li class="l-footer__social-item"><a class="l-footer__social-link" href="#" target="_blank">
+                    <svg class="svg-use">
+                      <use xlink:href="../assets/images/sprites/sprite.svg#github">
+                        <title>github</title>
+                      </use>
+                    </svg></a></li>
+                <li class="l-footer__social-item"><a class="l-footer__social-link" href="#" target="_blank">
+                    <svg class="svg-use">
+                      <use xlink:href="../assets/images/sprites/sprite.svg#in">
+                        <title>in</title>
+                      </use>
+                    </svg></a></li>
+              </ul>
+              <ul class="c-copy c-copy_footer">
+                <li class="c-copy_item">&copy;&nbsp;Yuliya Volkova</li>
+                <li class="c-copy_item">создано в &laquo;&nbsp;<a href="https://loftschool.com/" target="_blank">LoftSchool</a>&nbsp;&raquo;</li>
+                <li class="c-copy_item">2018</li>
+              </ul>
+            </div>
+          </div>
+        </footer>
       </section>
       <div class="l-hamburger">
         <nav class="c-hamburger-nav"><a class="c-hamburger-nav__target" href=""><span class="c-hamburger-nav__fake"></span></a>
           <ul class="c-hamburger-nav__list visually-hidden">
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#my_works">мои работы</a></li>
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#blog">блог</a></li>
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#about">обо мне</a></li>
+            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#">мои работы</a></li>
+            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./blog.html">блог</a></li>
+            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./about.html">обо мне</a></li>
             <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#login">авторизация</a></li>
           </ul>
         </nav>
       </div>
     </div>
-  <script type="text/javascript" src="https://yuliyavolkova.github.io/portfolio_pages/app/common.bundle.js"></script><script type="text/javascript" src="https://yuliyavolkova.github.io/portfolio_pages/app/my_works.bundle.js"></script></body>
+  <script type="text/javascript" src="http://localhost:8080/app/my_works.bundle.js"></script></body>
 </html>

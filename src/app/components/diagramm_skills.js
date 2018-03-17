@@ -15,7 +15,7 @@ const diagrammsSkills = (() => {
         {skillTitle: 'Gulp', percent: '0.80'}]},
     ],
     containerSkills = document.querySelector('.c-skills-card__container'),
-    skillsSectHeight = document.querySelector('.l-content__wrapper').clientHeight,
+    skillsSectHeight = document.querySelector('.l-main__wrapper').clientHeight,
     firstSectHeight = document.querySelector('.l-hero').clientHeight,
     arrItems = new Array();
 

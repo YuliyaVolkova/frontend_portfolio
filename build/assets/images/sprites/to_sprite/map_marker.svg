@@ -1,0 +1,8 @@
+export default {
+      id: "map_marker-usage",
+      viewBox: "0 0 15.151 21.654",
+      url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\map_marker.svg",
+      toString: function () {
+        return this.url;
+      }
+    }

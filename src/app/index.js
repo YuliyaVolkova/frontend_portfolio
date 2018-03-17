@@ -11,8 +11,8 @@ svg4everybody();
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
 //*
-//function requireAll(r) { r.keys().forEach(r); }
-//requireAll(require.context('../assets/images/sprites/to_sprite/', true));
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../assets/images/sprites/to_sprite/', true));
 
 const prlxMontains = (() => {
 
@@ -30,11 +30,31 @@ const prlxMontains = (() => {
   };
 
   const handler = () => {
+    flip.handler();
     container.addEventListener('mousemove', bgmove, false);
   }; 
   return {handler};
 })();
 
-window.onload = prlxMontains.handler;
+const flip = (() => {
 
+  const container = document.body.querySelector('.l-welcome'),
+    but = document.body.querySelector('.c-button');
+
+  var flag = false;
+
+  /// parallax background-effect 
+  const flipCard = (e) => {
+    if (flag) return;
+    container.classList.add('flip');
+    setTimeout(() => flag=false, 30);
+  };
+
+  const handler = () => {
+    but.addEventListener('click', flipCard, false);
+  }; 
+  return {handler};
+})();
+
+window.onload = prlxMontains.handler();
 console.log('It` work %%%!');

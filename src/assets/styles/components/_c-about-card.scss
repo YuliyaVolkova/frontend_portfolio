@@ -7,6 +7,7 @@
 .c-about-card__header {
 	color: $title-color;
 	margin-bottom: 7%;
+	position: relative;
 }
 .c-about-card__img-wrap {
 	@include size(rem(444), rem(391));
@@ -20,15 +21,31 @@
 	max-width: 100%;
 	width: 100%;
 	height: auto;
+	margin-bottom: 3%;
 }
 .c-about-card__content {
 	text-align: center;
 }
 .c-about-card__content-header {
-	color: $text-color;
+	color: $title-color;
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: auto;
+	& .svg_dash {
+		transform: translateY(-50%);
+	}
+
+	& .h-title-article {
+		 line-height: 1.17;
+		 text-align: center;
+	}
+
 	margin-bottom: 3%;
 }
 .c-about-card__content-text {
+	display: block;
 	text-align: left;
 	line-height: 1.5;
 	padding: 1% 0;

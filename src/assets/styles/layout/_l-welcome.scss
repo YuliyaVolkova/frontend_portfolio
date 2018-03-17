@@ -1,6 +1,10 @@
 
 .l-welcome {
-	
 	@include absolute-center;
 	z-index: 1;
+	perspective: 1000;
+	@include size(rem(380), rem(395));
+	&.flip .l-flip-container {
+		transform: rotateY(180deg);
+	}
 }

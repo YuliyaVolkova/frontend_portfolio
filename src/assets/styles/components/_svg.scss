@@ -11,13 +11,7 @@
 	opacity: 0.7;
 	@include size(100%);
 	fill: $primaryColor;
-}
-
-.svg_aboutLeft, .svg_aboutRight {
-	width: 50%;
-	height: 120%;
-	fill: $light-beige;
-	stroke: $light-beige;
+	transition: opacity 0.3s;
 }
 
 .svg_dash {
@@ -29,20 +23,60 @@
 	vertical-align: middle;
 }
 
-.svg_hero-bottom {
+.svg_main-top {
 	width: 100%;
-	fill: $beige-one;
-	stroke: $beige-one;
-	height: 1000px;
+	color: #F0EFE9;
+	height: 360.368px;
 	flex: 1;
 }
 
 .svg_about {
 	opacity: 0.07;
-	@include size(100%, 13%);
 	position: absolute;
 	top: 0;
 	left: 50%;
-	transform: translate(-50%, 64%);
-	z-index: 1;
+	right: 0;
+	bottom: 0;
+	width: 80%;
+	transform: translate(-50%, -25%);
+	z-index: 0;
+}
+
+.svg_bg_right {
+	color: #EFEBE0;
+	width: 100%;
+	height: 650px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+	transform: translateY(-33%);
+}
+
+.svg_skype, .svg_mail, .svg_phone, .svg_map-marker {
+	color: $brand-color;
+	flex-basis: 20%;
+	transition: opacity 0.3s;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.svg_skype {
+	@include size(rem(24), rem(24));
+}
+.svg_mail {
+	@include size(2.5rem, 1.75rem);
+}
+.svg_phone {
+	@include size(rem(20), rem(19));
+
+}
+.svg_map-marker {
+	@include size(rem(19), rem(24));
+}
+.svg_login {
+	@include size(rem(15), rem(17));
+	 color: rgb(196, 203, 205);
 }

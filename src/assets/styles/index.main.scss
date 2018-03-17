@@ -17,6 +17,7 @@
 
   'layout/l-wrapper',
   'layout/l-parallax',
+  'layout/l-flip-container',
   'layout/l-login',
   'layout/l-welcome',
   'layout/l-copy';
@@ -24,5 +25,9 @@
 @import
 
   'components/c-button',
+  'components/h-title',
+  'components/svg',
   'components/c-welcome',
+  'components/c-login',
+  'components/c-form',
   'components/c-copy'; 
