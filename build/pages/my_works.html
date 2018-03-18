@@ -55,33 +55,92 @@
       </section>
       <section class="l-section l-main">
         <div class="l-main__top">
-          <svg class="svg_main-top">
+          <svg class="svg_main-top_one-color">
             <use xlink:href="../assets/images/sprites/sprite.svg#bg">
               <title>bg</title>
             </use>
           </svg>
         </div>
-        <div class="l-main__wrapper">
-          <div class="l-main__column-one"></div>
-          <div class="l-main__column-two">
-            <div class="l-main__column-two-bg"></div>
+        <div class="l-main__wrapper l-main__wrapper_display-bl">
+          <div class="l-main__header">
+            <div class="l-main__header-title">
+              <svg class="svg_dash">
+                <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                  <title>dash</title>
+                </use>
+              </svg>
+              <h2 class="h-title-section">Мои Pаботы</h2>
+              <svg class="svg_dash">
+                <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                  <title>dash</title>
+                </use>
+              </svg>
+              <svg class="svg-main-icon svg-main-icon_works">
+                <use xlink:href="../assets/images/sprites/sprite.svg#works_header">
+                  <title>works_header</title>
+                </use>
+              </svg>
+            </div>
+          </div>
+          <div class="l-main__slider">
+            <div class="c-slider">
+              <div class="c-slider__desc-fr">
+                <div class="c-slider__desc-header">
+                  <svg class="svg_dash">
+                    <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                      <title>dash</title>
+                    </use>
+                  </svg>
+                  <h3 class="h-title-article">Сайт школы онлайн Образования</h3>
+                  <svg class="svg_dash">
+                    <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                      <title>dash</title>
+                    </use>
+                  </svg>
+                </div>
+                <div class="c-slider__desc-text"><span>HTMl , CSS, JAVASCRIPT</span></div><a class="c-button c-slider__desc-link" href="https://webmanshake.ru/" target="_blank">
+                  <svg class="svg_link">
+                    <use xlink:href="../assets/images/sprites/sprite.svg#link">
+                      <title>link</title>
+                    </use>
+                  </svg><span class="c-button__text">Посмотреть сайт</span></a>
+              </div>
+              <div class="c-slider__main-fr"><img class="c-slider__main-img" alt="" src="http://localhost:8080/assets/images/content/work-1.png"></div>
+              <div class="c-slider__control-fr">
+                <div class="c-slider__control-prev"><img class="c-slider__control-img" alt="" src="http://localhost:8080/assets/images/content/work-4.png"><a class="c-slider__control__link" href="#">
+                    <svg class="svg_slider-arrow">
+                      <use xlink:href="../assets/images/sprites/sprite.svg#portf_arrow_down">
+                        <title>portf_arrow_down</title>
+                      </use>
+                    </svg></a></div>
+                <div class="c-slider__control-next"><img class="c-slider__control-img" alt="" src="http://localhost:8080/assets/images/content/work-2.png"><a class="c-slider__control__link" href="#">
+                    <svg class="svg_slider-arrow">
+                      <use xlink:href="../assets/images/sprites/sprite.svg#portf_arrow_up">
+                        <title>portf_arrow_up</title>
+                      </use>
+                    </svg></a></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <section class="l-section l-last">
         <div class="l-map-container"></div>
-        <footer class="l-footer">
-          <div class="l-container">
-            <div class="l-footer__left">
-              <ul class="c-nav__list">
-                <li class="c-nav__item"><a class="c-nav__link" href="#">мои работы</a></li>
-                <li class="c-nav__item"><a class="c-nav__link" href="./blog.html">блог</a></li>
-                <li class="c-nav__item"><a class="c-nav__link" href="./about.html">обо мне</a></li>
-                <li class="c-nav__item"><a class="c-nav__link" href="#login">авторизация</a></li>
-              </ul>
-              <div class="c-footer__text"><span>Я веб-разработчик из Санкт-Петербурга, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</span></div>
-            </div>
-            <div class="l-footer__right">
+        <div class="l-layout-first">
+          <div class="l-contacts">
+            <div class="c-contacts"></div>
+          </div>
+          <footer class="l-footer">
+            <div class="l-container">
+              <div class="l-footer__nav">
+                <ul class="c-nav__list">
+                  <li class="c-nav__item"><a class="c-nav__link" href="#">мои работы</a></li>
+                  <li class="c-nav__item"><a class="c-nav__link" href="./blog.html">блог</a></li>
+                  <li class="c-nav__item"><a class="c-nav__link" href="./about.html">обо мне</a></li>
+                  <li class="c-nav__item"><a class="c-nav__link" href="../index.html#login">авторизация</a></li>
+                </ul>
+              </div>
+              <div class="l-footer__text"><span>Я веб-разработчик из Санкт-Петербурга, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</span></div>
               <ul class="l-footer__social">
                 <li class="l-footer__social-item"><a class="l-footer__social-link" href="#" target="_blank">
                     <svg class="svg-use">
@@ -108,8 +167,8 @@
                 <li class="c-copy_item">2018</li>
               </ul>
             </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </section>
       <div class="l-hamburger">
         <nav class="c-hamburger-nav"><a class="c-hamburger-nav__target" href=""><span class="c-hamburger-nav__fake"></span></a>
@@ -117,7 +176,7 @@
             <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#">мои работы</a></li>
             <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./blog.html">блог</a></li>
             <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./about.html">обо мне</a></li>
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#login">авторизация</a></li>
+            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="../index.html#login">авторизация</a></li>
           </ul>
         </nav>
       </div>

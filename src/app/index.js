@@ -11,8 +11,8 @@ svg4everybody();
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
 //*
-//function requireAll(r) { r.keys().forEach(r); }
-//requireAll(require.context('../assets/images/sprites/to_sprite/', true));
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../assets/images/sprites/to_sprite/', true));
 
 const init = () => {
   if(window.location.hash==='#login') flip.autorizate();
@@ -44,11 +44,8 @@ const prlxMontains = (() => {
 const flip = (() => {
 
   const container = document.body.querySelector('.l-welcome'),
-    flipContainer = document.body.querySelector('.l-flip-container'),
     butLogin = document.body.querySelector('.c-button#targetLogin'),
     loginTargEl = document.body.querySelector('.l-login__button'),
-    firstScreen = document.body.querySelector('.c-welcome'),
-    secondScreen = document.body.querySelector('.c-login'),
     templFace = document.body.querySelector('#faceBl'),
     templBackFace = document.body.querySelector('#backFaceBl'),
     containerFace = document.body.querySelector('.l-face-container'),

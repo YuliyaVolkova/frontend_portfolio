@@ -19,13 +19,19 @@
   'layout/l-section',
   'layout/l-hero',
   'layout/l-hero__social',
+  'layout/l-container',
   'layout/l-hamburger',
-  'layout/l-main';
+  'layout/l-main',
+  'layout/l-map-container',
+  'layout/l-contacts',
+  'layout/l-footer';
 
 @import 
 
   'components/c-hamburger-nav',
   'components/c-developer',
-  'components/h-title',
   'components/c-next',
-  'components/svg';
+  'components/svg',
+  'components/h-title',
+  'components/c-nav',
+  'components/c-copy';

@@ -12,6 +12,9 @@
 	&:first-letter {
 		text-transform: uppercase;
 	}
+	@include tablet {
+		font-size: rem(49);
+	}
 }
 
 .h-title-section_color {

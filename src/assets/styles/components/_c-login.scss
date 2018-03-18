@@ -1,4 +1,4 @@
-.c-login {
+.c-login-form {
 	background-color: rgba(252, 252, 252, 0.85);
 	@include size(rem(380), rem(395));
 	display: flex;
@@ -6,7 +6,7 @@
 	border-radius: rem(5);
 }
 
-.c-login__header {
+.c-login-form__header {
 	color: $title-color;
 	width: 71%;
 	display: flex;

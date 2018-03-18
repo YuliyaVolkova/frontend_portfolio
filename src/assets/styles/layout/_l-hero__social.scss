@@ -7,6 +7,12 @@
 	display: flex;
 	width: 12%;
 	justify-content: space-between;
+	@include tablet {
+		width: 20%;
+	}
+	@include mobile {
+		width: 30%;
+	}
 }
 
 .l-hero__social-item {

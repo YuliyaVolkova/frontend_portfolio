@@ -9,15 +9,7 @@ block variables
 		var navList = [{pageUrl: './my_works.html', title: 'мои работы'},
 			{pageUrl: '#', title: 'блог'},
 			{pageUrl: './about.html', title: 'обо мне'},
-			{pageUrl: '#login', title: 'авторизация'}]
-
-	- var footerText = 'Я веб-разработчик из Санкт-Петербурга, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.'
-	-
-		var copy = [
-			'&copy;&nbsp;Yuliya Volkova',
-			'создано в &laquo;&nbsp;<a href="https://loftschool.com/" target="_blank">LoftSchool</a>&nbsp;&raquo;',
-			'2018' ]
-	- var social = ['vk', 'github', 'in']
+			{pageUrl: '../index.html#login', title: 'авторизация'}]
 
 block extend
 	section.l-section.l-hero.l-hero_blog
@@ -42,15 +34,8 @@ block extend
 				.l-main__column-two-bg
 	section.l-section.l-last
 		.l-map-container
-		footer.l-footer
-			.l-container
-				.l-footer__left
-					+navMenu(navlist)
-					.c-footer__text
-						span= footerText
-				.l-footer__right
-					+social('l-footer', social, '../assets/images/sprites/sprite.svg')
-					ul.c-copy.c-copy_footer
-						each val in copy
-							li.c-copy_item!= val
-	+hamburger(navlist)
+		.l-layout-first
+			.l-contacts
+				.c-contacts
+			include ../assets/pug/components/footer.pug
+	+hamburger(navList)

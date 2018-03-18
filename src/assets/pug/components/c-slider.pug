@@ -1,0 +1,24 @@
+- var technologies = 'HTMl , CSS, JAVASCRIPT'
+
+.c-slider
+	.c-slider__desc-fr
+		.c-slider__desc-header
+			+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+			h3.h-title-article Сайт школы онлайн Образования
+			+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+		.c-slider__desc-text
+			span= technologies
+		a.c-button.c-slider__desc-link(href="https://webmanshake.ru/" target="_blank")
+			+icon('link', 'svg_link', '../assets/images/sprites/sprite.svg')
+			span.c-button__text Посмотреть сайт
+	.c-slider__main-fr
+		img.c-slider__main-img(alt="", src=require('../assets/images/content/work-1.png'))
+	.c-slider__control-fr
+		.c-slider__control-prev
+			img.c-slider__control-img(alt="", src=require('../assets/images/content/work-4.png'))
+			a.c-slider__control__link(href="#")
+				+icon('portf_arrow_down', 'svg_slider-arrow', '../assets/images/sprites/sprite.svg')
+		.c-slider__control-next
+			img.c-slider__control-img(alt="", src=require('../assets/images/content/work-2.png'))
+			a.c-slider__control__link(href="#")
+				+icon('portf_arrow_up', 'svg_slider-arrow', '../assets/images/sprites/sprite.svg')

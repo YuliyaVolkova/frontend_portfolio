@@ -1,6 +1,15 @@
 .l-container {
-
 	width: 95%;
+	height: rem(147px);
 	display: flex;
 	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	@include tablet {
+		height: rem(236);
+		align-items: center;
+	}
+	@include mobile {
+		height: rem(270);
+	}
 }

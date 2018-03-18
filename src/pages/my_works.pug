@@ -7,36 +7,27 @@ block variables
 		var navList = [{pageUrl: '#', title: 'мои работы'},
 			{pageUrl: './blog.html', title: 'блог'},
 			{pageUrl: './about.html', title: 'обо мне'},
-			{pageUrl: '#login', title: 'авторизация'}]
-	- var footerText = 'Я веб-разработчик из Санкт-Петербурга, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.'
-	-
-		var copy = [
-			'&copy;&nbsp;Yuliya Volkova',
-			'создано в &laquo;&nbsp;<a href="https://loftschool.com/" target="_blank">LoftSchool</a>&nbsp;&raquo;',
-			'2018' ]
-	- var social = ['vk', 'github', 'in']
+			{pageUrl: '../index.html#login', title: 'авторизация'}]
 
 block extend
 	section.l-section.l-hero
-		include ../assets/pug/components/section-hero.pug
+		include ../assets/pug/components/section-header.pug
 	section.l-section.l-main
 		.l-main__top
-			+icon('bg', 'svg_main-top', '../assets/images/sprites/sprite.svg')
-		.l-main__wrapper
-			.l-main__column-one
-			.l-main__column-two
-				.l-main__column-two-bg
+			+icon('bg', 'svg_main-top_one-color', '../assets/images/sprites/sprite.svg')
+		.l-main__wrapper.l-main__wrapper_display-bl
+			.l-main__header
+				.l-main__header-title
+					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					h2.h-title-section Мои Pаботы
+					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+					+icon('works_header', `svg-main-icon svg-main-icon_works`, '../assets/images/sprites/sprite.svg')
+			.l-main__slider
+				include ../assets/pug/components/c-slider.pug
 	section.l-section.l-last
 		.l-map-container
-		footer.l-footer
-			.l-container
-				.l-footer__left
-					+navMenu(navlist)
-					.c-footer__text
-						span= footerText
-				.l-footer__right
-					+social('l-footer', social, '../assets/images/sprites/sprite.svg')
-					ul.c-copy.c-copy_footer
-						each val in copy
-							li.c-copy_item!= val
-	+hamburger(navlist)
+		.l-layout-first
+			.l-contacts
+				.c-contacts
+			include ../assets/pug/components/footer.pug
+	+hamburger(navList)

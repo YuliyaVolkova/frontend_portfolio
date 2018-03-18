@@ -1,12 +1,13 @@
 .c-nav__list {
 	display: flex;
 	width: 80%;
-	height: 50%;
 	align-items: center;
 }
+
 .c-nav__item {
 	flex-grow: 1;
 }
+
 .c-nav__link {
 	display: inline-block;
 	font-size: (rem(17));
