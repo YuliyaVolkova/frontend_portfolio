@@ -15,7 +15,6 @@ block variables
 block extend
 	section.l-section.l-hero.l-hero_blog
 		+social('l-hero', socialId, '../assets/images/sprites/sprite.svg')
-		//-+icon(bgHeroSvgId, 'svg_hero', '../assets/images/sprites/sprite.svg')
 		.l-hero__develop.l-hero__develop_blog
 			.c-developer
 				.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")
@@ -32,5 +31,5 @@ block extend
 		.l-main__top
 			+icon('bg', 'svg_main-top_one-color', '../assets/images/sprites/sprite.svg')
 		.l-main__wrapper.l-main_blog
-			.c-blog
-			include ../assets/pug/components/footer.pug	
+			include ../assets/pug/components/c-blog.pug
+			include ../assets/pug/components/footer.pug

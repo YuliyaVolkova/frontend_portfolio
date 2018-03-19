@@ -59,11 +59,13 @@
 	left: 50%;
 	right: 0;
 	bottom: 0;
-	transform: translate(-50%, -25%);
+	//transform: translate(-50%, -25%);
+	transform: translate(-50%, -50%);
 	z-index: 0;
 }
 .svg-main-icon_about {
 	width: 80%;
+	transform: translate(-50%, -30%);
 }
 
 .svg-main-icon_works {
