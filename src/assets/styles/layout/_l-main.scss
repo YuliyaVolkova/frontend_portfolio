@@ -4,7 +4,10 @@
 }
 
 .l-main_blog {
-	
+	background-color: #faf8f0;
+	height: 1522px;
+	display: flex;
+	flex-direction: column;
 }
 
 .l-main__top {
@@ -17,11 +20,6 @@
 	transform: translateY(-50%);
 }
 
-.l-main__top_blog {
-	top: 50%;
-	transform: translateY(-60%);
-}
-
 .l-main__wrapper {
 	width: 100%;
 	min-height: 100%;
@@ -31,8 +29,9 @@
 			width: rem(1800);
 			margin: auto;
 	}
-	&.l-main__wrapper_display-bl {
+	&.l-main__wrapper_works {
 		display: block;
+		margin-bottom: 2%;
 	}
 }
 

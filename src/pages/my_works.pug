@@ -15,7 +15,7 @@ block extend
 	section.l-section.l-main
 		.l-main__top
 			+icon('bg', 'svg_main-top_one-color', '../assets/images/sprites/sprite.svg')
-		.l-main__wrapper.l-main__wrapper_display-bl
+		.l-main__wrapper.l-main__wrapper_works
 			.l-main__header
 				.l-main__header-title
 					+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
@@ -24,10 +24,8 @@ block extend
 					+icon('works_header', `svg-main-icon svg-main-icon_works`, '../assets/images/sprites/sprite.svg')
 			.l-main__slider
 				include ../assets/pug/components/c-slider.pug
-	section.l-section.l-last
-		.l-map-container
+	section.l-section.l-feeds
 		.l-layout-first
-			.l-contacts
-				.c-contacts
+			include ../assets/pug/components/c-feeds.pug
 			include ../assets/pug/components/footer.pug
 	+hamburger(navList)

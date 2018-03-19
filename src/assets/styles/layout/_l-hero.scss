@@ -26,7 +26,11 @@
 
 .l-hero_blog {
 	background-position: center top;
-
+	height: 55vh;
+	min-height: 55vh;
+	& .l-hamburger {
+		top: 10%;
+	}
 	&:before {
 		display: block;
 		content: '';
@@ -50,7 +54,7 @@
 	z-index: 2;
 }
 
-.l-hero__develop_blog {
+/*.l-hero__develop_blog {
 	bottom: 0;
 	transform: translate(-50%, -79%);
-}
+}*/

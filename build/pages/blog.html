@@ -33,11 +33,6 @@
                 </use>
               </svg></a></li>
         </ul>
-        <svg class="svg_hero">
-          <use xlink:href="../assets/images/sprites/sprite.svg#blog_header">
-            <title>blog_header</title>
-          </use>
-        </svg>
         <div class="l-hero__develop l-hero__develop_blog">
           <div class="c-developer">
             <div class="c-developer__img-wrap" style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;"><img class="c-developer__img visually-hidden" alt="" src="http://localhost:8080/assets/images/content/photo.jpg"></div>
@@ -54,33 +49,37 @@
                     <title>dash</title>
                   </use>
                 </svg>
+                <svg class="svg_hero-blog">
+                  <use xlink:href="../assets/images/sprites/sprite.svg#blog_header">
+                    <title>blog_header</title>
+                  </use>
+                </svg>
               </div>
               <h2 class="c-developer__desc c-developer__desc_blog">Статьи, которые я написал</h2>
             </div>
           </div>
         </div>
+        <div class="l-hamburger">
+          <nav class="c-hamburger-nav"><a class="c-hamburger-nav__target" href=""><span class="c-hamburger-nav__fake"></span></a>
+            <ul class="c-hamburger-nav__list visually-hidden">
+              <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./my_works.html">мои работы</a></li>
+              <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#">блог</a></li>
+              <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./about.html">обо мне</a></li>
+              <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="../index.html#login">авторизация</a></li>
+            </ul>
+          </nav>
+        </div>
       </section>
       <section class="l-section l-main">
         <div class="l-main__top">
-          <svg class="svg_main-top">
+          <svg class="svg_main-top_one-color">
             <use xlink:href="../assets/images/sprites/sprite.svg#bg">
               <title>bg</title>
             </use>
           </svg>
         </div>
-        <div class="l-main__wrapper">
-          <div class="l-main__column-one"></div>
-          <div class="l-main__column-two">
-            <div class="l-main__column-two-bg"></div>
-          </div>
-        </div>
-      </section>
-      <section class="l-section l-last">
-        <div class="l-map-container"></div>
-        <div class="l-layout-first">
-          <div class="l-contacts">
-            <div class="c-contacts"></div>
-          </div>
+        <div class="l-main__wrapper l-main_blog">
+          <div class="c-blog"></div>
           <footer class="l-footer">
             <div class="l-container">
               <div class="l-footer__nav">
@@ -121,16 +120,6 @@
           </footer>
         </div>
       </section>
-      <div class="l-hamburger">
-        <nav class="c-hamburger-nav"><a class="c-hamburger-nav__target" href=""><span class="c-hamburger-nav__fake"></span></a>
-          <ul class="c-hamburger-nav__list visually-hidden">
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./my_works.html">мои работы</a></li>
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="#">блог</a></li>
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="./about.html">обо мне</a></li>
-            <li class="c-hamburger-nav__item"><a class="c-hamburger-nav__link" href="../index.html#login">авторизация</a></li>
-          </ul>
-        </nav>
-      </div>
     </div>
   <script type="text/javascript" src="http://localhost:8080/app/blog.bundle.js"></script></body>
 </html>

@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
 @import
 
   'utils/variables',
@@ -35,4 +38,7 @@
   'components/c-nav',
   'components/c-copy',
   'components/c-button',
-  'components/c-slider';
+  'components/c-slider',
+  'components/c-form',
+  'components/c-feeds',
+  'components/c-prev';

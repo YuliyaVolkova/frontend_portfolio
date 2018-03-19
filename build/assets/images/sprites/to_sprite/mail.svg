@@ -1,6 +1,6 @@
 export default {
       id: "mail-usage",
-      viewBox: "0 0 33 36",
+      viewBox: "0 0 22.012 17.295",
       url: __webpack_public_path__ + "C:\\Users\\Yuliya\\webprojects\\portfolio\\src\\assets\\images\\sprites\\to_sprite\\mail.svg",
       toString: function () {
         return this.url;

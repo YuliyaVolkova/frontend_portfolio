@@ -1,0 +1,142 @@
+.c-feeds {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.c-feeds__header {
+	@include size(100%, 14rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.c-feeds__header-title {
+	width: 41%;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	margin: auto;
+	position: relative;
+	& .h-title-section {
+		 text-align: center;
+		 margin: 0 rem(22);
+	}
+	& .svg_dash {
+		width: 2.5rem;
+		transform: translateY(-100%);
+	}
+	&::first-letter {
+		text-transform: uppercase;
+	}
+	@include tablet {
+		width: 43%;
+	}
+}
+
+.c-feeds__content {
+	display: flex;
+	height: rem(270);
+	width: 70%;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: baseline;
+}
+.c-feeds__card {
+	width: 45%;
+	padding: 1%;
+}
+.c-feeds__card-icon {
+	color: rgba(55, 62, 66, 0.2);
+	font-size: 36px;
+	margin-bottom: 2%;
+}
+.c-feeds-card__text {
+	margin-bottom: 7%;
+	display: block;
+	line-height: 1.63;
+}
+.c-feeds-card__about {
+	display: flex;
+	align-items: center;
+}
+.c-feeds-card__img-wrap {
+	@include size(rem(78));
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	margin: 0 5% 0;
+	border-radius: 50%;
+}
+.c-feeds-card__img {
+	max-width: 100%;
+
+}
+.c-feeds-card__about-text {
+	color: rgb(32, 181, 161);
+	line-height: 1.5;
+	overflow: hidden;
+
+}
+.c-feeds-card__about-name {
+	font-weight: 900;
+}
+//* c-form
+
+.c-feeds-form {
+	background-image: url('../images/decor/bg/feeds_bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	@include size(rem(380), rem(437));
+	display: flex;
+	flex-direction: column;
+	border-radius: rem(5);
+	margin: auto auto 0 auto;
+	.c-form__input {
+		padding-left: rem(20);
+		font-size: rem(16);
+	}
+}
+
+.c-feeds-form__header {
+	color: $title-color;
+	width: 85%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin: auto;
+	& .svg_dash {
+		transform: translateY(-50%);
+	}
+
+	& .h-title-article {
+		 line-height: 1.17;
+		 text-align: center;
+	}
+}
+.c-form__textarea {
+	resize: none;
+	font-size: rem(16);
+	width: 100%;
+	height: rem(140);
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid $primaryColor;
+	color: $text-color;
+	padding: rem(10) rem(8);
+	overflow: hidden;
+	transition: border 0.3s;
+	//appearance: none;
+	padding-left: rem(20);
+
+	&:focus {
+		border: 1px solid $brand-color;
+	}
+
+	@include placeholder {
+		opacity: 0.5;
+		color: $text-color;
+	}
+}

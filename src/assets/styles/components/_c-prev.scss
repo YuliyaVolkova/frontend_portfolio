@@ -1,0 +1,16 @@
+.c-prev {
+
+	display: block;
+	@include size(rem(28), rem(18));
+	transition: transform 0.3s;
+	will-change: transform;
+	margin: auto;
+
+	&:hover {
+
+		transform: scale(1.2);
+		.svg_prev {
+			opacity: 1;
+		}
+	}
+}

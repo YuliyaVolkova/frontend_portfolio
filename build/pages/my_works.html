@@ -61,7 +61,7 @@
             </use>
           </svg>
         </div>
-        <div class="l-main__wrapper l-main__wrapper_display-bl">
+        <div class="l-main__wrapper l-main__wrapper_works">
           <div class="l-main__header">
             <div class="l-main__header-title">
               <svg class="svg_dash">
@@ -124,11 +124,100 @@
           </div>
         </div>
       </section>
-      <section class="l-section l-last">
-        <div class="l-map-container"></div>
+      <section class="l-section l-feeds">
         <div class="l-layout-first">
-          <div class="l-contacts">
-            <div class="c-contacts"></div>
+          <div class="c-feeds">
+            <div class="c-feeds__header">
+              <div class="c-feeds__header-title">
+                <svg class="svg_dash">
+                  <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                    <title>dash</title>
+                  </use>
+                </svg>
+                <h2 class="h-title-section">Что обо мне говорят</h2>
+                <svg class="svg_dash">
+                  <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                    <title>dash</title>
+                  </use>
+                </svg>
+                <svg class="svg-main-icon svg-main-icon_works">
+                  <use xlink:href="../assets/images/sprites/sprite.svg#about_header">
+                    <title>about_header</title>
+                  </use>
+                </svg>
+              </div>
+            </div>
+            <div class="c-feeds__content">
+              <div class="c-feeds__card">
+                <div class="c-feeds__card-icon"><span class="fa fa-quote-left"></span></div>
+                <div class="c-feeds-card__text"><span>Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</span></div>
+                <div class="c-feeds-card__about">
+                  <div class="c-feeds-card__img-wrap" style="background-image: url(../assets/images/content/kovalchuk.jpg); background-repeat:no-repeat;"><img class="c-feeds-card__img visually-hidden" alt="" src="require(../assets/images/content/kovalchuk.jpg)"></div>
+                  <div class="c-feeds-card__about-text">
+                    <div class="c-feeds-card__about-name"><span>Ковальчук Дмитрий</span></div>
+                    <div class="c-feeds-card__about-desc"><span>основатель Loftschool</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-feeds__card">
+                <div class="c-feeds__card-icon"><span class="fa fa-quote-left"></span></div>
+                <div class="c-feeds-card__text"><span>Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</span></div>
+                <div class="c-feeds-card__about">
+                  <div class="c-feeds-card__img-wrap" style="background-image: url(../assets/images/content/sabanchev.jpg); background-repeat:no-repeat;"><img class="c-feeds-card__img visually-hidden" alt="" src="require(../assets/images/content/sabanchev.jpg)"></div>
+                  <div class="c-feeds-card__about-text">
+                    <div class="c-feeds-card__about-name"><span>Сабанцев Владимир</span></div>
+                    <div class="c-feeds-card__about-desc"><span>преподаватель</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c-feeds-form">
+              <div class="c-feeds-form__header">
+                <svg class="svg_dash">
+                  <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                    <title>dash</title>
+                  </use>
+                </svg>
+                <h3 class="h-title-article">Связаться со мной</h3>
+                <svg class="svg_dash">
+                  <use xlink:href="../assets/images/sprites/sprite.svg#dash">
+                    <title>dash</title>
+                  </use>
+                </svg>
+              </div>
+              <form class="c-form" action="./server_test.php" id="feeds" method="POST">
+                <div class="c-form__inner">
+                  <div class="c-form__row">
+                    <label class="c-form__item">
+                      <input class="c-form__input" type="text" name="username" placeholder="Имя" data-rule="name|required">
+                    </label>
+                  </div>
+                  <div class="c-form__row">
+                    <label class="c-form__item">
+                      <input class="c-form__input" type="email" name="email" placeholder="Email" data-rule="required">
+                    </label>
+                  </div>
+                  <div class="c-form__row">
+                    <label class="c-form__item">
+                      <textarea class="c-form__textarea" type="text" placeholder="Ваше сообщение" name="mesage"></textarea>
+                    </label>
+                  </div>
+                  <ul class="c-form__buts-action">
+                    <li class="c-form__nav-item">
+                      <button class="c-form__nav-link" id="targetMain" type="submit" value="Submit"><span class="c-button__text">Отправить</span></button>
+                    </li>
+                    <li class="c-form__nav-item">
+                      <button class="c-form__nav-link" type="reset" value="Reset"><span class="c-button__text">Очистить</span></button>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </div><a class="c-prev" id="next" href="#">
+              <svg class="svg_prev">
+                <use xlink:href="../assets/images/sprites/sprite.svg#arrow_down">
+                  <title>arrow_down</title>
+                </use>
+              </svg></a>
           </div>
           <footer class="l-footer">
             <div class="l-container">
