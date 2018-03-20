@@ -44,6 +44,12 @@
 .svg-main-top_two-color {
 	width: 100%;
 	height: 20rem;
+	fill: #EFEBE0;
+	stroke: #EFEBE0;
+		@include tablet {
+			fill: #F0EFE9;
+			stroke: #F0EFE9;
+	}
 }
 
 .svg_main-top_one-color {
@@ -59,13 +65,16 @@
 	left: 50%;
 	right: 0;
 	bottom: 0;
-	//transform: translate(-50%, -25%);
 	transform: translate(-50%, -50%);
 	z-index: 0;
 }
 .svg-main-icon_about {
 	width: 80%;
 	transform: translate(-50%, -30%);
+	@include tablet {
+		width: 70%;
+		transform: translate(-50%, -40%);
+	}
 }
 
 .svg-main-icon_works {

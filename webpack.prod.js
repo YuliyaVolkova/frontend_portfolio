@@ -24,7 +24,7 @@ module.exports = merge(common, {
 
       new CopyWebpackPlugin([
     { from: 'assets/images/sprites/', to: 'assets/images/sprites/' },
-  //  { from: 'assets/images/content/menu/', to: 'assets/images/content/menu/'},
+   { from: 'assets/images/content/', to: 'assets/images/content/'},
      ]),
      new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),

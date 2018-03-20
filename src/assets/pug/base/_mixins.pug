@@ -3,12 +3,12 @@ mixin icon(iconName, iconClass, url)
 		use(xlink:href=`${url}#${iconName}`)
 			title=iconName
 
-mixin social(classPrefix, listSocial, url)
+mixin social(classPrefix, listSocial, urlIcon)
 	ul(class=`${classPrefix}__social`)
 		each val in listSocial
 			li(class=`${classPrefix}__social-item`)
-				a(class=`${classPrefix}__social-link`, href="#" target="_blank")
-					+icon(val, 'svg-use', url)
+				a(class=`${classPrefix}__social-link`, href=`${val.url}`, target="_blank")
+					+icon(val.iconID, 'svg-use', urlIcon)
 
 mixin navMenu(navlist)
 	ul.c-nav__list

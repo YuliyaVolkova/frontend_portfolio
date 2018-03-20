@@ -3,7 +3,10 @@ extends ../assets/pug/layout/main.layout.pug
 block variables
 	- var title = 'Блог о web разработке'
 	- var pageClMod = 'blog'
-	- var socialId = ['vk', 'github', 'in']
+	-
+		var social = [{iconID: 'vk', url: 'https://yuliyavolkova.github.io/portfolio_pages/pages/about.html'},
+		{iconID: 'github', url: 'https://yuliyavolkova.github.io/portfolio_pages/'},
+		{iconID: 'in', url: 'https://yuliyavolkova.github.io/portfolio_pages/'}]
 	- var bgHeroSvgId = 'blog_header'
 	-
 		var navList = [{pageUrl: './my_works.html', title: 'мои работы'},
@@ -13,8 +16,8 @@ block variables
 	- var blog = 'blog'
 
 block extend
-	section.l-section.l-hero.l-hero_blog
-		+social('l-hero', socialId, '../assets/images/sprites/sprite.svg')
+	header.l-section.l-hero.l-hero_blog
+		+social('l-hero', social, '../assets/images/sprites/sprite.svg')
 		.l-hero__develop.l-hero__develop_blog
 			.c-developer
 				.c-developer__img-wrap(style="background-image: url('../assets/images/content/photo.jpg'); background-repeat:no-repeat;")

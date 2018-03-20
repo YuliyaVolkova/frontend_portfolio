@@ -85,6 +85,9 @@
 	& .c-form__item {
 		margin: 0 0 3% 0;
 	}
+	& .c-form__item:hover {
+		cursor: pointer;
+	}
 }
 
 .c-form__checkbox {

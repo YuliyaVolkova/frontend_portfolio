@@ -10,12 +10,12 @@ block variables
 			{pageUrl: '../index.html#login', title: 'авторизация'}]
 
 block extend
-	section.l-section.l-hero
+	header.l-section.l-hero
 		include ../assets/pug/components/section-header.pug
 	section.l-section.l-main
 		.l-main__top
 			include ../assets/pug/components/l-main__top_two_color.pug
-		.l-main__wrapper
+		.l-main__wrapper.l-main_about
 			.l-main__column-one
 				include ../assets/pug/components/c-about-card.pug
 			.l-main__column-two
