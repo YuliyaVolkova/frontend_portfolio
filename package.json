@@ -13,6 +13,7 @@
   "author": "Yuliya Volkova",
   "license": "ISC",
   "dependencies": {
+    "code-prettify": "^0.1.0",
     "css-loader": "^0.28.9",
     "eslint": "^4.18.2",
     "eslint-loader": "^2.0.0",

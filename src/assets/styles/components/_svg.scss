@@ -78,8 +78,9 @@
 }
 
 .svg-main-icon_works {
-	width: 134%;
-	height: rem(194);
+	width: 100%;
+	height: rem(190);
+	transform: translate(-50%, -28%);
 	@include tablet {
 		height: 8.125rem;
 	}

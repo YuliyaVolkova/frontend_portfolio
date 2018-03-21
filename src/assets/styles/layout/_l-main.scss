@@ -25,7 +25,7 @@
 	}
 	&.l-main_blog {
 		background-color: #faf8f0;
-		height: 1522px;
+		//height: 1522px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -54,7 +54,7 @@
 	position: relative;
 	color: $title-color;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	& .h-title-section {
 		 text-align: center;

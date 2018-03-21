@@ -47,9 +47,9 @@
 
 .c-slider__desc-header {
 	color: $title-color;
-	width: 65%;
+	width: 55%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: baseline;
 	& .svg_dash {
 		transform: translateY(-50%);

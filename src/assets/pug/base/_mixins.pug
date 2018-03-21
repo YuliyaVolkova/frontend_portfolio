@@ -16,8 +16,8 @@ mixin navMenu(navlist)
 			li.c-nav__item
 				a.c-nav__link(href=`${val.pageUrl}`)= val.title	
 
-mixin hamburger(navlist)
-	.l-hamburger
+mixin hamburger(navlist, mod)
+	div(class=`l-hamburger${mod?` l-hamburger_${mod}`:''}`)
 		nav.c-hamburger-nav
 			a.c-hamburger-nav__target(href="")
 				span.c-hamburger-nav__fake

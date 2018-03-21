@@ -94,17 +94,21 @@
 	flex-direction: column;
 	border-radius: rem(5);
 	margin: auto auto 0 auto;
-	.c-form__input {
+	& .c-form__item {
+    	height: initial;
+    }
+	& .c-form__input {
 		padding-left: rem(20);
 		font-size: rem(16);
+		border-radius: 5px;
 	}
 }
 
 .c-feeds-form__header {
 	color: $title-color;
-	width: 85%;
+	width: 90%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: baseline;
 	margin: auto;
 	& .svg_dash {

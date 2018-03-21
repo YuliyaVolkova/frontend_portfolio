@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,eAAgB,CAEf,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,4BAAe,CACd,GAAG,CAAE,GAAG",
-"sources": ["_l-blog-wrapper.scss"],
-"names": [],
-"file": "_l-blog-wrapper.css"
-}
