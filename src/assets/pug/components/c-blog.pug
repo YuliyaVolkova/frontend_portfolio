@@ -19,7 +19,7 @@
 								a.c-blog__nav-link(href=`#${index+1}article`)= val.title
 	main.c-blog__main
 		each val, index in posts
-			article.c-blog__article(data-section=`#${index+1}article`)
+			article.c-blog__article(data-section=`${index+1}article`)
 				h3.h-title-article
 					span= val.title
 				time.article__date(datetime="")= val.date

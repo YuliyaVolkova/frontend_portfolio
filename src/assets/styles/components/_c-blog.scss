@@ -18,6 +18,11 @@
 		display: none;
 	}
 }
+.pos-fixed {
+  position: fixed;
+  top:10%;
+}
+
 
 .c-blog__nav-item {
 	text-align: right;
@@ -42,6 +47,7 @@
 .c-blog__main {
 	  width: 68%;
     padding: 0 1% 2% 1%;
+    padding: 1% 1% 2% 1%;
     margin: 0 1.9% 0% auto;
     @include tablet {
     	width: 95%;
