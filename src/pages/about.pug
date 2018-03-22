@@ -10,9 +10,9 @@ block variables
 			{pageUrl: '../index.html#login', title: 'авторизация'}]
 
 block extend
-	header.l-section.l-hero
+	header.l-section.l-hero(data-section='1section')
 		include ../assets/pug/components/section-header.pug
-	section.l-section.l-main
+	section.l-section.l-main(data-section='2section')
 		.l-main__top
 			include ../assets/pug/components/l-main__top_two_color.pug
 		.l-main__wrapper.l-main_about
@@ -20,7 +20,7 @@ block extend
 				include ../assets/pug/components/c-about-card.pug
 			.l-main__column-two
 				include ../assets/pug/components/c-skills-card.pug
-	section.l-section.l-last
+	section.l-section.l-last(data-section='3section')
 		.l-map-container
 		.l-layout-first
 			.l-contacts

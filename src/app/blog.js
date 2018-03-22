@@ -15,11 +15,8 @@ const scrollBlog = (() => {
 
     nodesSections = Array.prototype.slice.call(sections),
     arrOffset = nodesSections.map((item) => item.offsetTop),
-
     navBlock = document.body.querySelector('.c-blog__aside'),
-
     header = document.body.querySelector('.l-hero_blog').getBoundingClientRect(),
-
     unboundForEach = Array.prototype.forEach,
     forEach = Function.prototype.call.bind(unboundForEach),
     siblings = n => [...n.parentElement.children].filter(c=>c!=n);
@@ -48,7 +45,7 @@ const scrollBlog = (() => {
     const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
     if(scrollPos<=arrOffset[0]+200&&navBlock.classList.contains('pos-fixed'))
       navBlock.classList.remove('pos-fixed');
-    if(scrollPos>arrOffset[0]+300&&!navBlock.classList.contains('pos-fixed'))
+    if(scrollPos>arrOffset[0]+300&&!navBlock.classList.contains('pos-fixed')) 
       navBlock.classList.add('pos-fixed');
 
     const index = getSection(scrollPos-100),
@@ -60,21 +57,24 @@ const scrollBlog = (() => {
   }
 
   function showSection(e) {
+    if(!window.location.hash) return;
     const hash = e?this.getAttribute('href'):window.location.hash,
       dataSect = hash.split('#').join(''),
       linkAct = document.body.querySelector(`.c-blog__nav-link[href="${hash}"`),
       sectionAct = document.body.querySelector(`.c-blog__article[data-section="${dataSect}"`),
       index = nodesSections.indexOf(sectionAct);
     setActItem(linkAct);
+    // window.innerWidth*0.04 - padding top 4%
     var scrollPos = (index === 0)?header.height:(arrOffset[index] + header.height + window.innerWidth*0.04);
-    // if(e) animateMove(e, scrollPos);
-    // else 
-    document.documentElement.scrollTop = document.body.scrollTop = scrollPos;
+    if(e) animateMove(e, scrollPos);
+    else 
+      document.documentElement.scrollTop = document.body.scrollTop = scrollPos;
   }
 
   const animate = (options) => {
     flag = true;
     let start = performance.now();
+    var startPos = window.pageYOffset || document.documentElement.scrollTop;
     requestAnimationFrame(function _animate(time) {
     // timeFraction от 0 до 1
       let timeFraction = (time - start) / options.duration;
@@ -82,7 +82,7 @@ const scrollBlog = (() => {
         flag = false;}
       // текущее состояние анимации
       let progress = options.timing(timeFraction);
-      options.move(progress);
+      options.move(progress, startPos);
       if (timeFraction < 1) {
         requestAnimationFrame(_animate);
       }
@@ -96,8 +96,8 @@ const scrollBlog = (() => {
       timing: function(timeFraction) {
         return timeFraction;
       },
-      move: function(progress) {
-        document.documentElement.scrollTop = document.body.scrollTop = scrollPos*(progress);
+      move: function(progress, startPos) {
+        document.documentElement.scrollTop = document.body.scrollTop = startPos + (scrollPos- startPos)*(progress);
       },
     });
   };
