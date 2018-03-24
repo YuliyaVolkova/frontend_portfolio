@@ -25,6 +25,12 @@ body, html {
 	-moz-osx-font-smoothing: grayscale;
 	font-display: optional;
 	position: relative;
+	&.about .l-footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 	@include custom_1800 {
 		background-color: rgba($text-color, 0.3);
 	} 

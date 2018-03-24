@@ -1,4 +1,3 @@
-console.log('my_works.js');
 import 'normalize.css'; 
 import '../assets/styles/my_works.main.scss';
 import svg4everybody from 'svg4everybody';
@@ -8,17 +7,15 @@ console.log('It` work %%%!');
 
 const scrollWorks = (() => {
 
-  const sections = document.body.querySelectorAll('.l-section'),
+  let sections = [...document.body.querySelectorAll('.l-section')],
     nextBut = document.body.querySelector('#next'),
     firstBut = document.body.querySelector('#first'),
-    nodesSections = Array.prototype.slice.call(sections),
-    arrOffset = nodesSections.map((item) => item.offsetTop);
-  var  flag = false;
+    arrOffset = sections.map((item) => item.offsetTop);
 
   
   function getSection(scrollPos)  {
     if(scrollPos<=arrOffset[0]) return 0;
-    for (var i = 0; i < arrOffset.length-1; i++) {
+    for (let i = 0; i < arrOffset.length-1; i++) {
       if(scrollPos>arrOffset[i]&&scrollPos<arrOffset[i+1])
         return i;
     }
@@ -26,32 +23,27 @@ const scrollWorks = (() => {
   }
 
   function checkScroll() {
-    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    const index = getSection(scrollPos+100);
-    window.location.hash = sections[index].getAttribute('data-section');
+    let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    window.location.hash = sections[getSection(scrollPos+100)].getAttribute('data-section');
   }
 
   function showSection(e) {
     if(!window.location.hash&&!e) return;
-    const hash = e?this.getAttribute('href'):window.location.hash,
-      dataSect = hash.split('#').join(''),
-      sectionAct = document.body.querySelector(`.l-section[data-section="${dataSect}"`),
-      index = nodesSections.indexOf(sectionAct);
-    var scrollPos = arrOffset[index]-25;
+    let hash = e?this.getAttribute('href'):window.location.hash,
+      sectionAct = document.body.querySelector(`.l-section[data-section="${hash.split('#').join('')}"`),
+      scrollPos = arrOffset[sections.indexOf(sectionAct)]-25;
     if(e) animateMove(e, scrollPos);
     else 
       document.documentElement.scrollTop = document.body.scrollTop = scrollPos;
   }
 
   const animate = (options) => {
-    flag = true;
-    let start = performance.now();
-    var startPos = window.pageYOffset || document.documentElement.scrollTop;
+    let start = performance.now(),
+      startPos = window.pageYOffset || document.documentElement.scrollTop;
     requestAnimationFrame(function _animate(time) {
     // timeFraction от 0 до 1
       let timeFraction = (time - start) / options.duration;
-      if (timeFraction > 1) {timeFraction = 1;
-        flag = false;}
+      if (timeFraction > 1) timeFraction = 1;
       // текущее состояние анимации
       let progress = options.timing(timeFraction);
       options.move(progress, startPos);

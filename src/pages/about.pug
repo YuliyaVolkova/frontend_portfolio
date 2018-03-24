@@ -3,6 +3,7 @@ extends ../assets/pug/layout/main.layout.pug
 block variables
 	- var title = 'Обо мне'
 	- var bgTitleSvgId = 'portfolio_header'
+	- var pageM = 'about'
 	-
 		var navList = [{pageUrl: './my_works.html', title: 'мои работы'},
 			{pageUrl: './blog.html', title: 'блог'},
@@ -22,8 +23,7 @@ block extend
 				include ../assets/pug/components/c-skills-card.pug
 	section.l-section.l-last(data-section='3section')
 		.l-map-container
-		.l-layout-first
-			.l-contacts
-				include ../assets/pug/components/c-contacts.pug
-			include ../assets/pug/components/footer.pug
+		.l-contacts
+			include ../assets/pug/components/c-contacts.pug
+		include ../assets/pug/components/footer.pug
 	+hamburger(navList, 'about')

@@ -28,6 +28,12 @@ module.exports = {
      filename: 'app/[name].bundle.js',
    },
 
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
+
   module: {
     rules: [
       {
@@ -196,6 +202,13 @@ module.exports = {
               presets: ['env', "stage-0"]
             }
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          // `vue-loader` options
+        }
+      }
     ],
   },
 

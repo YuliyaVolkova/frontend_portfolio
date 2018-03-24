@@ -1,2 +1,2 @@
-.l-contacts{flex-grow:1;display:flex;justify-content:center;align-items:center}
+.l-contacts{position:absolute;top:50%;left:50%;transform:translate(-50%, -80%)}
 /*# sourceMappingURL=_l-contacts.css.map */
