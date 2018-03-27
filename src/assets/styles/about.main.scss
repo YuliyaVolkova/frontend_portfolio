@@ -13,9 +13,10 @@
   'base/helpers';
 
 @import
-
+  'animations/animations',
   'layout/l-wrapper',
   'layout/l-section',
+  'layout/l-scroll-parallax',
   'layout/l-hero',
   'layout/l-hero__social',
   'layout/l-container',

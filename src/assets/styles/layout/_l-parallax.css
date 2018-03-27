@@ -1,2 +1,2 @@
-.l-parallax__container{position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;background-image:url(../../images/decor/bg/montains.jpg);background-size:140% 140%;background-repeat:no-repeat;overflow:hidden;will-change:background-position;transition:background-position 0.4s}
+.l-parallax__container{position:absolute;top:0;left:0;bottom:0;right:-0;overflow:hidden;background-color:#9ABDBE}.parallax-layer{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;will-change:transform}.parallax-layer:first-child .parallax-layer__img{top:0}.parallax-layer__img{max-width:100%;position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;height:auto}
 /*# sourceMappingURL=_l-parallax.css.map */

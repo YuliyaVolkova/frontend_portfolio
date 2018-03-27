@@ -5,21 +5,20 @@
 	top: 5%;
 	right: 5%;
 	z-index: 1;
-
 	@include custom {
-
 		right: 10%;
+	}
+	@include custom_1800 {
+		top: 30%;
+		right: 50%;
+		transform: translate(50%, -100%);
 	}
 
 	@include tablet {
-
 		top: 4.5%;
 	}
 
 	@include mobile {
-
-		//position: initial;
-		//margin: auto 0;
 		right: 50%;
 		transform: translateX(50%);
 	}

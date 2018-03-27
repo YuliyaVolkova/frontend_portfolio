@@ -1,17 +1,31 @@
 
 .l-hero__social {
 	position: absolute;
-	z-index: 1;
+	z-index: 2;
 	left: 10%;
 	top: 10%;
 	display: flex;
 	width: 12%;
 	justify-content: space-between;
+	@include custom_1800 {
+		left: 50%;
+		transform: translateX(-800px);
+	}
+	@include desktop {
+		width: 16%;
+	}
+	@include laptop {
+		width: 16%;
+	}
 	@include tablet {
 		width: 20%;
+		top: 5%;
+		left: 5%;
 	}
 	@include mobile {
 		width: 30%;
+		top: 4%;
+		left: 4%;
 	}
 }
 
@@ -27,8 +41,10 @@
 	color: $primaryColor;
 
 	&:hover .svg-use {
-
 		opacity: 1;
+	}
+	&:visited .svg-use {
+		opacity: 0.5;
 	}
 }
 

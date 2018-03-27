@@ -5,17 +5,29 @@
 		margin: 0 auto;
 		padding-top: 5%;
 	}
+	@include mobile {
+		padding: 0 0 5% 0;
+	}
 }
 
 .c-skills-card__header {
 	color: $title-color;
 	width: 50%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: baseline;
 	margin: auto;
+	@include tablet {
+		width: 58%;
+	}
+	@include mobile {
+		margin-top: 7%;
+	}
 	& .svg_dash {
 		transform: translateY(-50%);
+		@include mobile {
+			transform: none;
+		}
 	}
 
 	& .h-title-article {
@@ -32,7 +44,11 @@
 	display: block;
 	@include tablet {
 		margin: 0 auto 7%;
-		width: 85%;
+		width: 77%;
+		line-height: 1.714;
+	}
+	@include mobile {
+		width: 100%;
 	}
 }
 
@@ -57,6 +73,9 @@
 	&::first-letter {
 		text-transform: uppercase;
 	}
+	@include tablet {
+		font-size: rem(21);
+	}
 }
 .c-skills-card__group-content {
 	width: 100%;
@@ -80,4 +99,10 @@
 	color: $brand-color;
 	line-height: 1.12;
 	text-align: center;
+}
+.svg_skill-diagr {
+	@include tablet {
+		width: 140px;
+		height: 140px;
+	}
 }

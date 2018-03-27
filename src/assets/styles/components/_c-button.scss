@@ -23,6 +23,9 @@
 
 		color: $brand-color;
 	}
+	@include mobile {
+		//min-height: 2rem;
+	}
 }
 
 .c-button__text {
@@ -39,4 +42,7 @@
 	vertical-align: middle;
 	color: $primaryColor;
 	transition: color 0.2s;
+	@include mobile {
+		line-height: 2rem;
+	}
 }

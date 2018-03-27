@@ -2,24 +2,29 @@ import 'normalize.css';
 import '../assets/styles/about.main.scss';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
+import hamburgerNav from './components/c-hamburger.js';
 
 import diagrammsSkills from './components/diagramm_skills.js';
 
 import Vue from 'vue';
 import GoogleMap from './components/gmap_one_point.vue';
+require('../assets/images/decor/map_marker.svg');
 
-//Vue.config.productionTip = false;
+//Vue.config.productionTip = true;
+Vue.config.productionTip = false;
 
-window.onload = function() {
+const init = () => {
   scrollAbout.handler();
   diagrammsSkills.init();
+  hamburgerNav.handler();
   new Vue({
     el: '.l-map-container',
     template: '<google-map name="example"></google-map>',
     components: { GoogleMap },
   });
 };
-
+//-----------------
+//-----------------
 const injectMap = () => {
 
   let script = document.createElement('script');
@@ -28,10 +33,14 @@ const injectMap = () => {
   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBeBIQIYzh41ByRq6AbIxnd-TWFZFMJkkU';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
 };
+//-------------------
+//-------------------
 
 injectMap();
 
 console.log('It` work %%%!');
+//------------------
+//------------------
 
 const scrollAbout = (() => {
 
@@ -39,22 +48,8 @@ const scrollAbout = (() => {
     nextBut = document.body.querySelector('#next'),
     arrOffset = sections.map((item) => item.offsetTop);
 
-  
-  function getSection(scrollPos)  {
-    if(scrollPos<=arrOffset[0]) return 0;
-    for (let i = 0; i < arrOffset.length-1; i++) {
-      if(scrollPos>arrOffset[i]&&scrollPos<arrOffset[i+1])
-        return i;
-    }
-    return arrOffset.length-1;
-  }
-
-  function checkScroll() {
-    let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    window.location.hash = sections[getSection(scrollPos+50)].getAttribute('data-section');
-  }
-
   function showSection(e) {
+     
     if(!window.location.hash&&!e) return;
     let hash = e?this.getAttribute('href'):window.location.hash,
       sectionAct = document.body.querySelector(`.l-section[data-section="${hash.split('#').join('')}"`),
@@ -67,6 +62,7 @@ const scrollAbout = (() => {
   const animate = (options) => {
     let start = performance.now(),
       startPos = window.pageYOffset || document.documentElement.scrollTop;
+       
     requestAnimationFrame(function _animate(time) {
     // timeFraction от 0 до 1
       let timeFraction = (time - start) / options.duration;
@@ -96,9 +92,10 @@ const scrollAbout = (() => {
   const handler = () => {
 
     showSection();
-    window.addEventListener('scroll', checkScroll, false);
     nextBut.addEventListener('click', showSection, false);
   };
 
   return {handler};
 })();
+
+window.onload = init; 

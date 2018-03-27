@@ -102,6 +102,7 @@ module.exports = {
              },
              pngquant: {
               quality: '90-100',
+              enabled: false,
              },
             },
           },
@@ -269,10 +270,11 @@ module.exports = {
       },
       svgo: {
       },
-      pngquant: {
+      pngquant: null,
+      /*pngquant: {
               
               quality: '90-100',        
-      }, 
+      }, */
       plugins: []
     }),
     

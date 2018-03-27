@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACA,OAAQ,CACP,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,GAAG,CACV,IAAI,CAAE,GAAG,CACT,MAAM,CAAE,CAAC,CACT,SAAS,CAAE,gBAAgB",
+"sources": ["_l-copy.scss"],
 "names": [],
 "file": "_l-copy.css"
 }

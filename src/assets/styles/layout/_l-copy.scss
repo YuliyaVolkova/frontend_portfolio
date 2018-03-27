@@ -1,27 +1,12 @@
 
 .l-copy {
-
 	position: absolute;
+	width: 65%;
+	left: 50%;
 	bottom: 0;
-	transform: translateY(100%);
-	width: 100%;
-
-	@include tablet {
-
-	//	bottom: -100%;
-	//	transform: translateY(-200%);
-		//margin-top: auto;
-	}
-
-	@include mobile {
-
-		bottom: -50%;
-		transform: translateY(-100%);
-		//margin: auto 0;
-	}
-
-	@include s-mobile {
-
-		transform: translateY(-200%);
+	transform: translateX(-50%);
+	@include custom_1800 {
+		bottom: 30%;
+		width: 20%;
 	}
 }

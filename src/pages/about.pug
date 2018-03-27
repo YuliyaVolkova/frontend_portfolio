@@ -11,19 +11,22 @@ block variables
 			{pageUrl: '../index.html#login', title: 'авторизация'}]
 
 block extend
-	header.l-section.l-hero(data-section='1section')
-		include ../assets/pug/components/section-header.pug
-	section.l-section.l-main(data-section='2section')
-		.l-main__top
-			include ../assets/pug/components/l-main__top_two_color.pug
-		.l-main__wrapper.l-main_about
-			.l-main__column-one
-				include ../assets/pug/components/c-about-card.pug
-			.l-main__column-two
-				include ../assets/pug/components/c-skills-card.pug
-	section.l-section.l-last(data-section='3section')
-		.l-map-container
-		.l-contacts
-			include ../assets/pug/components/c-contacts.pug
-		include ../assets/pug/components/footer.pug
-	+hamburger(navList, 'about')
+	.l-section.l-hero(data-section='1section')
+		.l-scroll-parallax-container
+			- for(i = 0; i < 9; i++)
+				.l-scroll-parallax__layer
+					img.l-scroll-parallax__img(src=require(`../assets/images/decor/bg/parallax/layer_${i+1}.png`), alt="")
+			include ../assets/pug/components/section-header.pug
+			.l-main__top
+					include ../assets/pug/components/l-main__top_two_color.pug
+			section.l-section.l-main.parallax__content(data-section='2section')
+				.l-main__wrapper.l-main_about
+					.l-main__column-one
+						include ../assets/pug/components/c-about-card.pug
+					.l-main__column-two
+						include ../assets/pug/components/c-skills-card.pug
+				section.l-section.l-last(data-section='3section')
+					.l-map-container
+					.l-contacts
+						include ../assets/pug/components/c-contacts.pug
+					include ../assets/pug/components/footer.pug

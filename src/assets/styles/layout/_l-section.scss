@@ -1,11 +1,10 @@
-
 .l-section {
 	width: 100%;
 	min-height: 628px;
 	position: relative;
 		@include custom {
 			min-height: 650px;
-			width: rem(1800);
+			max-width: rem(1800);
 			margin: auto;
 		}
 		@include tablet {
@@ -14,7 +13,7 @@
 }
 
 .l-last {
-	height: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -27,9 +26,6 @@
 
 .l-feeds {
 	height: 1280px;
-	background-image: url('../images/decor/bg/feeds_bg.png');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center center;
+    background: url('../images/decor/bg/feeds_bg.png') no-repeat;
+    background-position: center center;
 }

@@ -13,6 +13,9 @@
 	overflow: hidden;
 	margin-bottom: 4%;
 	border-radius: 50%;
+	@include mobile {
+		@include size(rem(145));
+	}
 }
 
 .c-developer__img {
@@ -36,6 +39,9 @@
 	line-height: 1.5;
 	margin-bottom: 0.3%;
 	color: $primaryColor;
+	@include mobile {
+		font-size: rem(22);
+	}
 }
 
 .c-developer__desc {

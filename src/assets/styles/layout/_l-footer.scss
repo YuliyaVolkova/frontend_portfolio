@@ -29,13 +29,13 @@
 	display: flex;
 	align-items: center;
 	@include tablet {
-		width: 80%;
+		width: 90%;
 		height: 22%;
 		order: 1;
 		justify-content: center;
 	}
 	@include mobile {
-		width: 90%;
+		width: 100%;
 	}
 }
 
@@ -65,7 +65,7 @@
 		text-align: center;
 	}
 	@include mobile {
-		width: 90%;
+		width: 100%;
 	}
 }
 
@@ -92,6 +92,9 @@
 	border-radius: 50%;
 	margin-right: 2%;
 	transition: background-color 0.3s;
+	@include mobile {
+		margin-right: 4%;
+	}
 	&:hover  {
 		background-color: rgba($primaryColor, 0.85);
 		.l-footer__social-link {

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="380px" height="437px" viewBox="0 0 380 437">
+	<defs>
+		<filter id="#blurFilter">
+			<feGaussianBlur stdDeviation="3"/>
+		</filter>
+	</defs>
+	<image x="0" y="0" width="380" height="437" xlink:href="../assets/images/decor/bg/feeds_bg.png" style="filter: url(#blurFilter);"/>
+</svg>

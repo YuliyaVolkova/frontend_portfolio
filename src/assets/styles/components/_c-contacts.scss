@@ -7,16 +7,22 @@
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	@include mobile {
+		width: 100%;
+	}
 }
 .c-contacts__header {
 	color: $title-color;
 	width: 50%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: baseline;
 	margin: auto;
 	& .svg_dash {
 		transform: translateY(-50%);
+		@include mobile {
+			transform: none;
+		}
 	}
 
 	& .h-title-article {

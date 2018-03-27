@@ -18,6 +18,9 @@
 		height: 27%;
 		order: 2;
 	}
+	@include mobile {
+		height: 22%;
+	}
 }
 
 .c-slider__main-fr {
@@ -43,6 +46,9 @@
 		order: 3;
 		height: 22%;
 	}
+	@include mobile {
+		height: 27%;
+	}
 }
 
 .c-slider__desc-header {
@@ -51,19 +57,24 @@
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
+	margin-bottom: 5%;
 	& .svg_dash {
 		transform: translateY(-50%);
+		@include mobile {
+			transform: none;
+		}
 	}
-
 	& .h-title-article {
 		 line-height: 1.17;
 		 text-align: center;
 		 font-weight: 400;
 	}
-	margin-bottom: 5%;
 	@include tablet {
 		width: 68%;
 		margin-bottom: 2%;
+	}
+	@include mobile {
+		align-items: center;
 	}
 }
 
@@ -80,6 +91,14 @@
 	@include tablet {
 		width: 50%;
 		margin-bottom: 2%;
+	}
+	@include mobile {
+		margin-bottom: 2%;
+		width: 100%;
+		min-height: 2rem;
+		line-height: 2rem;
+		vertical-align: middle;
+		height: initial;
 	}
 }
 

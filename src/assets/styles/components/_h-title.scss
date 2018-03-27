@@ -15,6 +15,9 @@
 	@include tablet {
 		font-size: rem(49);
 	}
+	@include mobile {
+		font-size: rem(35);
+	}
 }
 
 .h-title-section_color {
@@ -33,5 +36,8 @@
 
 	&:first-letter {
 		text-transform: uppercase;
+	}
+	@include mobile {
+		font-size: rem(22);
 	}
 }

@@ -10,7 +10,10 @@ block variables
 			'2018' ]
 
 block extend
-	.l-parallax__container
+	#parallax.l-parallax__container
+		- for (var i = 0; i < 10; i++)
+			.parallax-layer(data-speed=`${(i+1)*0.01}`)
+				img.parallax-layer__img(src=require(`./assets/images/decor/bg/parallax/layer_${i+1}.png`), alt="")
 	.l-login__button
 		button.c-button#targetLogin
 			span.c-button__text Авторизоваться
@@ -22,7 +25,7 @@ block extend
 				include ./assets/pug/components/c-welcome.pug
 			.visually-hidden#backFaceBl(type='template/text')
 				include ./assets/pug/components/c-login-form.pug
-		footer.l-copy
-			ul.c-copy
-				each val in copy
-					li.c-copy_item!= val
+	footer.l-copy
+		ul.c-copy
+			each val in copy
+				li.c-copy_item!= val

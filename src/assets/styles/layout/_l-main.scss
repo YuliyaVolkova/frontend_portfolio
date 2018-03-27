@@ -1,13 +1,13 @@
 .l-main {
 	width: 100%;
 	background-color: #F0EFE9;
-	height: 100%;
+	//height: 100%;
 }
 
 .l-main__top {
 	width: 100%;
 	position: absolute;
-	top: 0;
+	top: 100%;
 	left: 0;
 	right: 0;
 	z-index: 0;
@@ -20,20 +20,24 @@
 	display: flex;
 	align-items: baseline;
 	@include custom {
-			width: rem(1800);
+			max-width: rem(1800);
 			margin: auto;
 	}
 	&.l-main_blog {
 		background-color: #faf8f0;
-		//height: 1522px;
 		display: flex;
 		flex-direction: column;
 	}
 	&.l-main_works {
 		display: block;
-		margin-bottom: 2%;
+		//margin-bottom: 2%;
 	}
 	&.l-main_about {
+		background: rgb(240,239,233); /* Old browsers */
+	background: -webkit-linear-gradient(left, rgba(240,239,233,1) 0%, rgba(239,235,224,1) 50%, rgba(239,235,224,1) 100%);
+	background: -o-linear-gradient(left, rgba(240,239,233,1) 0%, rgba(239,235,224,1) 50%, rgba(239,235,224,1) 100%);
+	background: linear-gradient(to right, rgba(240,239,233,1) 0%, rgba(239,235,224,1) 50%, rgba(239,235,224,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0efe9', endColorstr='#efebe0',GradientType=1 ); /* IE6-9 */
 		@include tablet {
 			flex-direction: column;
 			align-items: center;
@@ -46,7 +50,10 @@
 	background-color: rgb(250, 248, 240);
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
+	@include mobile {
+		height: 9rem;
+	}	
 }
 
 .l-main__header-title {
@@ -63,7 +70,7 @@
 		text-transform: uppercase;
 	}
 	@include tablet {
-		width: 43%;
+		width: 63%;
 	}
 }
 
@@ -71,8 +78,12 @@
 	width: 100%;
 	height: 750px;
 	display: block;
+	margin-bottom: 3%;
 	@include tablet {
 		height: 1030px;
+	}
+	@include mobile {
+		height: 585px;
 	}
 }
 

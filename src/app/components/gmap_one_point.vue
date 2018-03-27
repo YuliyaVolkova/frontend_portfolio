@@ -38,7 +38,7 @@ export default {
         "elementType": "all",
         "stylers": [
             {
-                "hue": "#2c2e33"
+               "hue": "#2c2e33"
             },
             {
                 "saturation": 7
@@ -182,7 +182,7 @@ export default {
         "elementType": "all",
         "stylers": [
             {
-                "hue": "#00bfa5"
+                "hue": "#00BEA4"
             },
             {
                 "visibility": "simplified"

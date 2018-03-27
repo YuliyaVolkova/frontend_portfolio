@@ -1,12 +1,51 @@
 .l-parallax__container {
-
-	@include absolute-stretch;
-	z-index: 0;
-	background-image: url(../images/decor/bg/montains.jpg);
-	background-size: 145% 145%;
-	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 	overflow: hidden;
-	background-position: right top;
-	will-change: background-position;
-	transition: background-position 0.4s;
+	background-color: #9ABDBE;
+	will-change: top, left, bottom, right;
+	@include tablet {
+		background: url(../images/decor/bg/mountains.jpg);
+		background-size: 300% auto;
+		background-repeat: no-repeat;
+		background-position: center top;
+		will-change: background-position;
+		transition: background-position 0.2s;
+		z-index: 0;
+	}
+	@include mobile {
+		background-size: 350% auto;
+	}
+}
+
+.parallax-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	will-change: transform;
+	&:first-child .parallax-layer__img {
+		top: 0;
+	}
+	@include tablet {
+		display: none;
+	}
+}
+
+.parallax-layer__img {
+	max-width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: auto;
+	@include tablet {
+		display: none;
+	}
 }

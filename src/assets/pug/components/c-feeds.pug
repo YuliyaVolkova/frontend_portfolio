@@ -3,7 +3,7 @@
 		aboutAutor: 'основатель Loftschool',
 		text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!', photoUrl: '../assets/images/content/kovalchuk.jpg'},
 		{ name: 'Сабанцев Владимир',
-		aboutAutor: 'преподаватель',
+		aboutAuthor: 'преподаватель',
 		text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!', photoUrl: '../assets/images/content/sabanchev.jpg'}]
 
 .c-feeds
@@ -27,29 +27,36 @@
 						.c-feeds-card__about-name
 							span= val.name
 						.c-feeds-card__about-desc
-							span= val.aboutAutor
-	.c-feeds-form
-		.c-feeds-form__header
-			+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-			h3.h-title-article Связаться со мной
-			+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
-		form.c-form(action="./server_test.php" id="feeds" method="POST")
-			.c-form__inner
-				.c-form__row
-					label.c-form__item
-						input.c-form__input(type="text", name="username", placeholder="Имя", data-rule="name|required")
-				.c-form__row
-					label.c-form__item
-						input.c-form__input(type="email", name="email", placeholder="Email", data-rule="required")
-				.c-form__row
-					label.c-form__item
-						textarea.c-form__textarea(type="text", placeholder="Ваше сообщение", name="mesage")
-				ul.c-form__buts-action
-					li.c-form__nav-item
-						button.c-form__nav-link#targetMain(type="submit", value="Submit")
-							span.c-button__text Отправить
-					li.c-form__nav-item
-						button.c-form__nav-link(type="reset" value="Reset")
-							span.c-button__text Очистить
+							span= val.aboutAuthor
+	.c-feeds-form-bg
+		.c-feeds-blured
+		//-svg.svg_blur(width="380" height="437" viewBox="810 632 1190 1068")
+			defs
+				filter#blurFilter
+					feGaussianBlur(stdDeviation="0")
+			image(x="0", y="0", width="2000" height="1699", xlink:href="../assets/images/decor/bg/feeds_bg.png", style="filter: url(#blurFilter);")
+		.c-feeds-form
+			.c-feeds-form__header
+				+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+				h3.h-title-article Связаться со мной
+				+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+			form.c-form(action="./server_test.php" id="feeds" method="POST")
+				.c-form__inner
+					.c-form__row
+						label.c-form__item
+							input.c-form__input(type="text", name="username", placeholder="Имя", data-rule="name|required")
+					.c-form__row
+						label.c-form__item
+							input.c-form__input(type="email", name="email", placeholder="Email", data-rule="required")
+					.c-form__row
+						label.c-form__item
+							textarea.c-form__textarea(type="text", placeholder="Ваше сообщение", name="mesage")
+					ul.c-form__buts-action
+						li.c-form__nav-item
+							button.c-form__nav-link#targetMain(type="submit", value="Submit")
+								span.c-button__text Отправить
+						li.c-form__nav-item
+							button.c-form__nav-link(type="reset" value="Reset")
+								span.c-button__text Очистить
 	a.c-prev#first(href='#1section')
 		+icon('arrow_down', 'svg_prev', '../assets/images/sprites/sprite.svg')

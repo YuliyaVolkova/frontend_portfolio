@@ -4,7 +4,10 @@
 	margin: auto;
 	padding-bottom: 5%;
 	@include tablet {
-		width: 75%;
+		width: 65%;
+	}
+	@include mobile {
+		width: 100%;
 	}
 }
 
@@ -29,6 +32,9 @@
 
 .c-about-card__content {
 	text-align: center;
+	@include mobile {
+		padding: 2%;
+	}
 }
 
 .c-about-card__content-header {
@@ -40,6 +46,9 @@
 	margin: auto;
 	& .svg_dash {
 		transform: translateY(-50%);
+		@include mobile {
+			transform: none;
+		}
 	}
 
 	& .h-title-article {
@@ -54,4 +63,7 @@
 	text-align: left;
 	line-height: 1.5;
 	padding: 1% 0;
+	@include tablet {
+		line-height: 1.714;
+	}
 }

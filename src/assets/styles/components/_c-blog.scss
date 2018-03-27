@@ -14,8 +14,37 @@
 	top: 1.5%;
 	right: 75%;
 	@include tablet {
-		display: none;
+		width: 0;
+    overflow: hidden;
+    opacity: 0;
 	}
+}
+
+.c-blog__menu-swipe{
+  display: none;
+  &:hover {
+    @include tablet {
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+  }
+  @include tablet {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transform: translateX(-75%);
+    @include size(rem(70));
+    border-radius: 0 50% 50% 0;
+    background-color: $brand-color;
+    -webkit-box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
+  }
+  @include mobile {
+    top: 5%;
+  }
 }
 .pos-fixed {
   position: fixed;

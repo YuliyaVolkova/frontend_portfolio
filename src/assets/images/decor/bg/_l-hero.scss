@@ -1,0 +1,39 @@
+
+.l-hero {
+	height: 100vh;
+	//background-repeat: no-repeat;
+	//background-size: cover;
+	//background-position: center center;
+	//background-image: url('../images/decor/bg/montains.jpg');
+	//background-attachment: fixed;
+		
+		&:before {
+			content: '';
+			display: block;
+			@include absolute-stretch;
+			background-color: rgba(1, 102, 114, 0.3);
+			z-index: 0;
+		}
+
+	@include custom {
+		min-height: 650px;
+	}
+
+	@include mobile {
+		background-attachment: scroll;
+	}
+	& .l-hamburger {
+		top: 10%;
+	}
+}
+
+.l-hero_blog {
+	background-position: center top;
+	height: 350px;
+	min-height: 350px;
+}
+
+.l-hero__develop {
+	@include absolute-center;
+	z-index: 2;
+}

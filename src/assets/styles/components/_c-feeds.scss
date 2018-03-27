@@ -8,16 +8,30 @@
 	@include size(100%, 14rem);
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
+	@include mobile {
+		height: 7rem;
+		margin: 6% 0 2% 0;
+	}	
 }
 
 .c-feeds__header-title {
-	width: 41%;
+	width: 44%;
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
 	margin: auto;
 	position: relative;
+	@include tablet {
+		width: 67%;
+	}
+	@include mobile {
+		width: 55%;
+		align-items: center;
+	}
+	@include s-mobile {
+		width: 65%;
+	}
 	& .h-title-section {
 		 text-align: center;
 		 margin: 0 rem(22);
@@ -25,12 +39,12 @@
 	& .svg_dash {
 		width: 2.5rem;
 		transform: translateY(-100%);
+		@include tablet {
+			width: 1.5rem;
+		}
 	}
 	&::first-letter {
 		text-transform: uppercase;
-	}
-	@include tablet {
-		width: 43%;
 	}
 }
 
@@ -41,15 +55,30 @@
 	margin: 0 auto;
 	justify-content: space-between;
 	align-items: baseline;
+	@include tablet {
+		width: 95%;
+	}
+	@include mobile {
+		flex-direction: column;
+		height: initial;
+		justify-content: flex-start;
+	}
 }
 .c-feeds__card {
 	width: 45%;
 	padding: 1%;
+	@include mobile {
+		width: 100%;
+		margin-bottom: 3%;
+	}
 }
 .c-feeds__card-icon {
 	color: rgba(55, 62, 66, 0.2);
 	font-size: 36px;
 	margin-bottom: 2%;
+	@include mobile {
+		text-align: center;
+	}
 }
 .c-feeds-card__text {
 	margin-bottom: 7%;
@@ -68,6 +97,9 @@
 	overflow: hidden;
 	margin: 0 5% 0;
 	border-radius: 50%;
+	@include mobile {
+		margin: 0 5% 0 0;
+	}
 }
 .c-feeds-card__img {
 	max-width: 100%;
@@ -84,16 +116,37 @@
 }
 //* c-form
 
-.c-feeds-form {
-	background-image: url('../images/decor/bg/feeds_bg.png');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+.c-feeds-form-bg {
+
 	@include size(rem(380), rem(437));
+	margin: auto auto 0 auto;
+	position: relative;
+	border-radius: rem(6);
+	overflow: hidden;
+}
+
+.c-feeds-blured {
+	position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/decor/bg/feeds_bg.png');
+    background-position: center -755px;
+    background-repeat: no-repeat;
+    filter: blur(14px);
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-size: 2000px;
+}
+
+.c-feeds-form {
+	@include size(100%);
+	position: relative;
+	z-index: 20;
 	display: flex;
 	flex-direction: column;
-	border-radius: rem(5);
-	margin: auto auto 0 auto;
+	border-radius: rem(6);
 	& .c-form__item {
     	height: initial;
     }

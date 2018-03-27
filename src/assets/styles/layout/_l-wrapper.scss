@@ -5,6 +5,7 @@
 	margin: 0;
 	position: relative;
 	overflow: hidden;
+	min-height: 100vh;
 	@include custom {
 		min-height: 650px;
 	}

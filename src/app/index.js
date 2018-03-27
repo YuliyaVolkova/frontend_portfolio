@@ -3,10 +3,7 @@ import 'normalize.css';
 import '../assets/styles/index.main.scss';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
-
-//* or
-//var svgEveryBody = require('svg4everybody');
-//svgEveryBody();
+import isMobileDevice from './components/detect_mobile.js';
 	
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
@@ -15,17 +12,19 @@ svg4everybody();
 //requireAll(require.context('../assets/images/sprites/to_sprite/', true));
 
 const init = () => {
+  let tabletMth = window.matchMedia('(max-width: 768px)');
   if(window.location.hash==='#login') flip.autorizate();
   else flip.initWelcome();
-  prlxMontains.handler();
+  if(!isMobileDevice()&&!tabletMth.matches) parallax.handler();
 };
+///*------------------------------------
+///* parallax background-effect- 1 layer
+///*--------------------------------------
 
 const prlxMontains = (() => {
-
   const container = document.body.querySelector('.l-parallax__container');
   var flag = false;
 
-  /// parallax background-effect 
   const bgmove = (e) => {
     if (flag) return;
     let x = -(e.pageX + e.target.offsetLeft)/2.5,
@@ -35,12 +34,48 @@ const prlxMontains = (() => {
     setTimeout(() => flag=false, 420);
   };
 
-  const handler = () => {
+  const init = () => {
     container.addEventListener('mousemove', bgmove, false);
   }; 
+  return {init};
+})();
+///*------------------------------------------------
+///* parallax background-effect - to multiple layers
+///*------------------------------------------------
+const parallax = (() => {
+  let container = document.body.querySelector('#parallax'),
+    layers = [...container.children];
+
+  const containerPos = () => {
+    //last layer faster move
+    let positionTop = window.innerHeight/2*layers[layers.length-1].dataset.speed,
+      positionLeft = window.innerWidth/2*layers[layers.length-1].dataset.speed;
+
+    container.style.top = `-${positionTop}px`;
+    container.style.bottom = `-${positionTop}px`;
+    container.style.left = `-${positionLeft}px`;
+    container.style.right = `-${positionLeft}px`;
+  };
+
+  const move = (e) => {
+    let initialX = window.innerWidth/2 - e.pageX,
+      initialY = window.innerHeight/2 - e.pageY;
+    layers.forEach((item) => {
+      let divider = item.dataset.speed,
+        moveX = initialX * divider,
+        moveY = initialY * divider;
+      item.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  };
+
+  const handler = () => {
+    containerPos();
+    window.addEventListener('resize', containerPos, false);
+    window.addEventListener('mousemove', move, false);
+  };
   return {handler};
 })();
-
+//-----------------
 const flip = (() => {
 
   const container = document.body.querySelector('.l-welcome'),
@@ -103,5 +138,5 @@ const flip = (() => {
   return {initWelcome, autorizate};
 })();
 
-window.onload = init();
+window.onload = init;
 console.log('It` work %%%!');

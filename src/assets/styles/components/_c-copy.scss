@@ -9,7 +9,7 @@
 	& a:hover {
 		text-decoration: none;
 	}
-	@include mobile {
+	@include tablet {
 		flex-wrap: wrap;
 		text-align: center;
 	}
@@ -54,7 +54,7 @@
 		justify-content: center;
 	}
 	@include mobile {
-		width: 90%;
+		width: 100%;
 	}
 	& .c-copy_item {
 		color: rgba($primaryColor, 0.5);

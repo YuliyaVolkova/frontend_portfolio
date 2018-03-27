@@ -7,6 +7,14 @@
 	z-index: 1;
 }
 
+.svg_hamburger {
+	@include size(rem(40), rem(30));
+	color: $primaryColor;
+	@include tablet {
+		@include size(rem(35), rem(27));
+	}
+}
+
 .svg_hero-blog {
 	opacity: 0.06;
 	@include size(150%, 300%);
@@ -39,11 +47,14 @@
 	stroke: currentColor;
 	display: inline-block;
 	vertical-align: middle;
+	@include mobile {
+		width: 0.9rem;
+	}
 }
 
 .svg-main-top_two-color {
-	width: 100%;
-	height: 20rem;
+	width: 100.2%;
+	height: 21rem;
 	fill: #EFEBE0;
 	stroke: #EFEBE0;
 		@include tablet {
@@ -53,8 +64,8 @@
 }
 
 .svg_main-top_one-color {
-	width: 100%;
-	height: 20rem;
+	width: 100.2%;
+	height: 21rem;
 	color: rgb(250, 248, 240);
 }
 
@@ -74,6 +85,9 @@
 	@include tablet {
 		width: 70%;
 		transform: translate(-50%, -40%);
+	}
+	@include tablet {
+		width: 50%;
 	}
 }
 

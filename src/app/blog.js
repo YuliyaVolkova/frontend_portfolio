@@ -3,10 +3,12 @@ import '../assets/styles/blog.main.scss';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
 import runCodePrettify from './components/code_prettify.js';
+import hamburgerNav from './components/c-hamburger.js';
 
 window.onload = function() {
   runCodePrettify();
   scrollBlog.handler();
+  hamburgerNav.handler();
 };
 
 const scrollBlog = (() => {

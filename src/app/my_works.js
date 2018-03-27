@@ -2,8 +2,15 @@ import 'normalize.css';
 import '../assets/styles/my_works.main.scss';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
+import hamburgerNav from './components/c-hamburger.js';
 
 console.log('It` work %%%!');
+
+window.onload = function() {
+  // scrollWorks.handler();
+  hamburgerNav.handler();
+  blurResize.handler();
+};
 
 const scrollWorks = (() => {
 
@@ -76,5 +83,24 @@ const scrollWorks = (() => {
 
   return {handler};
 })();
+//------------------------------------
+//------blured bg of form-------------
+//------------------------------------
+const blurResize = (() => {
+  let wrapper = document.body.querySelector('.c-feeds-form-bg'),
+    blurForm = document.body.querySelector('.c-feeds-blured');
+    
+  const setBg = () => {
+    let offsetTop = -wrapper.offsetTop - 210, //210 ?
+      blurStyle = blurForm.style;
+    blurStyle.backgroundPosition = `center ${offsetTop}px`;
+  };
 
-window.onload = scrollWorks.handler;
+
+  const handler = () => {
+    setBg();
+    window.addEventListener('resize', setBg, false);
+  };
+
+  return {handler};
+})();

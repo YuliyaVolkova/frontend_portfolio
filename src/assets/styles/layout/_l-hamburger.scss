@@ -1,15 +1,20 @@
 
 .l-hamburger {
-
 	position: absolute;
-	top: 2%;
+	top: 10%;
 	right: 10%;
 	z-index: 1;
-	&_about {
-		top: 2.5%;
-		@include mobile {
-			top: 2%;
-		}
+	@include tablet {
+		right: 5%;
+		top: 5%;
+	}
+	@include mobile {
+		right: 4%;
+		top: 4%;
+	}
+	@include custom_1800 {
+		left: 50%;
+		transform: translateX(800px);
 	}
 	&_works {
 		@include tablet {

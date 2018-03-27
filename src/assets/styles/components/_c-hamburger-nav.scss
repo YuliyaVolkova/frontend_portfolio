@@ -1,50 +1,109 @@
 
 .c-hamburger-nav {
-	
-	@include size(rem(38), rem(33));
+	@include size(rem(40), rem(30));
+	position: relative;
 }
 
 .c-hamburger-nav__target {
-	
 	display: block;
 	@include size(100%);
 	display: flex;
+	justify-content: center;
 	align-items: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	& #firstLine {
+		transform-origin: left top;
+		will-change: transform;
+	}
+	& #centerLine {
+		transform-origin: center center;
+		will-change: transform;
+	}
+	& #lastLine {
+		transform-origin: left bottom;
+		will-change: transform;
+	}
+	&.animate #firstLine{
+		animation: rotate_leftClose 0.3s linear;
+		animation-fill-mode: forwards;
+	}
+	&.animate #centerLine{
+		animation: scale_centerClose 0.3s linear;
+		animation-fill-mode: forwards;
+	}
+	&.animate #lastLine{
+		animation: rotate_rightClose 0.3s linear;
+		animation-fill-mode: forwards;
+	}
 }
 
-.c-hamburger-nav__fake {
-
+.c-hamburger-nav__close {
 	display: block;
-	@include size(rem(38), rem(5));
-	background-color: $primaryColor;
-	border-radius: 15%;
-	overflow: visible;
-	transition: 0.3s;
-
-	&:before {
-
-	  content: "";
-	  display: block;
-	  @include size(rem(38), rem(5));
-	  border-radius: 15%;
-	  background-color: $primaryColor;
-	  position: absolute;
-	  top: 100%;
-	  transform: translateY(-100%);
-	  left: 0;
+	@include size(rem(40), rem(30));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right:10%;
+	top: 10%;
+	@include custom_1800 {
+		left: 50%;
+		transform: translateX(800px);
 	}
+	@include tablet {
+		right: 5%;
+		top: 5%;
+	}
+	@include mobile {
+		top: 3%;
+		right: 4%;
+	}
+	& #firstLine {
+		transform-origin: left top;
+		will-change: transform;
+		transform: rotate(45deg) translate(2px, 1px);
+	}
+	& #centerLine {
+		transform-origin: center center;
+		will-change: transform;
+		transform: scaleX(0.0002);
+	}
+	& #lastLine {
+		transform-origin: left bottom;
+		will-change: transform;
+		transform: rotate(-45deg) translate(2px, 1px);
+	}
+	&.animate #firstLine{
+		animation: rotate_leftHamburger 0.3s linear;
+		animation-fill-mode: forwards;
+	}
+	&.animate #centerLine{
+		animation: rotate_centerHamburger 0.3s linear;
+		animation-delay: 0.295s;
+		animation-fill-mode: forwards;
+	}
+	&.animate #lastLine{
+		animation: rotate_rightHamburger 0.3s linear;
+		animation-fill-mode: forwards;
+	}
+}
 
-	&:after {
+.overlay {
 
-	  content: "";
-	  display: block;
-	  @include size(rem(38), rem(5));
-	  border-radius: 15%;
-	  background-color: $primaryColor;
-	  position: absolute;
-	  bottom: 100%;
-	  left: 0;
-	  transform: translateY(100%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		right: 0;
+		@include size(100%);
+		background-color: rgba($brand-color, 0.87);
+		@include custom_1800 {
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1813px;
 	}
 }
 
@@ -59,28 +118,10 @@
 .c-hamburger-nav__item {
 
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	text-transform: uppercase;
-	font-size: rem(24);
-	font-weight: 400;
-
-	&:before {
-
-		content: "";
-		display: block;
-		@include size(rem(5));
-		border-radius: 50%;
-		background-color: $primaryColor;
-		margin: rem(15);
+	color: $primaryColor;
+	margin-bottom: 8%;
+	& .svg_dash {
+		opacity: 0.2;
 	}
-
-	&:first-child:before {
-		
-		display: none;
-	}
-}
-.c-hamburger-nav__link {
-
-
 }

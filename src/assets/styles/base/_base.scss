@@ -10,13 +10,13 @@
 }
 
 body, html {
-
   	color: $text-color;
  	background-color: $light-grey; 
   	font-family: $text-font-stack;
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	height: 100%;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.425rem;
@@ -25,6 +25,7 @@ body, html {
 	-moz-osx-font-smoothing: grayscale;
 	font-display: optional;
 	position: relative;
+	min-height: 100vh;
 	&.about .l-footer {
 		position: absolute;
 		bottom: 0;
@@ -36,28 +37,35 @@ body, html {
 	} 
 	
 	@include laptop {
-
 		font-size: 15px;
 	}
 
 	@include tablet {
-
 		font-size: 14px;
 	}
 
 	@include mobile {
-
 		font-size: 13px;
 	}
 
 	@include s-mobile {
-
 		font-size: 12px;
 	}
 }
 body.hero, html.hero {
 	height: 100%;
 	overflow: hidden;
+	min-height: 628px;
+	& .l-parallax__container {
+		@include custom_1800 {
+			//width: 1800px;
+			//margin: 0 auto;
+			//overflow: hidden;
+		}
+	}
+	@include tablet {
+		min-height: 100vh;
+	}
 }
 
 /**
