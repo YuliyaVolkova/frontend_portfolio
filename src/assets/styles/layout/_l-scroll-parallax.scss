@@ -15,6 +15,9 @@
 		background-position: center top;
 		z-index: 0;
 	}
+	@include mobile {
+		background-size: 330% auto;
+	}
 }
 
 .l-scroll-parallax__layer {

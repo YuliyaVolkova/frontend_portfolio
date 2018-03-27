@@ -39,12 +39,13 @@ export default {
         "stylers": [
             {
                "hue": "#2c2e33"
+               
             },
             {
-                "saturation": 7
+               "saturation": 7
             },
             {
-                "lightness": 19
+               "lightness": 19
             },
             {
                 "visibility": "on"
@@ -56,7 +57,7 @@ export default {
         "elementType": "all",
         "stylers": [
             {
-                "hue": "#ffffff"
+                "hue": "#00ff00"
             },
             {
                 "saturation": -100
@@ -181,8 +182,14 @@ export default {
         "featureType": "water",
         "elementType": "all",
         "stylers": [
+            {  
+              "hue": "#00BfA5"
+            },
             {
-                "hue": "#00BEA4"
+              "saturation": -32
+            },
+            {
+              "lightness": -27
             },
             {
                 "visibility": "simplified"
