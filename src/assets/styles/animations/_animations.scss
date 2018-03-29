@@ -32,4 +32,14 @@
 	from { transform: scaleX(0.0002); }
 	to { transform: scaleX(1.1); }
 }
-
+//----------------------------
+//-----------blog tablet nav----
+//----------------------------
+@keyframes blog_tabletNavOpen {
+	from { transform: translateX(-72%); }
+	to { transform: translateX(0%); }
+}
+@keyframes blog_tabletNavClose {
+	from { transform: translateX(0%); }
+	to { transform: translateX(-100.5%); }
+}

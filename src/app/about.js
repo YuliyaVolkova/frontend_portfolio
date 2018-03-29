@@ -5,14 +5,29 @@ svg4everybody();
 import hamburgerNav from './components/c-hamburger.js';
 
 import diagrammsSkills from './components/diagramm_skills.js';
+///*-------------------------------------------
+///* inject google-map script tag to html page
+///*-------------------------------------------
+const injectMap = () => {
 
+  let script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.async = true;
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBeBIQIYzh41ByRq6AbIxnd-TWFZFMJkkU';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+};
+injectMap();
+//---------------------------------------------
 import Vue from 'vue';
 import GoogleMap from './components/gmap_one_point.vue';
 require('../assets/images/decor/map_marker.svg');
 
-//Vue.config.productionTip = true;
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
+//Vue.config.productionTip = false;
 
+///*------------------------------------
+///* init app about-page
+///*-------------------------------------
 const init = () => {
   scrollAbout.handler();
   diagrammsSkills.init();
@@ -23,46 +38,28 @@ const init = () => {
     components: { GoogleMap },
   });
 };
-//-----------------
-//-----------------
-const injectMap = () => {
 
-  let script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.async = true;
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBeBIQIYzh41ByRq6AbIxnd-TWFZFMJkkU';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-};
-//-------------------
-//-------------------
-
-injectMap();
-
-console.log('It` work %%%!');
-//------------------
-//------------------
-
+///*-------------------------------------------
+///* scroll to second screen on arrow-click
+///*-------------------------------------------
 const scrollAbout = (() => {
 
-  let sections = [...document.body.querySelectorAll('.l-section')],
-    nextBut = document.body.querySelector('#next'),
+  let body =document.body,
+    sections = [...body.querySelectorAll('.l-section')],
+    nextBut = body.querySelector('#next'),
+    container = body.querySelector('.l-scroll-parallax-container'),
     arrOffset = sections.map((item) => item.offsetTop);
 
   function showSection(e) {
-     
-    if(!window.location.hash&&!e) return;
-    let hash = e?this.getAttribute('href'):window.location.hash,
-      sectionAct = document.body.querySelector(`.l-section[data-section="${hash.split('#').join('')}"`),
-      scrollPos = arrOffset[sections.indexOf(sectionAct)]-25;
-    if(e) animateMove(e, scrollPos);
-    else 
-      document.documentElement.scrollTop = document.body.scrollTop = scrollPos;
+    let hash = this.getAttribute('href')||window.location.hash,
+      sectionAct = body.querySelector(`.l-section[data-section="${hash.replace(/#/,'')}"`),
+      scrollPos = arrOffset[sections.indexOf(sectionAct)]-10;
+    animateMove(e, scrollPos);
   }
 
-  const animate = (options) => {
+  const animate = options => {
     let start = performance.now(),
-      startPos = window.pageYOffset || document.documentElement.scrollTop;
-       
+      startPos = container.scrollTop;  
     requestAnimationFrame(function _animate(time) {
     // timeFraction от 0 до 1
       let timeFraction = (time - start) / options.duration;
@@ -84,18 +81,20 @@ const scrollAbout = (() => {
         return timeFraction;
       },
       move: function(progress, startPos) {
-        document.documentElement.scrollTop = document.body.scrollTop = startPos + (scrollPos- startPos)*(progress);
+        container.scrollTop = startPos + (scrollPos- startPos)*(progress);
       },
     });
   };
 
   const handler = () => {
-
-    showSection();
     nextBut.addEventListener('click', showSection, false);
   };
 
   return {handler};
 })();
 
-window.onload = init; 
+///*------------------------------------------------
+///* -----------run app-----------------------------
+///*------------------------------------------------
+window.onload = init;
+console.log('It` work %%%!');

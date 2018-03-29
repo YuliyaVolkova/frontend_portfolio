@@ -16,11 +16,10 @@ const diagrammsSkills = (() => {
     ],
     body = document.body,
     container = body.querySelector('.l-scroll-parallax-container'),
-    firstScrHeight = body.querySelector('.parallax__content').offsetTop,
-    colSecondTop = body.querySelector('.l-main__column-two').offsetTop,
     containerSkills = body.querySelector('.c-skills-card__container'),
+    skillsSectHeight = body.querySelector('.l-main__wrapper').clientHeight,
+    firstSectHeight = body.querySelector('.l-hero').clientHeight,
     arrItems = new Array();
-  var animated = false, scrollPos = 0;
 
   class Skill {
     constructor(options) {
@@ -83,13 +82,11 @@ const diagrammsSkills = (() => {
 
   function animate(options) {
     let start = performance.now();
+
     requestAnimationFrame(function _animate(time) {
     // timeFraction от 0 до 1
       let timeFraction = (time - start) / options.duration;
-      if (timeFraction > 1) {
-        timeFraction = 1;
-        animated = false;
-      }
+      if (timeFraction > 1) timeFraction = 1;
       // текущее состояние анимации
       let progress = options.timing(timeFraction);
       options.draw(progress);
@@ -119,19 +116,13 @@ const diagrammsSkills = (() => {
     }
   }
 
-  function scrollAnimate() {
-    if(animated) return;
-    let newPos = this.scrollTop;
-    if(newPos<=scrollPos) {
-      scrollPos = newPos;
-      return;
-    }
-    scrollPos = newPos;
-    if(scrollPos<((firstScrHeight+colSecondTop)*3/4)||scrollPos>(firstScrHeight+colSecondTop)*6/7)
-      return;
-    animated = true;
+  function scrollAnimate(e) {
+    const pageYOffset = e.currentTarget.pageYOffset;
+    console.log(pageYOffset);
+     
+    if(pageYOffset>skillsSectHeight||pageYOffset>firstSectHeight-400&&pageYOffset<skillsSectHeight) return;
     setTimeout(function() {animate({
-      duration: 2000,
+      duration: 1000,
       timing: function(timeFraction) {
         return timeFraction;
       },
@@ -145,10 +136,10 @@ const diagrammsSkills = (() => {
     });}, 50);
   }
 
-  const init = () => {
+  function init() {
     createExSkills(data);
-    container.addEventListener('scroll', scrollAnimate, false);
-  };
+    window.addEventListener('scroll', scrollAnimate, false);
+  }
   return {init};
 })();
 

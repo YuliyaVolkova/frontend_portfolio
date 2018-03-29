@@ -4,49 +4,37 @@ import svg4everybody from 'svg4everybody';
 svg4everybody();
 import hamburgerNav from './components/c-hamburger.js';
 
-console.log('It` work %%%!');
-
-window.onload = function() {
-  // scrollWorks.handler();
+///*------------------------------------
+///* init app my_works-page
+///*------------------------------------
+const init = () => {
+  scrollWorks.handler();
   hamburgerNav.handler();
   blurResize.handler();
 };
 
+///*------------------------------------
+///* move to sections
+///*------------------------------------
 const scrollWorks = (() => {
 
-  let sections = [...document.body.querySelectorAll('.l-section')],
-    nextBut = document.body.querySelector('#next'),
-    firstBut = document.body.querySelector('#first'),
-    arrOffset = sections.map((item) => item.offsetTop);
-
-  
-  function getSection(scrollPos)  {
-    if(scrollPos<=arrOffset[0]) return 0;
-    for (let i = 0; i < arrOffset.length-1; i++) {
-      if(scrollPos>arrOffset[i]&&scrollPos<arrOffset[i+1])
-        return i;
-    }
-    return arrOffset.length-1;
-  }
-
-  function checkScroll() {
-    let scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    window.location.hash = sections[getSection(scrollPos+100)].getAttribute('data-section');
-  }
+  let body = document.body,
+    sections = [...body.querySelectorAll('.l-section')],
+    toNextBut = body.querySelector('#next'),
+    toFirstBut = body.querySelector('#first'),
+    arrOffset = sections.map((item) => item.offsetTop),
+    container = body.querySelector('.l-scroll-parallax-container');
 
   function showSection(e) {
-    if(!window.location.hash&&!e) return;
-    let hash = e?this.getAttribute('href'):window.location.hash,
-      sectionAct = document.body.querySelector(`.l-section[data-section="${hash.split('#').join('')}"`),
-      scrollPos = arrOffset[sections.indexOf(sectionAct)]-25;
-    if(e) animateMove(e, scrollPos);
-    else 
-      document.documentElement.scrollTop = document.body.scrollTop = scrollPos;
+    let hash = this.getAttribute('href')||window.location.hash,
+      sectionAct = body.querySelector(`.l-section[data-section="${hash.replace(/#/,'')}"`),
+      scrollPos = arrOffset[sections.indexOf(sectionAct)];
+    animateMove(e, scrollPos);
   }
 
-  const animate = (options) => {
+  const animate = options => {
     let start = performance.now(),
-      startPos = window.pageYOffset || document.documentElement.scrollTop;
+      startPos = container.scrollTop;
     requestAnimationFrame(function _animate(time) {
     // timeFraction от 0 до 1
       let timeFraction = (time - start) / options.duration;
@@ -68,34 +56,30 @@ const scrollWorks = (() => {
         return timeFraction;
       },
       move: function(progress, startPos) {
-        document.documentElement.scrollTop = document.body.scrollTop = startPos + (scrollPos- startPos)*(progress);
+        container.scrollTop = startPos + (scrollPos- startPos)*(progress);
       },
     });
   };
 
   const handler = () => {
-
-    showSection();
-    window.addEventListener('scroll', checkScroll, false);
-    nextBut.addEventListener('click', showSection, false);
-    firstBut.addEventListener('click', showSection, false);
+    toNextBut.addEventListener('click', showSection, false);
+    toFirstBut.addEventListener('click', showSection, false);
   };
 
   return {handler};
 })();
-//------------------------------------
-//------blured bg of form-------------
-//------------------------------------
+///*------------------------------------
+///* blur bg to feeds-form
+///*-------------------------------------
 const blurResize = (() => {
-  let wrapper = document.body.querySelector('.c-feeds-form-bg'),
-    blurForm = document.body.querySelector('.c-feeds-blured');
+  let body = document.body,
+    wrapper = body.querySelector('.c-feeds-form-bg'),
+    blurForm = body.querySelector('.c-feeds-blured');
     
   const setBg = () => {
-    let offsetTop = -wrapper.offsetTop - 210, //210 ?
-      blurStyle = blurForm.style;
-    blurStyle.backgroundPosition = `center ${offsetTop}px`;
+    let offsetTop = -wrapper.offsetTop - 210; //210 ?
+    blurForm.style.backgroundPosition = `center ${offsetTop}px`;
   };
-
 
   const handler = () => {
     setBg();
@@ -104,3 +88,8 @@ const blurResize = (() => {
 
   return {handler};
 })();
+///*------------------------------------------------
+///* -----------run app-----------------------------
+///*------------------------------------------------
+window.onload = init;
+console.log('It` work %%%!');

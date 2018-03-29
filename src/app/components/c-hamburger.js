@@ -2,34 +2,37 @@
 
 const hamburgerNav = (function() {
 
-  let component =document.body.querySelector('.c-hamburger-nav'),
+  let body = document.body,
+    component = body.querySelector('.c-hamburger-nav'),
     button = component.querySelector('#openOverlay'),
     overlay,
     template = component.querySelector('#hamburgerTemplate');
 
-  function createOverlay() {
+  const createOverlay = () => {
     overlay = document.createElement('div');
     overlay.classList.add('overlay');
     overlay.innerHTML = template.innerHTML;
-  }
+  };
     
-  function isEsc(e) {
+  const isEsc = e => {
     switch(e.which) {
     case 27: closeOverlay(e);
       break;       
     default: return;
     }
     return false;
-  }   
+  };   
 
   function insertOverlay() {
     button.removeEventListener('animationend', insertOverlay, false);
-    document.body.appendChild(overlay);
+    body.appendChild(overlay);
     button.style.transform = 'scale(0.001)';
     button.classList.remove('animate');
-    let close = document.body.querySelector('#closeOverlay');
+    let close = overlay.querySelector('#closeOverlay'),
+      homeLink = overlay.querySelector('.c-hamburger-nav__link[href="#"]').parentElement;
+    homeLink.addEventListener('click', closeOverlay, false);  
     close.addEventListener('click', closeOverlay, false);
-    document.body.addEventListener('keydown', isEsc, false);
+    body.addEventListener('keydown', isEsc, false);
   }
 
   function openOverlay(e) {
@@ -51,15 +54,15 @@ const hamburgerNav = (function() {
     e.preventDefault();
     let close = overlay.querySelector('#closeOverlay');
     close.removeEventListener('click', closeOverlay, false);
-    document.body.removeEventListener('keydown', isEsc, false);
+    body.removeEventListener('keydown', isEsc, false);
     close.classList.add('animate');
     close.addEventListener('animationend', removeClassAnimate, false);
   }
 
-  function handler() {
+  const handler = () => {
     createOverlay();
     button.addEventListener('click', openOverlay, false);
-  }
+  };
 
   return {handler};
 })();

@@ -10,14 +10,51 @@
 
 .c-blog__aside {
 	position: absolute;
-	left: 0;
 	top: 1.5%;
-	right: 75%;
+  right: 50%;
+  width: 25%;
+    transform: translateX(-100%);
+  @include custom_1800 {
+    width: 450px;
+  }
 	@include tablet {
-		width: 0;
-    overflow: hidden;
-    opacity: 0;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+		transform: translateX(-72%);
+    background-color: $brand-color;
+    padding-right: rem(16);
+    -webkit-box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
 	}
+  &.pos-fixed {
+    position: fixed;
+    top:10%;
+  }
+  &.overlay-mobile {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: initial;
+    transform: none;
+    z-index: 3;
+    will-change: transform;
+  }
+  &.animateOpen {
+    animation: blog_tabletNavOpen 0.7s linear;
+    animation-fill-mode: forwards;
+    & .c-blog__menu-swipe:hover {
+      @include tablet {
+        cursor: initial;
+      }
+    }
+  }
+  &.animateClose {
+    animation: blog_tabletNavClose 0.7s linear;
+    animation-fill-mode: forwards;
+  }
 }
 
 .c-blog__menu-swipe{
@@ -25,16 +62,30 @@
   &:hover {
     @include tablet {
       cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.2s;
     }
   }
+  &:before {
+    content: '';
+    height: 110%;
+    width: 70%;
+    background-color: inherit;
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  } 
   @include tablet {
     display: block;
     position: absolute;
-    top: 10%;
-    left: 0;
-    transform: translateX(-75%);
+    top: 50%;
+    left: 100%;
+    z-index: -1;
+    transform: translateX(-70%);
     @include size(rem(70));
     border-radius: 0 50% 50% 0;
     background-color: $brand-color;
@@ -43,14 +94,18 @@
     box-shadow: 3px 0px 3px 0px rgba(0,0,0,0.2);
   }
   @include mobile {
-    top: 5%;
+   
   }
 }
-.pos-fixed {
-  position: fixed;
-  top:10%;
-}
 
+.c-blog__nav {
+  @include tablet {
+    width: 55%;
+  }
+  @include mobile {
+    width: 70%;
+  }
+}
 
 .c-blog__nav-item {
 	text-align: right;
@@ -59,10 +114,19 @@
 	&.is-active .c-blog__nav-link {
 	font-weight: 900;
 	color: rgb(0, 191, 165);
+    @include tablet {
+      color: rgba($primaryColor, 1);
+    }
 	}
 	&.is-active {
 		border-right: 3px solid rgb(0, 191, 165);
+    @include tablet {
+      border-right: none;
+    }
 	}
+  @include tablet {
+    border-right: none;
+  }
 }
 
 .c-blog__nav-link {
@@ -71,6 +135,9 @@
 	line-height: 1.63;
 	text-align: right;
 	color: $text-color;
+  @include tablet {
+    color: rgba($primaryColor, 0.7);
+  }
 }
 
 .c-blog__main {
