@@ -174,9 +174,7 @@ const scrollBlog = (() => {
     links.forEach(function(el) {
       el.addEventListener('click', showSection, false);
     });
-    if(tabletMth.matches) {
-      tabletButton.addEventListener('click', mobile, false);
-    }
+    tabletButton.addEventListener('click', mobile, false);
   };
 
   return {init};

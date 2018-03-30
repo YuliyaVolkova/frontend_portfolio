@@ -19,7 +19,7 @@ const injectMap = () => {
 injectMap();
 //---------------------------------------------
 import Vue from 'vue';
-import GoogleMap from './components/gmap_one_point.vue';
+import GoogleMap from './components/gmap.vue';
 require('../assets/images/decor/map_marker.svg');
 
 Vue.config.productionTip = true;
@@ -34,8 +34,7 @@ const init = () => {
   hamburgerNav.handler();
   new Vue({
     el: '.l-map-container',
-    template: '<google-map name="example"></google-map>',
-    components: { GoogleMap },
+    render: h => h(GoogleMap),
   });
 };
 

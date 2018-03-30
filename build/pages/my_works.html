@@ -261,21 +261,24 @@
                           </use>
                         </svg>
                       </div>
-                      <form class="c-form" action="./server_test.php" id="feeds" method="POST">
+                      <form class="c-form" action="./server_test.php" id="feeds-form" method="POST" @submit="validateForm" novalidate="true">
                         <div class="c-form__inner">
                           <div class="c-form__row">
                             <label class="c-form__item">
-                              <input class="c-form__input" type="text" name="username" placeholder="Имя" data-rule="name|required">
+                              <input class="c-form__input" type="text" name="username" placeholder="Имя" v-model="name.value" :class="{'error': attemptSubmit &amp;&amp; wrongName}">
+                              <div class="validator-error" v-if="name.error">{{name.error}}</div>
                             </label>
                           </div>
                           <div class="c-form__row">
                             <label class="c-form__item">
-                              <input class="c-form__input" type="email" name="email" placeholder="Email" data-rule="required">
+                              <input class="c-form__input" type="email" name="email" placeholder="Email" :class="{'error': attemptSubmit &amp;&amp; wrongMail}" v-model="email.value">
+                              <div class="validator-error" v-if="email.error">{{email.error}}</div>
                             </label>
                           </div>
                           <div class="c-form__row">
                             <label class="c-form__item">
-                              <textarea class="c-form__textarea" type="text" placeholder="Ваше сообщение" name="mesage"></textarea>
+                              <textarea class="c-form__textarea" type="text" placeholder="Ваше сообщение" name="mesage" v-model="textmes.value" :class="{'error': attemptSubmit &amp;&amp; missingMessage}"></textarea>
+                              <div class="validator-error" v-if="textmes.error">{{textmes.error}}</div>
                             </label>
                           </div>
                           <ul class="c-form__buts-action">

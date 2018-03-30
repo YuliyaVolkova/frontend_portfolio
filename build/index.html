@@ -80,38 +80,40 @@
                   </use>
                 </svg>
               </div>
-              <form class="c-form" action="./server_test.php" id="login" method="POST">
+              <form class="c-form" action="./server_test.php" id="login-form" method="POST" @submit="validateForm" novalidate="true">
                 <div class="c-form__inner">
                   <div class="c-form__row">
-                    <label class="c-form__item"><span class="c-form__item-logo">
+                    <label class="c-form__item"><span class="c-form__item-logo" :class="{'error': attemptSubmit &amp;&amp; wrongLogin}">
                         <svg class="svg_login">
                           <use xlink:href="./assets/images/sprites/sprite.svg#login">
                             <title>login</title>
                           </use>
                         </svg></span>
-                      <input class="c-form__input" type="text" name="username" placeholder="Логин" data-rule="name|required">
+                      <input class="c-form__input" type="text" name="username" placeholder="Логин" v-model="login.value" :class="{'error': attemptSubmit &amp;&amp; wrongLogin}">
+                      <div class="validator-error" v-if="login.error">{{login.error}}</div>
                     </label>
                   </div>
                   <div class="c-form__row">
-                    <label class="c-form__item"><span class="c-form__item-logo">
+                    <label class="c-form__item"><span class="c-form__item-logo" :class="{'error': attemptSubmit &amp;&amp; wrongPassword}">
                         <svg class="svg_login">
                           <use xlink:href="./assets/images/sprites/sprite.svg#password">
                             <title>password</title>
                           </use>
                         </svg></span>
-                      <input class="c-form__input" type="password" name="password" placeholder="Пароль" data-rule="required">
+                      <input class="c-form__input" type="password" name="password" placeholder="Пароль" v-model="password.value" :class="{'error': attemptSubmit &amp;&amp; wrongPassword}">
+                      <div class="validator-error" v-if="password.error">{{password.error}}</div>
                     </label>
                   </div>
                   <div class="c-form__buttons">
                     <label class="c-form__item">
-                      <input class="c-form__checkbox" type="checkbox" name="capcha"><span class="c-form__item-title c-form__item-title--checkbox">Я человек</span>
+                      <input class="c-form__checkbox" type="checkbox" name="capcha" v-model="checkbox.value" :class="{'error': attemptSubmit &amp;&amp; wrongCheckbox}"><span class="c-form__item-title c-form__item-title--checkbox">Я человек</span>
                     </label><span class="c-form__row-title">Вы точно не робот?</span>
                     <div class="c-form__row">
                       <label class="c-form__item">
-                        <input class="c-form__radio" type="radio" name="noBot" value="yes" checked><span class="c-form__item-title c-form__item-title--radio">Да</span>
+                        <input class="c-form__radio" type="radio" name="noBot" value="yes" v-model="radio.value"><span class="c-form__item-title c-form__item-title--radio" :class="{'error': attemptSubmit &amp;&amp; wrongRadio}">Да</span>
                       </label>
                       <label class="c-form__item">
-                        <input class="c-form__radio" type="radio" name="noBot" value="none"><span class="c-form__item-title c-form__item-title--radio">Не уверен</span>
+                        <input class="c-form__radio" type="radio" name="noBot" value="none" v-model="radio.value"><span class="c-form__item-title c-form__item-title--radio">Не уверен</span>
                       </label>
                     </div>
                   </div>
