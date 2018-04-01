@@ -15,8 +15,8 @@ require(['image-preloader'], preloader);
 
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
-//function requireAll(r) { r.keys().forEach(r); }
-//requireAll(require.context('../assets/images/sprites/to_sprite/', true));
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../assets/images/sprites/to_sprite/', true));
 
 const init = () => {
   let tabletMth = window.matchMedia('(max-width: 768px)');
