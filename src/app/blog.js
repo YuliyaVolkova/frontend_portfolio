@@ -4,6 +4,14 @@ import svg4everybody from 'svg4everybody';
 svg4everybody();
 import runCodePrettify from './components/code_prettify.js';
 import hamburgerNav from './components/c-hamburger.js';
+//* preloader
+require.config({
+  paths: {
+    'image-preloader': '../build/imagePreloader.min',
+  },
+});
+import preloader from './components/preloader_pages.js';
+require(['image-preloader'], preloader);
 
 ///*------------------------------------
 ///* init app welcome-page

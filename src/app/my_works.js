@@ -4,6 +4,14 @@ import svg4everybody from 'svg4everybody';
 svg4everybody();
 import hamburgerNav from './components/c-hamburger.js';
 import Vue from 'vue';
+//* preloader
+require.config({
+  paths: {
+    'image-preloader': '../build/imagePreloader.min',
+  },
+});
+import preloader from './components/preloader_pages.js';
+require(['image-preloader'], preloader);
 
 ///*-------------------------------
 ///* init app my_works-page
@@ -64,9 +72,9 @@ const init = () => {
       },
       validateForm(e) {
         this.attemptSubmit = true;
-        if(this.wrongName||this.wrongMail||this.missingMessage)
+        if(this.wrongName||this.wrongMail||this.missingMessage) {
           e.preventDefault();
-
+        }
       },
     },
   });

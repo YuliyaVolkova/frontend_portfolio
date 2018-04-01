@@ -108,4 +108,12 @@ svg {
 button, input, select, textarea {
   font-family: $text-font-stack;
  }
+//* for preloading images
+img {
+	display: none;
+}
+.google-map img {
+    display: block;
+}
+
 

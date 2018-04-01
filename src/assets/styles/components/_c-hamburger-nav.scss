@@ -88,25 +88,6 @@
 		animation-fill-mode: forwards;
 	}
 }
-
-.overlay {
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: fixed;
-		top: 0;
-		right: 0;
-		z-index: 9;
-		@include size(100%);
-		background-color: rgba($brand-color, 0.87);
-		@include custom_1800 {
-			left: 50%;
-			transform: translateX(-50%);
-			width: 1813px;
-	}
-}
-
 .c-hamburger-nav__list {
 
 	display: flex;

@@ -28,6 +28,7 @@ const hamburgerNav = (function() {
     body.appendChild(overlay);
     button.style.transform = 'scale(0.001)';
     button.classList.remove('animate');
+    overlay.classList.add('to_open');
     let close = overlay.querySelector('#closeOverlay'),
       homeLink = overlay.querySelector('.c-hamburger-nav__link[href="#"]').parentElement;
     homeLink.addEventListener('click', closeOverlay, false);  
@@ -43,18 +44,22 @@ const hamburgerNav = (function() {
 
   function removeClassAnimate() {
     this.removeEventListener('animationend', removeClassAnimate, false);
-    button.style.transform = 'scale(1.1)';
-    overlay.remove();
     this.classList.remove('animate');
+    overlay.classList.remove('to_close');
+    overlay.classList.remove('to_open');
+    overlay.remove();
+    button.style.transform = 'scale(1.1)';
+    button.style.WebkitTransform = 'scale(1.1)';
     button.addEventListener('click', openOverlay, false);
   }
-	
+
   function closeOverlay(e) {
    
     e.preventDefault();
     let close = overlay.querySelector('#closeOverlay');
     close.removeEventListener('click', closeOverlay, false);
     body.removeEventListener('keydown', isEsc, false);
+    overlay.classList.add('to_close');
     close.classList.add('animate');
     close.addEventListener('animationend', removeClassAnimate, false);
   }

@@ -43,3 +43,38 @@
 	from { transform: translateX(0%); }
 	to { transform: translateX(-100.5%); }
 }
+//----------------------------
+//-----------hamburger nav----
+//----------------------------
+@keyframes open_hamburger_left {
+	from { transform: translateX(-100%); }
+	to { transform: translateX(0%); }
+}
+@keyframes open_hamburger_right {
+	from { transform: translateX(100%); }
+	to { transform: translateX(0%); }
+}
+@keyframes close_hamburger_left {
+	from { transform: translateX(0%); }
+	to { transform: translateX(-100%); }
+}
+@keyframes close_hamburger_right {
+	from { transform: translateX(0%); }
+	to { transform: translateX(100%); }
+}
+@keyframes to_visible {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes to_unvisible {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@keyframes bg_to_color {
+	from { background: rgba($brand-color, 0); }
+	to { background: rgba($brand-color, 0.87); }
+}
+@keyframes bg_to_transparent {
+	from { background: rgba($brand-color, 0.87); }
+	to { background: rgba($brand-color, 0); }
+}

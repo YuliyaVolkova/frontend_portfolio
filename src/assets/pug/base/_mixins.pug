@@ -36,6 +36,8 @@ mixin hamburger(navlist, mod)
 							+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
 							a.c-hamburger-nav__link.h-title-section.h-title-section_color(href=`${val.pageUrl}`)= val.title
 							+icon('dash', 'svg_dash', '../assets/images/sprites/sprite.svg')
+				.overlay-section.section-left
+				.overlay-section.section-right
 
 mixin iconID(iconName, iconClass)
 	svg(class=`${iconClass}`)

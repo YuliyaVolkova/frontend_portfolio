@@ -18,6 +18,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import
   'animations/animations',
   'layout/l-wrapper',
+  'layout/l-preloader',
   'layout/l-section',
   'layout/l-scroll-parallax',
   'layout/l-hero',
@@ -29,7 +30,7 @@ $fa-font-path: "~font-awesome/fonts";
   'layout/l-footer';
 
 @import 
-
+  'components/overlay',
   'components/c-hamburger-nav',
   'components/c-developer',
   'components/c-next',

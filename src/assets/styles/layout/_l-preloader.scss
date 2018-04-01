@@ -1,0 +1,90 @@
+#loader-wrapper {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: url(../images/decor/bg/bg_preloader.jpg) center/cover no-repeat;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: rem(144);
+    height: rem(144);
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   & circle {
+        transform-origin: center center;
+        stroke-width: 4;
+        opacity: 0;
+    }
+    & circle#bigCircle {
+        transform: rotate(-115deg);
+
+    }
+    & circle#middleCircle {
+        transform: rotate(-105deg);
+    }
+    circle#smallCircle {
+        transform: rotate(-90deg);      
+    }
+}
+.loader__text {
+    font-size: rem(16);
+    color: $primaryColor;
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: rgba($brand-color, 0);
+    z-index: 1000;
+    transform: translateX(0);   
+    }
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+    }
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+    }
+
+    /* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+
+    transform: translateX(-100%); 
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    	background 0s 0s linear;
+    background: rgba($brand-color, 0.3);
+    }
+
+.loaded #loader-wrapper .loader-section.section-right {
+    transform: translateX(100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    	background 0s 0s linear;
+    background: rgba($brand-color, 0.3);
+    }
+    
+.loaded #loader {
+    opacity: 0; 
+    transition: all 0.3s ease-out;
+    }
+.loaded #loader-wrapper {
+	visibility: hidden;
+    transform: translateY(-100%);  
+    transition: all 0.3s 1s ease-out;
+    }

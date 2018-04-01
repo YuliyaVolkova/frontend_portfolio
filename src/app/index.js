@@ -4,26 +4,26 @@ import svg4everybody from 'svg4everybody';
 svg4everybody();
 import isMobileDevice from './components/detect_mobile.js';
 import Vue from 'vue';
-	
+//* preloader
+require.config({
+  paths: {
+    'image-preloader': '../build/imagePreloader.min',
+  },
+});
+import preloader from './components/preloader_index.js';
+require(['image-preloader'], preloader);
+
 //* include to make external svg sprite 
 //*** from svg files in '../assets/images/sprites/to_social/'	
 //function requireAll(r) { r.keys().forEach(r); }
 //requireAll(require.context('../assets/images/sprites/to_sprite/', true));
-//----return array----
-//--------------------
-//var c = require.context('../assets/images/sprites/to_sprite/', true).keys();
 
-///*------------------------------------
-///* init app welcome-page
-///*-------------------------------------
 const init = () => {
   let tabletMth = window.matchMedia('(max-width: 768px)');
   if(window.location.hash==='#login') flip.autorizate();
   else flip.initWelcome();
   if(!isMobileDevice()&&!tabletMth.matches) parallax.handler();
-  //*----------------------------------
-  //*------js-form-data-validation-----
-  //*----------------------------------
+  //* validation data-form
   new Vue ({
     el: '#login-form',
     data: {
@@ -78,8 +78,9 @@ const init = () => {
       },
       validateForm(e) {
         this.attemptSubmit = true;
-        if(this.wrongLogin||this.wrongPassword||this.wrongCheckbox||this.wrongRadio)
+        if(this.wrongLogin||this.wrongPassword||this.wrongCheckbox||this.wrongRadio) {
           e.preventDefault();
+        }
       },
     },
   });
@@ -142,6 +143,8 @@ const flip = (() => {
 
   const flipHash = e => {
     e.preventDefault();
+    console.log('1');
+     
     if(container.classList.contains('flip')) 
       container.classList.remove('flip');
     else container.classList.add('flip');
@@ -175,8 +178,14 @@ const flip = (() => {
     containerBackface.innerHTML = templFace.innerHTML;
     templFace.innerHTML = '';
     loginTargEl.classList.add('visually-hidden');
-    let butMain = body.querySelector('.c-form__nav-link#targetMain');
-    butMain.addEventListener('click', flipHash, false);
+    const butMain = body.querySelector('.c-form__nav-link#targetMain');
+    console.log(butMain);
+    butMain.addEventListener('click', function() {
+      console.log('1');
+       
+    });
+     
+    //butMain.addEventListener('click', flipHash);
   };
 
   const initWelcome = () => { 
@@ -190,29 +199,6 @@ const flip = (() => {
 
   return {initWelcome, autorizate};
 })();
-
-///*------------------------------------
-///* parallax background-effect- 1 layer
-///*-------------------------------------
-/*const prlxMontains = (() => {
-  const container = document.body.querySelector('.l-parallax__container');
-  var flag = false;
-
-  const bgmove = e => {
-    if (flag) return;
-    let x = -(e.pageX + e.target.offsetLeft)/2.5,
-      y = -(e.pageY + e.target.offsetTop)/2.5;
-
-    container.style.backgroundPosition = `${x}px ${y}px`;
-    setTimeout(() => flag=false, 420);
-  };
-
-  const init = () => {
-    container.addEventListener('mousemove', bgmove, false);
-  }; 
-  return {init};
-})();*/
-
 ///*------------------------------------------------
 ///* -----------run app-----------------------------
 ///*------------------------------------------------

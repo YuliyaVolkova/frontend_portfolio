@@ -3,13 +3,19 @@ import '../assets/styles/about.main.scss';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
 import hamburgerNav from './components/c-hamburger.js';
-
 import diagrammsSkills from './components/diagramm_skills.js';
+//* preloader
+require.config({
+  paths: {
+    'image-preloader': '../build/imagePreloader.min',
+  },
+});
+import preloader from './components/preloader_pages.js';
+require(['image-preloader'], preloader);
 ///*-------------------------------------------
 ///* inject google-map script tag to html page
 ///*-------------------------------------------
 const injectMap = () => {
-
   let script = document.createElement('script');
   script.type = 'text/javascript';
   script.async = true;

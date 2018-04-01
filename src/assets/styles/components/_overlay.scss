@@ -1,0 +1,79 @@
+.overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 9;
+	overflow: hidden;
+	@include size(100%);
+	background-color: rgba($brand-color, 0);
+	@include custom_1800 {
+		left: 50%;
+		transform: translateX(-50%);
+		width: 1813px;
+	}
+}
+.overlay .overlay-section {
+    position: fixed;
+    top: 0;
+    width: 50.3%;
+    height: 100%;
+    background: rgba($brand-color, 0.87);
+    z-index: -1;
+    will-change: transform; 
+}
+.overlay .overlay-section.section-left {
+    left: 0;
+    transform: translateX(-100%);
+    }
+
+.overlay .overlay-section.section-right {
+    right: 0;
+    transform: translateX(100%);
+    }
+.overlay .c-hamburger-nav__list {
+	opacity: 0;
+}
+/* to_ open*/
+.overlay.to_open {
+	animation: bg_to_color 0.3s 0.5s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	animation-fill-mode: forwards;
+}
+.overlay.to_open .overlay-section.section-left {
+	animation: open_hamburger_left 0.5s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+	to_unvisible 0.2s 0.6s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	animation-fill-mode: forwards;
+    }
+
+.overlay.to_open .overlay-section.section-right {
+    animation: open_hamburger_right 0.5s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    to_unvisible 0.2s 0.6s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	animation-fill-mode: forwards;
+    }
+.overlay.to_open .c-hamburger-nav__list {
+    animation: to_visible 0.1s 0.6s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    animation-fill-mode: forwards;
+    }  
+/*to_close*/
+.overlay.to_close {
+	animation: bg_to_transparent 0s 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	animation-fill-mode: forwards;
+}
+.overlay.to_close .c-hamburger-nav__list { 
+    animation: to_unvisible 0.2s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    animation-fill-mode: forwards;
+    }
+.overlay.to_close .overlay-section.section-left {
+
+    animation: close_hamburger_left 0.3s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    to_visible 0s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	animation-fill-mode: forwards;
+    }
+
+.overlay.to_close .overlay-section.section-right {
+    animation: close_hamburger_right 0.3s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000),
+    to_visible 0s 0s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	animation-fill-mode: forwards;
+    }
