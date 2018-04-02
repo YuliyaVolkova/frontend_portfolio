@@ -1,4 +1,4 @@
-
+'use strict';
 const diagrammsSkills = (() => {
   const data = [{groupTitle: 'Frontend',
       skills: [{skillTitle: 'HTML5 &CSS3', percent: '0.92'},
@@ -151,5 +151,4 @@ const diagrammsSkills = (() => {
   };
   return {init};
 })();
-
 export default diagrammsSkills;

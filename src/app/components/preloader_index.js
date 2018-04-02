@@ -1,6 +1,5 @@
 'use strict';
 const preloader = (ImagePreloader) => {
-
   let preloader = new ImagePreloader(),
     body = document.body,
     imgs = [...body.querySelectorAll('img')],

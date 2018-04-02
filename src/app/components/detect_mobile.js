@@ -1,4 +1,3 @@
-
 'use strict';
 var isMobileDevice = ()=> {
   const testExp = new RegExp('Android|webOS|iPhone|iPad|' +

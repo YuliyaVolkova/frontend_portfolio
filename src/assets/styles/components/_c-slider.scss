@@ -30,11 +30,30 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 	@include tablet {
 		width: 100%;
 		order: 1;
-		height: 51%;
+		height: 45%;
 	}
+	& .animated {
+    transition: all 300ms;
+    position: relative;
+    z-index: -1;
+    transform: translate(0, -200%);
+  	}
+	& .slide-in {
+    	opacity: 0;
+  	}
+  	& .slide-in-active {
+  		opacity: 1;
+  	}
+  	& .slide-out {
+    	opacity: 1;
+  	}
+  	& .slide-out-active {
+    	opacity: 1;
+  	}
 }
 
 .c-slider__control-fr {
@@ -123,9 +142,11 @@
 	max-height: 80%;
 	width: 60%;
 	height: auto;
+	margin: 0 auto;
 	-webkit-box-shadow: 4px 18px 22px -15px rgba(0,0,0,0.87);
 	-moz-box-shadow: 4px 18px 22px -15px rgba(0,0,0,0.87);
 	box-shadow: 4px 18px 22px -15px rgba(0,0,0,0.87);
+	will-change: opacity, transform;
 	@include tablet {
 		width: 45%;
 	}
