@@ -197,13 +197,11 @@ export default {
         ]
     }
   ]
-     // zoomControl: false,
-      //scaleControl: true
     }
     this.map = new google.maps.Map(element, options);
     this.markerCoordinates.forEach((coord) => {
       const icon = {
-        url: '../assets/images/decor/map_marker.svg',
+        url: './assets/images/decor/map_marker.svg',
         size: new google.maps.Size(30, 40),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(-15, -40),

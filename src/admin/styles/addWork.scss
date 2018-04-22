@@ -1,0 +1,179 @@
+.title {
+		color: #4d5963;
+		font-size: rem(16);
+		font-weight: 500;
+		margin-bottom: rem(30);
+		&:first-letter {
+			text-transform: uppercase;
+		}
+	}
+	.table {
+		width: 50%;
+		padding-left: rem(25);
+		margin-bottom: rem(25);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		@include tablet {
+			padding-left: 0;
+			width: 95%;
+		}
+	}
+	.input {
+		outline: none;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		background-color: transparent;
+		padding: rem(5) rem(10);
+		width: 100%;
+		height: rem(35);
+		text-align: left;
+		font-size: rem(16);
+		color: rgba($text-color, 0.87);
+		margin-bottom: rem(40);
+		&:hover, &:focus {
+			background-color: rgba($primaryColor, 0.5);
+			cursor: pointer;
+			@include placeholder {
+				color: rgba($brand-color, 0.7);
+			}
+			@include tablet {
+				background-color: $primaryColor;
+			}
+		}
+		@include placeholder {
+			color: rgba(#373e42, 0.5);
+			font-weight: 400;
+		}
+		@include tablet {
+			background-color: $primaryColor;
+			height: rem(45);
+			width: 60%;
+		}
+		@include mobile {
+			width: 100%;
+		}
+	}
+	.input-row {
+		position: relative;
+	}
+	.input-file {
+		display: flex;
+		color: rgba(#373e42, 0.5);
+		transition: color 0.2s;
+		align-items: center;
+		margin-bottom: rem(40);
+		position: relative;
+		&:hover {
+			cursor: pointer;
+			color: rgba($brand-color, 0.7);
+		}
+		&:hover .svg_load_file {
+			fill: rgba($brand-color, 1);
+			stroke: rgba($brand-color, 1);
+		}
+	}
+	.svg_load_file {
+		display: block;
+		@include size(rem(40));
+		margin-right: rem(8);
+		fill: rgba(#373e42, 0.4);
+		stroke: rgba(#373e42, 0.2);
+		transition: fill 0.2s, stroke 0.2s;
+	}
+	.input-img-title {
+		font-size: rem(16);
+		font-weight: 400;
+		display: block;
+	}
+	.save {
+		min-width: rem(50);
+		min-height: 2.5rem;
+		font-size: rem(16);
+		padding: 0 rem(28);
+		display: inline-block;
+		vertical-align: middle;
+		background-color: $brand-color;
+		border: 1px solid transparent;
+		transition:  background-color 0.2s;
+		overflow: hidden;
+		border-radius: rem(5);
+		outline: none;
+
+		&:hover {
+			background-color: $primaryColor;
+			cursor: pointer;
+		}
+		&:hover .save-text {
+			color: $brand-color;
+		}
+		@include mobile {
+		min-height: 2rem;
+		}
+	}
+	.save-text {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 2.5rem;
+		font-weight: 500;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		vertical-align: middle;
+		color: $primaryColor;
+		transition: color 0.2s;
+	}
+.overlay {
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba($primaryColor, 0.6);
+	box-shadow: inset 0px 0px 100px 8px rgba($primaryColor, 0.6);
+}
+.popup {
+	@include size(rem(280),rem(115));
+	text-align: center;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background: $primaryColor;
+	border-radius: 3px;
+	color: $text-color;
+	font-size: rem(16);
+	font-weight: 500;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+	padding: 1.8% 0;
+}
+.popup-text {
+	font-size: rem(16);
+	font-weight: 400;
+	color: rgba($text-color, 0.8);
+}
+.validator-error {
+	font-size: rem(16);
+    font-weight: 500;
+   	text-align: left;
+   	z-index: 10;
+    left: 0;
+    bottom: 20%;
+    margin-top: rem(2);
+    color: #e44845;
+    background: transparent;
+    vertical-align: middle;
+    pointer-events: none;
+    position: absolute;
+    width: 150%;
+}
+.validator-error-file {
+	bottom: initial;
+	top: 100%;
+}

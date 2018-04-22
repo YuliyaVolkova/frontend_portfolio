@@ -1,26 +1,15 @@
 'use strict';
+import axios from 'axios';
 const diagrammsSkills = (() => {
-  const data = [{groupTitle: 'Frontend',
-      skills: [{skillTitle: 'HTML5 &CSS3', percent: '0.92'},
-        {skillTitle: 'Sass &Pug', percent: '0.85'},
-        {skillTitle: 'JavaScript &jQuery', percent: '0.85'}]},
-    {groupTitle: 'Backend', 
-      skills: [{skillTitle: 'PHP', percent: '0.3'},
-        {skillTitle: 'Node.js &npm', percent: '0.5'},
-        {skillTitle: 'mySQL', percent: '0.4'},
-        {skillTitle: 'Mongo.db', percent: '0.6'}]},
-    {groupTitle: 'Workflow', 
-      skills: [{skillTitle: 'Git', percent: '0.92'},
-        {skillTitle: 'Webpack', percent: '0.75'},
-        {skillTitle: 'Gulp', percent: '0.80'}]},
-    ],
-    body = document.body,
+  const body = document.body,
     container = body.querySelector('.l-scroll-parallax-container'),
-    firstScrHeight = body.querySelector('.parallax__content').offsetTop,
-    colSecondTop = body.querySelector('.l-main__column-two').offsetTop,
     containerSkills = body.querySelector('.c-skills-card__container'),
-    arrItems = new Array();
-  var animated = false, scrollPos = 0;
+    parallaxContent = body.querySelector('.parallax__content'),
+    skillsWrapper = body.querySelector('.l-main__column-two');
+  let firstScrHeight,
+    colSecondTop,
+    arrItems = new Array(),
+    animated = false, scrollPos = 0;
 
   class Skill {
     constructor(options) {
@@ -33,7 +22,7 @@ const diagrammsSkills = (() => {
       this.strokeDasharray = 2 * Math.PI * this.radius;
       this.svg.setAttribute('width', this.width);
       this.svg.setAttribute('height', this.height);
-      this.svg.setAttribute('opacity', options.percent);
+      this.svg.setAttribute('opacity', options.percent/100);
       this.svg.classList.add('svg_skill-diagr');
       this.svg.setAttribute('viewBox', `0 0 ${this.width} ${this.height}`);
       this.baseCircle = this.createCircle('rgb(0, 191, 165)', true);
@@ -73,10 +62,10 @@ const diagrammsSkills = (() => {
       return this;
     }
 
-    draw(progress) {
+    draw(progress) {  
       this.baseCircle.setAttribute(
         'stroke-dashoffset',
-        (1 - progress * this.percent) * this.strokeDasharray
+        (1 - progress * this.percent/100) * this.strokeDasharray
       );
     }
   }
@@ -98,10 +87,10 @@ const diagrammsSkills = (() => {
       }
     });
   }
-
   function createExSkills(data) {
     const width = 145;
-    for (var i = 0; i <= data.length - 1; i++) {
+    const titles = ['Frontend', 'Workflow', 'Backend'];
+    for (var i = 0; i < 3; i++) {
       arrItems[i] = new Array();
       const group = document.createElement('li');
       const groupTitle = document.createElement('div');
@@ -109,12 +98,13 @@ const diagrammsSkills = (() => {
       group.classList.add('c-skills-card__group');
       groupTitle.classList.add('c-skills-card__group-title');
       skillsContainer.classList.add('c-skills-card__group-content');
-      groupTitle.textContent = data[i].groupTitle;
+      groupTitle.textContent = titles[i];
       group.appendChild(groupTitle);
       group.appendChild(skillsContainer);
       containerSkills.appendChild(group);
-      for (var j = 0; j <= data[i].skills.length - 1; j++) {
-        arrItems[i][j] = new Skill({width: width, container: skillsContainer, title: data[i].skills[j].skillTitle, percent: data[i].skills[j].percent});
+      let filter = data.filter(x=> x.type===(i+1));    
+      for (var j = 0; j <= filter.length - 1; j++) {
+        arrItems[i][j] = new Skill({width: width, container: skillsContainer, title: filter[j].name, percent: filter[j].percents});
       }
     }
   }
@@ -127,6 +117,8 @@ const diagrammsSkills = (() => {
       return;
     }
     scrollPos = newPos;
+    firstScrHeight = parallaxContent.offsetTop;
+    colSecondTop = skillsWrapper.offsetTop;
     if(scrollPos<((firstScrHeight+colSecondTop)*3/4)||scrollPos>(firstScrHeight+colSecondTop)*6/7)
       return;
     animated = true;
@@ -136,18 +128,24 @@ const diagrammsSkills = (() => {
         return timeFraction;
       },
       draw: function(progress) {
-        for (var i = 0; i <= arrItems.length - 1; i++) {
-          for (var j = 0; j <= arrItems[i].length - 1; j++) {
+        for (var i = 0; i < arrItems.length; i++) {
+          for (var j = 0; j < arrItems[i].length; j++) {
             arrItems[i][j].draw(progress);
           }
         }
       },
     });}, 50);
   }
-
   const init = () => {
-    createExSkills(data);
-    container.addEventListener('scroll', scrollAnimate, false);
+    axios
+      .get('/json/skills.json')
+      .then(rs => {
+        createExSkills(rs.data);
+        container.addEventListener('scroll', scrollAnimate, false);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
   return {init};
 })();

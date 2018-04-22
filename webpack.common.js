@@ -1,37 +1,37 @@
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractNormalizeCSS = new ExtractTextPlugin('./assets/css/normalize.css');
-const extractSass = new ExtractTextPlugin({filename: './assets/css/styles.[name].css', allChunks:true});
+const extractNormalizeCSS = new ExtractTextPlugin('assets/css/normalize.css');
+const extractSass = new ExtractTextPlugin({filename: 'assets/css/styles.[name].css', allChunks:true});
 const autoprefixer = require('autoprefixer');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
-
   context: path.resolve(__dirname, 'src'),
-
   entry: {
     index: ['./app/index.js'],
     blog: ['./app/blog.js'],
     about: ['./app/about.js'],
-    my_works: ['./app/my_works.js']
+    my_works: ['./app/my_works.js'],
+    admin: ['./admin/main.js'],
+    login: ['./app/login.js']
   },
 
    output: {
-
      path: path.resolve(__dirname, 'build'),
      filename: 'app/[name].bundle.js',
    },
 
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
+      'vue$': 'vue/dist/vue.esm.js',
+      styles: path.resolve(__dirname, 'src/assets/styles'),
+      img: path.resolve(__dirname, 'src/assets/images'),
+    },
+    extensions: ["*", ".js", ".vue", ".json"]
   },
 
   module: {
@@ -43,6 +43,17 @@ module.exports = {
         name:'[path][name].[ext]',
         }
       },
+      /*{
+        test: /\.(svg)$/i,   //to support eg. background-image property 
+        use: [
+          {
+            loader: 'url-loader',
+          },
+          {
+            loader: 'svg-fill-loader',
+          }
+        ]
+      },*/
       {
       test: /\.(svg)$/i,   //sprite 
       include: path.resolve(__dirname, 'src/assets/images/sprites/to_sprite/'),
@@ -59,6 +70,27 @@ module.exports = {
           options: {
           plugins: [
             { removeAttrs: { attrs: '(fill|stroke)' } },
+            ],
+          },
+        },
+       ],
+      },
+      {
+      test: /\.(svg)$/i,   //sprite 
+      include: path.resolve(__dirname, 'src/assets/images/sprites/to_sprite_admin/'),
+      use: [
+        {
+          loader: 'svg-sprite-loader',
+          options: {
+            extract: true,
+            spriteFilename:  'assets/images/sprites/sprite_admin.svg',
+          }
+        },
+        {
+         loader: 'svgo-loader',
+          options: {
+          plugins: [
+            { removeAttrs: { attrs: '(fill)' } },
             ],
           },
         },
@@ -159,18 +191,21 @@ module.exports = {
               {loader: 'postcss-loader',
                options: {sourceMap: 'inline'}
              },
-              { loader:'sass-loader',
+             /*{
+             loader: 'svg-fill-loader/encodeSharp'
+             },*/
+             { loader:'sass-loader',
                 options: {sourceMap: true} 
               }
             ] 
         })    
       },
       {
+        enforce: "pre",
         test: /\.(pug|jade)$/,
         exclude: /node_modules/,
         loader: "pug-lint-loader",
-        options: require('./.pug-lintrc.js'),
-        enforce: "pre"
+        options: require('./.pug-lintrc.js')
       },
       {
         test: /\.pug$/,
@@ -207,7 +242,24 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          // `vue-loader` options
+          loaders: {
+            scss: [
+              "vue-style-loader",
+              "css-loader",
+              "sass-loader",
+              {
+                loader: "sass-resources-loader",
+                options: {
+                  resources: [
+                    path.resolve(__dirname, 'src/assets/styles/utils/_variables.scss'),
+                    path.resolve(__dirname, 'src/assets/styles/utils/_mixins.scss'),
+                    path.resolve(__dirname, 'src/assets/styles/utils/_functions.scss'),
+                    path.resolve(__dirname, 'src/assets/styles/base/_helpers.scss'),
+                  ]
+                }
+              }
+            ]
+          }
         }
       }
     ],
@@ -251,7 +303,6 @@ module.exports = {
         windows: false
       }
     }),
-
     // Make sure that the plugin is after any plugins that add images
     // These are the default options:
     new ImageminPlugin({
@@ -276,9 +327,7 @@ module.exports = {
               quality: '90-100',        
       }, */
       plugins: []
-    }),
-    
+    }),   
      new SpriteLoaderPlugin({plainSprite: true }),
-
   ],
  };

@@ -3,16 +3,15 @@
 ///* parallax background-effect - to multiple layers
 ///*------------------------------------------------
 const parallax = (() => {
-  let container = document.body.querySelector('#parallax'),
+  const container = document.body.querySelector('#parallax'),
     layers = [...container.children];
 
   const containerPos = () => {
-    //last layer faster move
-    let speedLast = layers[layers.length-1].dataset.speed,
+    //faster move the last layer 
+    const speedLast = layers[layers.length-1].dataset.speed,
       positionTop = window.innerHeight/2*speedLast,
       positionLeft = window.innerWidth/2*speedLast,
       containerStyle = container.style;
-
     containerStyle.top = `-${positionTop}px`;
     containerStyle.bottom = `-${positionTop}px`;
     containerStyle.left = `-${positionLeft}px`;
@@ -20,7 +19,7 @@ const parallax = (() => {
   };
 
   const move = e => {
-    let initialX = window.innerWidth/2 - e.pageX,
+    const initialX = window.innerWidth/2 - e.pageX,
       initialY = window.innerHeight/2 - e.pageY;
     layers.forEach((item) => {
       let divider = item.dataset.speed,

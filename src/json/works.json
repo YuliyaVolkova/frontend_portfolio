@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0001", 
+    "title": "Работа_1",
+    "technologies": "HTMl , CSS, JAVASCRIPT",
+    "url": "./assets/images/content/work-1.png"
+  },
+  {
+    "id": "0002", 
+    "title": "Работа_2",
+    "technologies": "HTMl , Sass, JAVASCRIPT",
+    "url": "./assets/images/content/work-2.png"
+  },
+  {
+    "id": "0003", 
+    "title": "Работа_3",
+    "technologies": "Pug , Sass, JAVASCRIPT",
+    "url": "./assets/images/content/work-3.png"
+  },
+  {
+    "id": "0004", 
+    "title": "Работа_4",
+    "technologies": "Pug , Sass, JAVASCRIPT, Vue",
+    "url": "./assets/images/content/work-4.png"
+  }
+]

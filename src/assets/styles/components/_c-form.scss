@@ -1,6 +1,9 @@
 .c-form {
 	width: 100%;
 	height: 77%;
+	&.c-form_h66 {
+		height: 66%;
+	}
 }
 
 .c-form__inner {
@@ -10,6 +13,9 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	&.c-form__inner_jc-sa {
+		justify-content: space-around;
+	}
 }
 
 .c-form__row {
@@ -17,6 +23,9 @@
 	display: flex;
 	margin-bottom: 4%;
 	position: relative;
+	&.c-form__row_mb0 {
+		margin-bottom: 0;
+	}
 }
 
 .c-form__item {
@@ -60,7 +69,6 @@
 	overflow: hidden;
 	transition: border 0.3s;
 	font-size: rem(16);
-	//appearance: none;
 	padding-left: 1.5rem;
 
 	&:focus {
@@ -169,7 +177,6 @@
 	position: relative;
 }
 
-
 .c-form__required-info {
 	position: absolute;
 	bottom: 5%;
@@ -190,7 +197,6 @@
 	font-weight: 700;
 	color: $brand-color;
 }
-
 
 .validator-error{
     font-size: rem(16);

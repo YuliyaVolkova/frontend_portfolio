@@ -13,6 +13,7 @@
 	justify-content: space-between;
 	align-items: baseline;
 	margin: auto;
+	position: relative;
 	& .svg_dash {
 		transform: translateY(-50%);
 	}
@@ -21,4 +22,15 @@
 		 line-height: 1.17;
 		 text-align: center;
 	}
+}
+.c-login__mes {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	bottom: 100%;
+	width: 100%;
+	text-align: center;
+	color: rgba($brand-color, 0.8);
+	padding: 2%;
+	transform: translateX(-50%);
 }

@@ -2,9 +2,10 @@
 //*----------------------------------
 //*------js-form-login-data-validation-----
 //*----------------------------------
+import axios from 'axios';
 import Vue from 'vue';
 const validateFormLogin = new Vue ({
-  el: '#login-form',
+  el: '#autorization',
   data: {
     login: { value: '',
       error: '',
@@ -19,6 +20,7 @@ const validateFormLogin = new Vue ({
       error: '',
     },
     attemptSubmit: false,
+    mes: '',
   },
   computed: {
     wrongLogin() {
@@ -59,6 +61,25 @@ const validateFormLogin = new Vue ({
       this.attemptSubmit = true;
       if(this.wrongLogin||this.wrongPassword||this.wrongCheckbox||this.wrongRadio) {
         e.preventDefault();
+      }
+      else {
+        e.preventDefault();
+        axios({ method: 'post',
+          url: '/login',
+          data: {
+            login: this.login.value,
+            password: this.password.value,
+          },
+        }).then((rs) => {
+          if (rs) {
+            this.attemptSubmit = false;
+            this.login.value = '';
+            this.password.value = '';
+            this.login.error = '';
+            this.password.error = '';
+            this.mes = rs.data.mes;
+          }
+        });
       }
     },
   },

@@ -1,4 +1,4 @@
-portfolio_pages/
-node_modules/
-src/burger.html
-
+/node_modules
+/build
+/config.json
+/app.js

@@ -11,7 +11,7 @@
 
 body, html {
   	color: $text-color;
- 	background-color: $light-grey; 
+ 	background-color: $brand-color; 
   	font-family: $text-font-stack;
 	margin: 0;
 	padding: 0;
@@ -56,13 +56,6 @@ body.hero, html.hero {
 	height: 100%;
 	overflow: hidden;
 	min-height: 628px;
-	& .l-parallax__container {
-		@include custom_1800 {
-			//width: 1800px;
-			//margin: 0 auto;
-			//overflow: hidden;
-		}
-	}
 	@include tablet {
 		min-height: 100vh;
 	}
@@ -108,12 +101,5 @@ svg {
 button, input, select, textarea {
   font-family: $text-font-stack;
  }
-//* for preloading images
-img {
-	display: none;
-}
-.google-map img {
-    display: block;
-}
 
 

@@ -1,0 +1,76 @@
+.skill-input {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+		@include tablet {
+			justify-content: space-between;
+		}
+	}
+	.input {
+		outline: none;
+		border: 1px solid transparent;
+		border-radius: 5px;
+		background-color: transparent;
+		padding: rem(5) rem(10);
+		width: 50%;
+		height: rem(35);
+		text-align: center;
+		font-size: rem(17);
+		color: rgba($text-color, 0.87);
+		&:hover, &:focus {
+			background-color: rgba($primaryColor, 0.5);
+			//border: 1px solid $brand-color;
+			cursor: pointer;
+		}
+		@include placeholder {
+			color: rgba($text-color, 0.8);
+		}
+	}
+	.message {
+		position: absolute;
+		bottom: 92%;
+		transform: translateX(15%);
+		left: 0;
+		color: $brand-color;
+	}
+	.save {
+		min-width: rem(50);
+		min-height: 2.5rem;
+		font-size: rem(16);
+		padding: 0 rem(28);
+		display: inline-block;
+		vertical-align: middle;
+		background-color: $brand-color;
+		border: 1px solid transparent;
+		transition:  background-color 0.2s;
+		overflow: hidden;
+		border-radius: rem(5);
+		outline: none;
+
+		&:hover {
+			background-color: $primaryColor;
+			cursor: pointer;
+		}
+		&:hover .save-text {
+			color: $brand-color;
+		}
+		@include mobile {
+		min-height: 2rem;
+		}
+	}
+	.save-text {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 2.5rem;
+		font-weight: 500;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		vertical-align: middle;
+		color: $primaryColor;
+		transition: color 0.2s;
+	}	

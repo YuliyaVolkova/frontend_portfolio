@@ -17,6 +17,9 @@
 	justify-content: center;
 	align-items: baseline;
 	margin: auto;
+	@include laptop {
+		width: 80%;
+	}
 	@include tablet {
 		width: 58%;
 	}

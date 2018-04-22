@@ -1,10 +1,11 @@
 'use strict';
+import axios from 'axios';
 //*----------------------------------
 //*------js-form-feed-data-validation-----
 //*----------------------------------
 import Vue from 'vue';
 const validateFormFeed = new Vue ({
-  el: '#feeds-form',
+  el: '.c-feeds-form',
   data: {
     name: { value: '',
       error: '',
@@ -16,6 +17,7 @@ const validateFormFeed = new Vue ({
       error: '',
     },
     attemptSubmit: false,
+    mes: '',
   },
   computed: {
     wrongName() {
@@ -54,6 +56,28 @@ const validateFormFeed = new Vue ({
       this.attemptSubmit = true;
       if(this.wrongName||this.wrongMail||this.missingMessage) {
         e.preventDefault();
+      }
+      else {
+        e.preventDefault();
+        axios({ method: 'post',
+          url: '/mail',
+          data: {
+            name: this.name.value,
+            email: this.email.value,
+            text: this.textmes.value,
+          },
+        }).then((rs) => {
+          if (rs) {
+            this.attemptSubmit = false;
+            this.name.value = '';
+            this.email.value = '';
+            this.textmes.value = '';
+            this.name.error = '';
+            this.email.error = '';
+            this.textmes.error = '';
+            this.mes = rs.data.mes;
+          }
+        });
       }
     },
   },

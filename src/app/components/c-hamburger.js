@@ -1,12 +1,11 @@
 'use strict';
-
 const hamburgerNav = (function() {
 
-  let body = document.body,
+  const body = document.body,
     component = body.querySelector('.c-hamburger-nav'),
     button = component.querySelector('#openOverlay'),
-    overlay,
     template = component.querySelector('#hamburgerTemplate');
+  let overlay;
 
   const createOverlay = () => {
     overlay = document.createElement('div');
@@ -27,17 +26,19 @@ const hamburgerNav = (function() {
     button.removeEventListener('animationend', insertOverlay, false);
     body.appendChild(overlay);
     button.style.transform = 'scale(0.001)';
+    button.style.WebkitTransform = 'scale(0.001)';
     button.classList.remove('animate');
     overlay.classList.add('to_open');
-    let close = overlay.querySelector('#closeOverlay'),
-      homeLink = overlay.querySelector('.c-hamburger-nav__link[href="#"]').parentElement;
-    homeLink.addEventListener('click', closeOverlay, false);  
+    const close = overlay.querySelector('#closeOverlay'),
+      pathName = window.location.pathname,
+      homeLink = overlay.querySelector(`.c-hamburger-nav__link[href="${pathName}"]`).parentElement;
+    homeLink.addEventListener('click', closeOverlay); 
     close.addEventListener('click', closeOverlay, false);
     body.addEventListener('keydown', isEsc, false);
   }
 
   function openOverlay(e) {
-    e.preventDefault();	
+    e.preventDefault(); 
     button.classList.add('animate');
     button.addEventListener('animationend', insertOverlay, false);
   }
@@ -54,7 +55,6 @@ const hamburgerNav = (function() {
   }
 
   function closeOverlay(e) {
-   
     e.preventDefault();
     let close = overlay.querySelector('#closeOverlay');
     close.removeEventListener('click', closeOverlay, false);
@@ -68,7 +68,6 @@ const hamburgerNav = (function() {
     createOverlay();
     button.addEventListener('click', openOverlay, false);
   };
-
   return {handler};
 })();
 

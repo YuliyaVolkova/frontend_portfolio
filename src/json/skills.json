@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Html &CSS3",
+    "percents": 95,
+    "type": 1
+  },
+  {
+    "name": "JavaScript &JQuery",
+    "percents": 80,
+    "type": 1
+  },
+  {
+    "name": "Pug &Sass",
+    "percents": 90,
+    "type": 1
+  },
+  {
+    "name": "Git",
+    "percents": 80,
+    "type": 2
+  },
+  {
+    "name": "Webpack &Gulp",
+    "percents": 80,
+    "type": 2
+  },
+  {
+    "name": "Node.js &npm",
+    "percents": 80,
+    "type": 2
+  },
+  {
+    "name": "Mongo.db",
+    "percents": 60,
+    "type": 3
+  },
+  {
+    "name": "Node.js",
+    "percents": 60,
+    "type": 3
+  },
+  {
+    "name": "Express",
+    "percents": 70,
+    "type": 3
+  }
+]

@@ -58,4 +58,8 @@ $browser-context: 16;
 
   @return $opposite-directions;
 }
-
+//for svg-fill-loader
+@function svg-bg($url, $color) {
+   $base-color: str-slice(inspect($color), 2);
+   @return unquote('url("' + $url + "?fill=%23" + $base-color +'")');
+ }

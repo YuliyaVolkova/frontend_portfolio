@@ -3,7 +3,7 @@
 ///* blur bg to feeds-form
 ///*-------------------------------------
 const blurResize = (() => {
-  let body = document.body,
+  const body = document.body,
     wrapper = body.querySelector('.c-feeds-form-bg'),
     blurForm = body.querySelector('.c-feeds-blured');
     
@@ -13,7 +13,12 @@ const blurResize = (() => {
   };
 
   const handler = () => {
-    setBg();
+    const timer = setInterval(() => {
+      if(wrapper.offsetTop) {
+        clearInterval(timer);
+        setBg();
+      }
+    }, 50);
     window.addEventListener('resize', setBg, false);
   };
 

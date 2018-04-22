@@ -4,24 +4,21 @@
 ///*------------------------------------------------
 const flip = (() => {
 
-  let body = document.body,
+  const body = document.body,
     container = body.querySelector('.l-welcome'),
-    butLogin = body.querySelector('.c-button#targetLogin'),
-    loginTargEl = body.querySelector('.l-login__button'),
-    templFace = body.querySelector('#faceBl'),
-    templBackFace = body.querySelector('#backFaceBl'),
-    containerFace = body.querySelector('.l-face-container'),
-    containerBackface = body.querySelector('.l-backface-container');
+    butToLoginWrapper = body.querySelector('#targetLogin'),
+    butToLogin = butToLoginWrapper.children[0],
+    butToMain = container.querySelector('#targetMain');
 
-  const flipHash = e => {
+  const flipLogin = e => {
     e.preventDefault();
     if(container.classList.contains('flip')) 
       container.classList.remove('flip');
     else container.classList.add('flip');
     setTimeout(() => {
-      loginTargEl.classList.toggle('visually-hidden');
-      if(!loginTargEl.classList.contains('visually-hidden')) {
-        butLogin.addEventListener('click', flip, false);
+      butToLoginWrapper.classList.toggle('visually-hidden');
+      if(!butToLoginWrapper.classList.contains('visually-hidden')) {
+        butToLogin.addEventListener('click', flip);
       }
     }, 500);
   };
@@ -32,35 +29,23 @@ const flip = (() => {
       container.classList.remove('flip');
     else container.classList.add('flip');
     setTimeout(() => {
-      loginTargEl.classList.toggle('visually-hidden');
-      if(!loginTargEl.classList.contains('visually-hidden'))
-        butLogin.addEventListener('click', flip, false);
+      butToLoginWrapper.classList.toggle('visually-hidden');
+      if(!butToLoginWrapper.classList.contains('visually-hidden'))
+        butToLogin.addEventListener('click', flip);
       else {
-        let butMain = body.querySelector('.c-form__nav-link#targetMain');
-        butMain.addEventListener('click', flipHash, false); 
+        butToMain.addEventListener('click', flipLogin); 
       }
     }, 500);
   };
 
-  const autorizate = () => {
-    containerFace.innerHTML = templBackFace.innerHTML;
-    templBackFace.innerHTML = '';
-    containerBackface.innerHTML = templFace.innerHTML;
-    templFace.innerHTML = '';
-    loginTargEl.classList.add('visually-hidden');
-    const butMain = body.querySelector('.c-form__nav-link#targetMain');
-    butMain.addEventListener('click', flipHash);
-  };
+  function autorizate() {
+    butToLoginWrapper.classList.add('visually-hidden');
+    butToMain.addEventListener('click', flipLogin);
+  }
 
-  const initWelcome = () => { 
-    containerFace.innerHTML = templFace.innerHTML;
-    templFace.innerHTML = '';
-    containerBackface.innerHTML = templBackFace.innerHTML;
-    templBackFace.innerHTML = '';
-    if(!loginTargEl.classList.contains('visually-hidden'))
-      butLogin.addEventListener('click', flip, false);
+  const initMain = () => { 
+    butToLogin.addEventListener('click', flip);
   };
-
-  return {initWelcome, autorizate};
+  return {initMain, autorizate};
 })();
 export default flip;

@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
@@ -10,11 +11,8 @@ const PORT = process.env.PORT || 8080;
 module.exports = merge(common, {
 
   devtool: 'inline-source-map',
-
   output: {
-
-     publicPath: 'http://localhost:8080/',
-     //publicPath: 'https://yuliyavolkova.github.io/portfolio_pages/',
+    publicPath: '/',
    },
 
   devServer: {
@@ -42,32 +40,52 @@ module.exports = merge(common, {
         reload: false
       }),
 
+      new CopyWebpackPlugin([
+        { from: 'assets/images/sprites/', to: 'assets/images/sprites/' },
+        { from: 'assets/images/content/', to: 'assets/images/content/'},
+        { from: 'json/', to: 'json/'},
+      ]),
+
       new HtmlWebpackPlugin({
        title: 'Portfolio Главная',
-       template: './index.pug',
+       template: './views/pages/index.pug',
        chunks: ['index'],
        filename: './index.html'
       }),
 
       new HtmlWebpackPlugin({
+       title: 'Login',
+       template: './views/pages/login.pug',
+       chunks: ['login'],
+       filename: './login.html'
+      }),
+      
+      new HtmlWebpackPlugin({
        title: 'Web blog',
-       template: './pages/blog.pug',
+       template: './views/pages/blog.pug',
        chunks: ['blog'],
-       filename: './pages/blog.html'
+       filename: './blog.html'
       }),
 
       new HtmlWebpackPlugin({
        title: 'About me',
-       template: './pages/about.pug',
+       template: './views/pages/about.pug',
        chunks: ['about'],
-       filename: './pages/about.html'
+       filename: './about.html'
       }),
 
       new HtmlWebpackPlugin({
        title: 'Мои работы',
-       template: './pages/my_works.pug',
+       template: './views/pages/my_works.pug',
        chunks: ['my_works'],
-       filename: './pages/my_works.html'
+       filename: './my_works.html'
+      }),
+
+      new HtmlWebpackPlugin({
+       title: 'Админ',
+       template: './views/pages/admin.pug',
+       chunks: ['admin'],
+       filename: './admin.html'
       }),
     ]
   });

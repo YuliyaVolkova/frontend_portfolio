@@ -1,2 +1,0 @@
-AIzaSyBeBIQIYzh41ByRq6AbIxnd-TWFZFMJkkU map google key
-let sections = [...document.body.querySelectorAll('.l-section')].map((item) => item.offsetTop); //js

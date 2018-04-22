@@ -3,19 +3,18 @@
 ///* scroll blog-articles
 ///*-------------------------------------
 const scrollBlog = (() => {
-  let body = document.body,
+  const body = document.body,
     sections = [...body.querySelectorAll('.c-blog__article')],
     container = body.querySelector('.l-scroll-parallax-container'),
-    arrOffset = sections.map((item) => item.offsetTop),
     navBlock = body.querySelector('#absoluteNav'),
     links = [...navBlock.querySelectorAll('.c-blog__nav-link')],
     tabletButton = navBlock.querySelector('.c-blog__menu-swipe'),
-    firstScrHeight = body.querySelector('.parallax__content').offsetTop,
-    header = body.querySelector('.l-hero_blog').getBoundingClientRect(),
-    fixedClone,
+    parallaxContent = body.querySelector('.parallax__content'),
+    firstSection = body.querySelector('.l-hero_blog'),
     tabletMth = window.matchMedia('(max-width: 768px)'),
     siblings = n => [...n.parentElement.children].filter(c=>c!=n);
-  var  frAnimated = false;
+  let  frAnimated = false,
+    arrOffset = [], firstScrHeight, header, fixedClone;
 
   function createFixNav() {
     fixedClone = document.createElement('div');
@@ -58,6 +57,9 @@ const scrollBlog = (() => {
 
   const checkScroll = () => {
     let scrollPos = container.scrollTop;
+    arrOffset = sections.map((item) => item.offsetTop);
+    firstScrHeight = parallaxContent.offsetTop;
+    header = firstSection.getBoundingClientRect();
     if(fixedClone&&scrollPos<=arrOffset[0]+firstScrHeight&&navBlock.classList.contains('visually-hidden')) {
       if(!tabletMth.matches||!fixedClone.classList.contains('animateOpen')) {
         fixedClone.classList.add('visually-hidden');
@@ -88,6 +90,9 @@ const scrollBlog = (() => {
 
   function showSection(e) {
     if(!window.location.hash) return;
+    arrOffset = sections.map((item) => item.offsetTop);
+    firstScrHeight = parallaxContent.offsetTop;
+    header = firstSection.getBoundingClientRect();
     let hash = e?this.getAttribute('href'):window.location.hash,
       sectionAct = body.querySelector(`.c-blog__article[data-section="${hash.replace(/#/,'')}"`),
       linksAct = [...body.querySelectorAll(`.c-blog__nav-link[href="${hash}"`)],

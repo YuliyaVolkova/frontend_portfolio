@@ -4,14 +4,15 @@
 ///*------------------------------------
 const scrollWorks = (() => {
 
-  let body = document.body,
+  const body = document.body,
     sections = [...body.querySelectorAll('.l-section')],
     toNextBut = body.querySelector('#next'),
     toFirstBut = body.querySelector('#first'),
-    arrOffset = sections.map((item) => item.offsetTop),
     container = body.querySelector('.l-scroll-parallax-container');
+  let arrOffset;
 
   function showSection(e) {
+    arrOffset = sections.map((item) => item.offsetTop);
     let hash = this.getAttribute('href')||window.location.hash,
       sectionAct = body.querySelector(`.l-section[data-section="${hash.replace(/#/,'')}"`),
       scrollPos = arrOffset[sections.indexOf(sectionAct)];
