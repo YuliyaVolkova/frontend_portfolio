@@ -1,5 +1,5 @@
-## Frontend для проекта Portfolio_Loftschool, сборка Webpack3 c HMR
-## Посмотреть мой проект можно здесь: https://yuliyavolkova.github.io/portfolio_pages/
+## Frontend для проекта Portfolio_Loftschool: сборка Webpack3 c HMR
+### Посмотреть мой проект можно здесь: https://yuliyavolkova.github.io/portfolio_pages/
 
 ### **студент**:  Волкова Юлия
 ### **наставник**: Ивченко Антон
